@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wd5kqux2!_un&5o2#rqkvo*^9s++mg%6d@hbxty9@*8vp$xsx$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -77,8 +77,20 @@ WSGI_APPLICATION = 'rocko.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+       'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': os.environ.get('db_name'),
+
+        'USER': os.environ.get('db_user'),
+
+        'PASSWORD': os.environ.get('db_password'),
+
+        'HOST': os.environ.get('db_host'),
+
+        'PORT': os.environ.get('db_port')
     }
 }
 
@@ -120,12 +132,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
-
 ]
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-MEDIA_ROOT=os.path.join(BASE_DIR, 'images')
-MEDIA_URL = '/images/'
+DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
+STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
+MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
+MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
+MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
+MINIO_STORAGE_USE_HTTPS = True
+MINIO_STORAGE_MEDIA_BUCKET_NAME = 'alcherrockomedia'
+MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
+MINIO_STORAGE_STATIC_BUCKET_NAME = 'alcherrockostatic'
+MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
+MEDIA_URL = '/image-uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'image-uploads')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
