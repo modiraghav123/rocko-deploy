@@ -9,6 +9,7 @@ body {
     top:3vh;
     height: 5vh;
     width: 5vw;
+    z-index: 1;
 
 }
 .skull img{
@@ -18,7 +19,7 @@ body {
 }
 .alcher_logo img{
  
-    height: 6vh;
+    height: 5vh;
     max-width: none;
 
 }
@@ -200,7 +201,7 @@ line-height: 24px;
 @media (max-width: 650px) {
     .top_part{
 
-        background-image:url("/static/images/background-mob.png")  ;
+        background-image:url("../images/background-mob.png")  ;
         background-repeat: no-repeat;
         background-size: 100vw 85vh;
 background-color: #0E0E0E;
@@ -226,7 +227,7 @@ background-color: #0E0E0E;
     }
     .skull img{
         height: 10vh;
-        width: 12vw;
+        /* width: 12vw; */
       }
 }
 @media (max-width: 700px){
@@ -265,7 +266,7 @@ background-color: #0E0E0E;
 
 #about_us_wide {
     display: block;
-    background-image:url("/static/images/Vector2.png")  ;
+    background-image:url("../images/Vector2.png")  ;
     background-repeat: no-repeat;
     background-size: 43% 89%;
     background-position: 0% 7vw;
@@ -276,7 +277,7 @@ background-color: #0E0E0E;
     padding: 7vw 12vw 5vw 12vw;
     width: auto;
     height: fit-content;
-    background-image:url("/static/images/Vector3.png")  ;
+    background-image:url("../images/Vector3.png")  ;
     background-repeat: no-repeat;
     background-position: 99%;
     background-size: contain;
@@ -317,7 +318,7 @@ background-color: #0E0E0E;
 
     #about-us-mobile {
         display: block;
-        background-image:url("/static/images/Vector3.png")  ;
+        background-image:url("../images/Vector3.png")  ;
         background-repeat: no-repeat;
         background-size: 20%;
         background-position: 99% 6%;
@@ -342,7 +343,7 @@ background-color: #0E0E0E;
 }
 
 #contact-main {
-    background-image:url("/static/images/left-skull1.svg")  ;
+    background-image:url("../images/left-skull1.svg")  ;
     background-repeat: no-repeat;
     background-position: 100%;
     background-size: contain;
@@ -369,7 +370,7 @@ background-color: #0E0E0E;
     flex-flow: row;
     padding-left: 30vw;
     padding-bottom: 8vw;
-    background-image:url("/static/images/drums.png")  ;
+    background-image:url("../images/drums.png")  ;
     background-repeat: no-repeat;
     background-size: 25vw;
     background-position: 0vw 6vw;
@@ -419,7 +420,7 @@ background-color: #0E0E0E;
 
     #mobile-img-contact {
         padding-top: 15vw;
-        background-image: url('images/left-skull1.svg'), url('images/right-skull.png');
+        background-image: url('../images/left-skull1.svg'), url('../images/right-skull.png');
         background-repeat: no-repeat;
         background-size: 40% 40%;
         background-position: 100% 0% , 0% 0%;
