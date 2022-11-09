@@ -14,13 +14,12 @@ body {
 .skull img{
  
     height: 8vh;
-    width: 8vw;
 
 }
 .alcher_logo img{
  
-    height: 4vh;
-    width: 4vw;
+    height: 6vh;
+    max-width: none;
 
 }
 .alcher_logo{
@@ -126,7 +125,7 @@ margin-top: -26vh;
 }
 .svg-img {
     padding-top: 15vw;
-    background-image:url("/static/images/left-skull.png"),url("/static/images/right-skull.png")  ;
+    background-image:url("../images/left-skull.png"),url("../images/right-skull.png")  ;
 
     background-repeat: no-repeat;
     background-size: 30% 30%;
@@ -142,9 +141,9 @@ margin-top: -26vh;
     width: 100vw;
     height: 100vh;
     padding-top: 77vh;
-    background-image:url("/static/images/image 9.png")  ;
-    background-size: 100vw 100vh;
-
+    background-image:url("../images/hero.png")  ;
+    background-size: cover;
+    object-position: center;
     background-repeat: no-repeat;
     box-sizing: border-box;
    }
@@ -393,6 +392,9 @@ background-color: #0E0E0E;
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+#mobile-footer{
+    display: none;
 }
 
 #contact-us-mobile {

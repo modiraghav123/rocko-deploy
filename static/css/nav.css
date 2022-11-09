@@ -180,6 +180,19 @@ padding: 0;
 background: transparent;
 }
 }
+.links2{
+    height: 13vh;
+    font-size: 1.5vw;
+padding-left: 10vw;
+padding-right: 10vw;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #0E0E0E;
+}
 @media (min-width: 650px){
     .nav_mob_view{
         display: none;
