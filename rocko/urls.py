@@ -18,7 +18,7 @@ from django.urls import path,include
 from base import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('base.urls')),
-    path('saveform/',views.saveform,name='saveform')
+    path('saveform/',views.saveform,name='saveform'),
+    path('', views.index ,name='index')
 
 ]

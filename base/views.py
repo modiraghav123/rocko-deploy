@@ -5,6 +5,7 @@ from .models import Team,Member
 
 def index(request):
     return render(request, 'base/rocko.html')
+
 def basic_form(request):
     return render(request, 'base/forms.html')
 
@@ -38,5 +39,5 @@ def saveform(request):
 
 
 
-    return render(request, 'base/forms.html')
+    return render(request, 'base/registration.html')
 
