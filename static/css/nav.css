@@ -193,6 +193,10 @@ padding-right: 10vw;
     position: fixed;
     background-color: #0E0E0E;
 }
+a{
+    color: rgba(198, 179, 148, 1);
+    text-decoration: inherit;
+}
 @media (min-width: 650px){
     .nav_mob_view{
         display: none;

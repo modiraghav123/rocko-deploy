@@ -88,16 +88,16 @@
             </div>
             <div class="links2">
                 <div class="nav_bar_text">
-                    <a>Home</a>
+                    <a href="#">Home</a>
                 </div>
                 <div class="nav_bar_text">
                     <a href="{% url 'saveform' %}">Registration</a>
                 </div>
                 <div class="nav_bar_text">
-                    <a>About us</a>
+                    <a href="#about_us">About us</a>
                 </div>
                 <div class="nav_bar_text">
-                    <a>Contact Us</a>
+                    <a href="#contact_us">Contact Us</a>
                 </div>
             </div>
             <div class="alcher_logo" >
@@ -117,13 +117,13 @@
                     <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#">Registration </a>
+                    <a href="{% url 'saveform' %}">Registration</a>
                 </li>
                 <li>
-                    <a href="#">About us </a>
+                    <a href="#about_us">About us</a>
                 </li>
                 <li>
-                    <a href="#">Contact us</a>
+                    <a href="#contact_us">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -20585,7 +20585,7 @@
                 <h1 style="border-left: 8px solid #711011; padding-left: 4%">About Us</h1>
             </div>
             <div
-                style="position: relative; background-image: url('Rocko/base/templates/base/images/Vector.png'); background-repeat: no-repeat; background-position: 0% 100%; background-size: 27%;">
+                style="position: relative; background-image: url('{% static '/images/Vector.png'%}'); background-repeat: no-repeat; background-position: 0% 100%; background-size: 27%;">
                 <img src="{% static "/images/image 24.png"%}" type="img/png"
                     style="margin: 2vw 0px 0px 13vw; width: 38%; height: 26%;">
                 <img src="{% static "/images/image 2.png"%}" type="img/png"
@@ -20633,10 +20633,10 @@
                 <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 15%;">19-00-00-0000
                 </p>
                 <div id="footer-icons">
-                    <i class="bi bi-youtube"></i>
-                    <i class="bi bi-facebook" style="margin-left: 3.5vw;"></i>
-                    <i class="bi bi-instagram" style="margin-left: 3.5vw;"></i>
-                    <i class="bi bi-twitter" style="margin-left: 3.5vw;"></i>
+                    <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.facebook.com/alcheringaiitg"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://www.instagram.com/alcheringaiitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
                 </div>
             </footer>
         </div>
@@ -20668,10 +20668,10 @@
                 </div>
                 <div>Social Media</div>
                 <div style="font-size: 5vw; margin-top: 2%">
-                    <i class="bi bi-youtube"></i>
-                    <i class="bi bi-facebook" style="margin-left: 3.5vw;"></i>
-                    <i class="bi bi-instagram" style="margin-left: 3.5vw;"></i>
-                    <i class="bi bi-twitter" style="margin-left: 3.5vw;"></i>
+                    <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.facebook.com/alcheringaiitg"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://www.instagram.com/alcheringaiitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
                 </div>
             </footer>
         </div>

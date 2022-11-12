@@ -130,6 +130,11 @@
         justify-content: space-around;
         margin: auto;
     }
+    .rem{
+        justify-content: space-between;
+        width:75%;
+        align-items:center;
+    }
 
     .page-heading {
         {% comment %} height: 134px; {% endcomment %}
@@ -143,7 +148,6 @@
         font-size: 64px;
         line-height: 96px;
         text-align: center;
-        padding-top: 13vh;
     }
 
     .register-button {
@@ -269,23 +273,23 @@
         </div>
         <div class="links2">
             <div class="nav_bar_text">
-                <a>Home</a>
+                <a href="{% url 'index' %}">Home</a>
             </div>
             <div class="nav_bar_text">
                 <a href="{% url 'saveform' %}">Registration</a>
             </div>
             <div class="nav_bar_text">
-                <a>About us</a>
+                <a href=`{% url 'index' %}`>About us</a>
             </div>
             <div class="nav_bar_text">
-                <a>Contact Us</a>
+                <a href="#contact_us">Contact Us</a>
             </div>
         </div>
         <div class="alcher_logo" >
             <img src="{% static 'images/alcher_logo.png' %}">
         </div>
     </div>
-    <div class="nav_mob_view" style="padding-top: 1vh;">
+    <div class="nav_mob_view" style="padding: 1vh;background-color: #282826;">
         <div class="nav-header">
             <img src="{% static 'images/nav_bar_skull.png' %}"alt="" class="logo" alt="logo" />
 
@@ -400,10 +404,10 @@
         <p style="color: #C6B394; padding-left: 1%;  padding-right: 15%;">19-00-00-0000
         </p>
         <div id="footer-icons">
-            <i class="bi bi-youtube"></i>
-            <i class="bi bi-facebook" style="margin-left: 3.5vw;"></i>
-            <i class="bi bi-instagram" style="margin-left: 3.5vw;"></i>
-            <i class="bi bi-twitter" style="margin-left: 3.5vw;"></i>
+            <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.facebook.com/alcheringaiitg"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://www.instagram.com/alcheringaiitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer>
     <footer id="mobile-footer">
@@ -421,10 +425,10 @@
         </div>
         <div>Social Media</div>
         <div style="font-size: 5vw; margin-top: 2%">
-            <i class="bi bi-youtube"></i>
-            <i class="bi bi-facebook" style="margin-left: 3.5vw;"></i>
-            <i class="bi bi-instagram" style="margin-left: 3.5vw;"></i>
-            <i class="bi bi-twitter" style="margin-left: 3.5vw;"></i>
+            <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.facebook.com/alcheringaiitg"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://www.instagram.com/alcheringaiitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
+                    <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer>
 </body>
@@ -510,7 +514,7 @@
 
 <!-- </html> -->
 
-
+<script src="{% static '/js/nav.js' %}"></script>
 <script>
     let currNoOfMem = -1;
     function addMember() {
@@ -570,7 +574,7 @@
         inp4.setAttribute("class", "input-text-field ");
         const rem_but = document.createElement("BUTTON");
         rem_but.setAttribute("type", "button");
-        rem_but.setAttribute("class", "row-view register-button ");
+        rem_but.setAttribute("class", "register-button ");
         var t = document.createTextNode("Remove member");
         rem_but.appendChild(t);
 
@@ -595,12 +599,15 @@
 
         let but_div = document.createElement("div");
         var rem = document.createElement("p");
+        rem.setAttribute("class","row-view rem")
         currMember.appendChild(rem);
 
          {% comment %} to be continued {% endcomment %}
-        {% comment %} var MemID=document.createElement("span");
+        var MemID=document.createElement("span");
         MemID.innerHTML=`Member ${currNoOfMem+1}` 
-        rem.append(MemID );  {% endcomment %}
+        MemID.setAttribute("style", `font-size:18px; font-weight:bold;`)
+        MemID.setAttribute("id", `memberhead_${currNoOfMem}`)
+        rem.append(MemID ); 
 
         but_div.append(rem);
         currMember.appendChild(but_div);
@@ -667,7 +674,11 @@
             let labelb = document.getElementById(`label2_${i}`);
             let labelc = document.getElementById(`label3_${i}`);
             let labeld = document.getElementById(`label4_${i}`);
+            let memHead=document.getElementById(`memberhead_${i}`)
 
+            memHead.innerHTML=`Member ${i}`
+
+            memHead.setAttribute("id", `memberhead_${i - 1}`);
             currMemberName.setAttribute("id", `name_${i - 1}`);
             currMemberEmail.setAttribute("id", `email_${i - 1}`);
             currMemberPhone.setAttribute("id", `phone_${i - 1}`);
