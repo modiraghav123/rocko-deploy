@@ -163,13 +163,16 @@ height: 90vh;
 
 }
 .register-button{
+    display: flex;
+    align-items: center;
     justify-content: center;
-    color: rgba(198, 179, 148, 1);
+    border: 1px solid black;
+    padding: 10px 15px;
     font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
 
 
 }
