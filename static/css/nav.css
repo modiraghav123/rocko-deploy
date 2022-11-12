@@ -126,6 +126,14 @@ transform: rotate(0deg);
 
 }
 
+.nav_link {
+    color:#C6B38C;
+}
+
+.nav_link:hover {
+    color:#b58e40;
+}
+
 .links a {
 color: var(--clr-primary-1);
 font-size: 3vw;

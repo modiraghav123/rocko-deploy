@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wd5kqux2!_un&5o2#rqkvo*^9s++mg%6d@hbxty9@*8vp$xsx$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -140,7 +140,6 @@ STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
 MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
 MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
 MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
-MINIO_STORAGE_REGION = 'eu-east-1'
 MINIO_STORAGE_USE_HTTPS = True
 MINIO_STORAGE_MEDIA_BUCKET_NAME = 'alcherrockomedia'
 MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
