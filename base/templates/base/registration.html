@@ -273,13 +273,13 @@
         </div>
         <div class="links2">
             <div class="nav_bar_text">
-                <a href="{% url 'index' %}" href="{% url 'index' %}" class="nav_link">Home</a>
+                <a href="{% url 'index' %}" class="nav_link">Home</a>
             </div>
             <div class="nav_bar_text">
-                <a class="nav_link">About us</a>
+                <a href="{% url 'index' %}#about_us" class="nav_link">About us</a>
             </div>
             <div class="nav_bar_text">
-                <a class="nav_link">Contact Us</a>
+                <a href="{% url 'index' %}#contact_us"class="nav_link">Contact Us</a>
             </div>
         </div>
         <div class="alcher_logo" >
@@ -302,10 +302,10 @@
                 <a href="#">Registration </a>
             </li>
             <li>
-                <a href="#">About us </a>
+                <a href="{% url 'index'%}#about_us">About us </a>
             </li>
             <li>
-                <a href="#">Contact us</a>
+                <a href="{% url 'index'%}#contact_us">Contact us</a>
             </li>
         </ul>
     </div>
