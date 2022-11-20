@@ -103,11 +103,20 @@
         background: rgba(255, 255, 255, 0);
         height: 40px;
         margin-top: 9px;
+        margin-bottom: 9px;
         width: 100%;
         padding: 5px;
         border-color: black;
         border-width: 2px;
         font-size: 16px;
+    }
+    label{
+        align-items:center;
+        font-size: 12px; 
+        font-weight: 500;
+    }
+    input[type='checkbox']{
+        margin-right:2px;
     }
 
     .drop-down {
@@ -169,8 +178,14 @@
     ul.ks-cboxtags li label:focus {
         box-shadow: 0 4px 15px 0 #C6B394;
     }
+    .namep{
+        margin-bottom:28px;
+    }
 
     @media only screen and (orientation: portrait) {
+        .namep{
+            margin-bottom:9px;
+        }
         .row-view {
             flex-direction: column;
             justify-content: space-around;
@@ -520,6 +535,28 @@
 
 <script src="{% static '/js/nav.js' %}"></script>
 <script>
+    function samefunc(e) {
+        const PhoneNumber = document.getElementsByName("phone_" + e)[0]
+        const Email = document.getElementsByName("email_" + e)[0]
+        const Gender = document.getElementsByName("gender_" + e)[0]
+        const PhoneNumberCheck = document.getElementsByName("check_phone_" + e)[0]
+        const EmailCheck = document.getElementsByName("check_email_" + e)[0]
+        const GenderCheck = document.getElementsByName("check_gender_" + e)[0]
+  
+        if (PhoneNumberCheck.checked) {
+          const leadPhoneNumber = document.getElementsByName("phoneNumber")[0].value
+          PhoneNumber.value = leadPhoneNumber
+        }
+        if (EmailCheck.checked) {
+          const leadEmail = document.getElementsByName("email")[0].value
+          Email.value = leadEmail
+        }
+        if (GenderCheck.checked) {
+          const leadGender= document.getElementsByName("gender")[0].value
+          Gender.value = leadGender
+        }
+  
+      }
     let currNoOfMem = -1;
     function addMember() {
 
@@ -536,7 +573,7 @@
         inp1.setAttribute("name", `name_${currNoOfMem}`);
         inp1.setAttribute("id", `name_${currNoOfMem}`);
         inp1.setAttribute("type", "text");
-        inp1.setAttribute("class", "input-text-field ");
+        inp1.setAttribute("class", "input-text-field namep ");
 
         var label2 = document.createElement("Label");
         label2.setAttribute("id", `label2_${currNoOfMem}`);
@@ -551,6 +588,18 @@
         inp2.setAttribute("class", "input-text-field ");
         inp2.setAttribute("type", "email");
 
+        const check2p = document.createElement("p");
+        check2p.setAttribute("style","display:flex;");
+        const check2 = document.createElement("input");
+        check2.setAttribute("name", `check_email_${currNoOfMem}`);
+        check2.setAttribute("id", `check_email_${currNoOfMem}`);
+        check2.setAttribute("type", "checkbox");
+        check2.setAttribute("onclick", `samefunc(${currNoOfMem})`);
+        const check2label = document.createElement("Label");
+        check2label.innerHTML="Same As Leader";
+        check2p.appendChild(check2);
+        check2p.appendChild(check2label);
+    
         var label3 = document.createElement("Label");
         label3.setAttribute("id", `label3_${currNoOfMem}`);
         label3.setAttribute("class", "head-style");
@@ -564,6 +613,19 @@
         inp3.setAttribute("type", "text");
         inp3.setAttribute("class", "input-text-field ");
 
+        const check3p = document.createElement("p");
+        check3p.setAttribute("style","display:flex;");
+        const check3 = document.createElement("input");
+        check3.setAttribute("name", `check_phone_${currNoOfMem}`);
+        check3.setAttribute("id", `check_phone_${currNoOfMem}`);
+        check3.setAttribute("type", "checkbox");
+        check3.setAttribute("onclick", `samefunc(${currNoOfMem})`);
+        const check3label = document.createElement("Label");
+        check3label.innerHTML="Same As Leader";
+        check3p.appendChild(check3);
+        check3p.appendChild(check3label);
+
+
         var label4 = document.createElement("Label");
         label4.setAttribute("id", `label4_${currNoOfMem}`);
         label4.setAttribute("class", "head-style");
@@ -576,6 +638,20 @@
         inp4.setAttribute("id", `gender_${currNoOfMem}`);
         inp4.setAttribute("type", "text");
         inp4.setAttribute("class", "input-text-field ");
+
+        const check4p = document.createElement("p");
+        check4p.setAttribute("style","display:flex;");
+        const check4 = document.createElement("input");
+        check4.setAttribute("name", `check_gender_${currNoOfMem}`);
+        check4.setAttribute("id", `check_gender_${currNoOfMem}`);
+        check4.setAttribute("type", "checkbox");
+        check4.setAttribute("onclick", `samefunc(${currNoOfMem})`);
+        const check4label = document.createElement("Label");
+        check4label.innerHTML="Same As Leader";
+        check4p.appendChild(check4);
+        check4p.appendChild(check4label);
+        
+
         const rem_but = document.createElement("BUTTON");
         rem_but.setAttribute("type", "button");
         rem_but.setAttribute("class", "register-button ");
@@ -628,6 +704,7 @@
         var email_p = document.createElement("p");
         email_p.appendChild(label2);
         email_p.appendChild(inp2);
+        email_p.appendChild(check2p);
 
         currMember.appendChild(email_p);
         name_email.appendChild(name_p);
@@ -638,10 +715,14 @@
         var phone_p = document.createElement("p");
         phone_p.appendChild(label3);
         phone_p.appendChild(inp3);
+        phone_p.appendChild(check3p);
+        
         currMember.appendChild(phone_p);
         var gender_p = document.createElement("p");
         gender_p.appendChild(label4);
         gender_p.appendChild(inp4);
+        gender_p.appendChild(check4p);
+
         currMember.appendChild(gender_p);
 
         phone_gender.appendChild(phone_p);
@@ -677,6 +758,9 @@
             let labelb = document.getElementById(`label2_${i}`);
             let labelc = document.getElementById(`label3_${i}`);
             let labeld = document.getElementById(`label4_${i}`);
+            let currMemberCheckEmail = document.getElementById(`check_email_${i}`);
+            let currMemberCheckPhone = document.getElementById(`check_phone_${i}`);
+            let currMemberCheckGender = document.getElementById(`check_gender_${i}`);
             let memHead=document.getElementById(`memberhead_${i}`)
 
             memHead.innerHTML=`Member ${i}`
@@ -687,6 +771,10 @@
             currMemberPhone.setAttribute("id", `phone_${i - 1}`);
             currMemberGender.setAttribute("id", `gender_${i - 1}`);
             currMemberRemBtn.setAttribute("id", `remove_${i - 1}`);
+            currMemberCheckEmail.setAttribute("id", `check_email_${i - 1}`);
+            currMemberCheckPhone.setAttribute("id", `check_phone_${i - 1}`);
+            currMemberCheckGender.setAttribute("id", `check_gender_${i - 1}`);
+
             labela.setAttribute("id", `label1_${i - 1}`)
             labelb.setAttribute("id", `label2_${i - 1}`)
             labelc.setAttribute("id", `label3_${i - 1}`)
@@ -697,6 +785,12 @@
             currMemberPhone.setAttribute("name", `phone_${i - 1}`);
             currMemberGender.setAttribute("name", `gender_${i - 1}`);
             currMemberRemBtn.setAttribute("value", `${i - 1}`);
+            currMemberCheckEmail.setAttribute("name", `check_email_${i - 1}`);
+            currMemberCheckPhone.setAttribute("name", `check_phone_${i - 1}`);
+            currMemberCheckGender.setAttribute("name", `check_gender_${i - 1}`);
+            currMemberCheckEmail.setAttribute("onclick", `samefunc(${i - 1})`);
+            currMemberCheckPhone.setAttribute("onclick", `samefunc(${i - 1})`);
+            currMemberCheckGender.setAttribute("onclick", `samefunc(${i - 1})`);
             i++;
         }
         currNoOfMem--;
