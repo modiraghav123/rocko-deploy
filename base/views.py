@@ -16,8 +16,9 @@ def saveform(request):
         
         teamName=request.POST.get('teamName')
         city=request.POST.get('city')
+        previousPerformance=request.POST.get('performance')
         # referal=request.POST.get('referal')
-        team=Team(teamName=teamName,city=city,referalCode="referal")
+        team=Team(teamName=teamName,city=city,referalCode="referal",previousPerformance=previousPerformance)
         team.save()
         name=request.POST.get('name')
         
