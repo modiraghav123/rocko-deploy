@@ -408,6 +408,9 @@ background-color: #0E0E0E;
 
 @media (max-width: 580px) {
 
+    #footer{
+        display: none;
+    }
     #contact-heading {
         font-size: 2vw;
         margin-bottom: 5vw;
