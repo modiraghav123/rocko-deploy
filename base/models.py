@@ -8,6 +8,7 @@ class Team(models.Model):
     teamName = models.CharField(max_length=124,null=True)
     city = models.CharField(max_length=50,null=True)
     referalCode = models.CharField(max_length=10,null=True)
+    previousPerformance=models.CharField(max_length=200,null=True)
     def __str__(self):
         return '%s' % (self.teamName)
 class Member(models.Model):
