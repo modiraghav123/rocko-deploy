@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wd5kqux2!_un&5o2#rqkvo*^9s++mg%6d@hbxty9@*8vp$xsx$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -135,16 +135,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
-STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
-MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
-MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
-MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
-MINIO_STORAGE_USE_HTTPS = True
-MINIO_STORAGE_MEDIA_BUCKET_NAME = 'alcherrockomedia'
-MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
-MINIO_STORAGE_STATIC_BUCKET_NAME = 'alcherrockostatic'
-MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+
 MEDIA_URL = '/image-uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'image-uploads')
 
