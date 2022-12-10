@@ -355,6 +355,7 @@
             <div class="sections m-5">
                 <p>
                     <label for="team_name" class="head-style ">Previous Performance Link</label>
+                    <span class="red-star"> *</span>
                     <input class="input-text-field " required type="text" name="performance" />
                 </p>
             </div>
@@ -403,10 +404,10 @@
             </div>
 
         </div>
-        <div id="member_form">
-        </div>
+        {% comment %} <div id="member_form">
+        </div> {% endcomment %}
 
-        <div class="row-view" style="display: flex;; ">
+        {% comment %} <div class="row-view" style="display: flex;; ">
             <div class="sections m-5">
                 <button onclick="addMember()" type="button" class=" register-button" style="font-size:18px">
                     <i class="fa-solid fa-plus"></i>
@@ -415,10 +416,10 @@
                  </button>
             </div>
             <div class="sections m-5"></div>
-        </div>
+        </div>{% endcomment %}
         <div class="row-view" style="padding:2.5%;">
             <button type="submit" class=" register-button"style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
-        </div>
+        </div> 
     </form>
     <footer id="footer">
         <i class="bi bi-globe2" style="font-size: 2vw;"></i>
@@ -543,7 +544,7 @@
 <!-- </html> -->
 
 <script src="{% static '/js/nav.js' %}"></script>
-<script>
+{% comment %} <script>
     function samefunc(e) {
         const PhoneNumber = document.getElementsByName("phone_" + e)[0]
         const Email = document.getElementsByName("email_" + e)[0]
@@ -691,7 +692,7 @@
         currMember.appendChild(rem);
 
          {% comment %} to be continued {% endcomment %}
-        var MemID=document.createElement("span");
+        {% comment %} var MemID=document.createElement("span");
         MemID.innerHTML=`Member ${currNoOfMem+1}` 
         MemID.setAttribute("style", `font-size:18px; font-weight:bold;`)
         MemID.setAttribute("id", `memberhead_${currNoOfMem}`)
@@ -805,6 +806,6 @@
         currNoOfMem--;
         document.getElementById("no_of_members").value = currNoOfMem + 1;
     }
-</script>
+</script> {% endcomment %} 
 
 </html>
