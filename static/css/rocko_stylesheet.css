@@ -176,6 +176,13 @@ height: 90vh;
 
 
 }
+
+@media (max-width: 650px) {
+    .register-button{
+        font-size: 13px;
+    }
+}
+
 .ROCKO-MOBILE svg {
     width: 100vw; 
     padding-left: 8vw;
