@@ -171,17 +171,12 @@ height: 90vh;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 15px;
     line-height: 24px;
 
 
 }
 
-@media (max-width: 650px) {
-    .register-button{
-        font-size: 11px;
-    }
-}
 
 .ROCKO-MOBILE svg {
     width: 100vw; 
