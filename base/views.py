@@ -22,7 +22,7 @@ def saveform(request):
         phone=request.POST.get('phoneNumber')
         gender=request.POST.get('gender')
         # referal=request.POST.get('referal')
-        team=Team(teamName=teamName,city=city,referalCode="referal",previousPerformance=previousPerformance, name=name,email=email,phoneNumber=phone,gender=gender)
+        team=Team(teamName=teamName,city=city,previousPerformance=previousPerformance, name=name,email=email,phoneNumber=phone,gender=gender)
         team.save()
         return render(request,'base/success.html')
         # leader=Member(isLeader=1,name=name,email=email,phoneNumber=phone,gender=gender,team=team)
