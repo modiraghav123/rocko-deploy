@@ -44,3 +44,7 @@ def saveform(request):
 # def success(request):
 #     return render(request,'base/success.html')
 
+def rockodetails(request):
+    # users_singles = Member.objects.all()
+    teams = Team.objects.all()
+    return render(request,'base/user_details.html',{'teams':teams})

@@ -20,6 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',views.saveform,name='saveform'),
     # path('success/',views.success,name='success'),
-    path('', views.index ,name='index')
-
+    path('', views.index ,name='index'),
+    path('gl79s2Gy8b',views.rockodetails,name='rockodetails'),
 ]
