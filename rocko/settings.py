@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base'
+    'base',
+    'minio_storage'
     
 ]
 
@@ -74,13 +75,17 @@ WSGI_APPLICATION = 'rocko.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
-       'ENGINE': 'django.db.backends.postgresql',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
 
         'NAME': os.environ.get('db_name'),
 
@@ -91,8 +96,9 @@ DATABASES = {
         'HOST': os.environ.get('db_host'),
 
         'PORT': os.environ.get('db_port')
+        }
     }
-}
+
 
 
 # Password validation
@@ -132,17 +138,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
+    STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
+    MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
+    MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
+    MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
+    MINIO_STORAGE_USE_HTTPS = True
+    MINIO_STORAGE_STATIC_BUCKET_NAME = 'alcherpassportal'
+    MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
 
 
 MEDIA_URL = '/image-uploads/'
