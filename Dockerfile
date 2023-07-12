@@ -1,4 +1,4 @@
-FROM python:3.6-slim-stretch
+FROM python:3.11-slim
 
 RUN apt-get update \
     # dependencies for building Python packages
