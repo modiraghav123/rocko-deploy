@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from base import views
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',views.saveform,name='saveform'),
     # path('success/',views.success,name='success'),
     path('', views.index ,name='index'),
     path('gl79s2Gy8b',views.rockodetails,name='rockodetails'),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

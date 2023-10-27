@@ -6,8 +6,8 @@ body {
 
 .skull {
     position: absolute;
-     left: 3.6vw;
-    top:3vh;
+     left: 6.6vw;
+    top:2vh;
     height: 5vh;
     width: 5vw;
     z-index: 1;
@@ -15,12 +15,12 @@ body {
 }
 .skull img{
  
-    height: 8vh;
+    height: 9vh;
 
 }
 .alcher_logo img{
  
-    height: 5vh;
+    height: 9vh;
     max-width: none;
 
 }
@@ -28,12 +28,13 @@ body {
     position: absolute;
     height: 5vh;
     width: 2vw;
-    right: 6.5vw;
-    top:4.2vh;
+    right: 10.5vw;
+    top:2vh;
 }
+
 .top_part{
     position: relative;
-width: 100vw; 
+    width: 100vw; 
     
     align-items: center;
   
@@ -48,20 +49,20 @@ width: 100vw;
     font-size: 1.5vw;
 padding-left: 10vw;
 padding-right: 10vw;
-    align-items: center;
+    align-items:center ;
     display: flex;
     width: 100vw;
     justify-content: space-evenly;
     box-sizing: border-box;
     position: fixed;
-    background-color: #0E0E0E;
+    background-color: #d0aaaa; 
 }
 .nav_bar_text{
     color: rgba(198, 179, 148, 1);
     font-family: Poppins , sans-serif;
     font-size: 1.5vw;
+    font-weight: bold;
    
-
 }
 .event_name{
     align-items: center;
@@ -78,6 +79,7 @@ padding-right: 10vw;
     align-items: center;
  
 }
+
 .svg-button{
     display: flex;
    align-items: center;
@@ -137,26 +139,53 @@ margin-top: -26vh;
 }
 .ROCKO{
     display: flex;
-   justify-content: center;
-   align-items: baseline;
-    flex-direction: column;
+    flex-flow:column;
+    justify-content: flex-end;
+    align-items: center;
     width: 100vw;
     height: 100vh;
-    padding-top: 77vh;
-    background-image:url("../images/hero2.png")  ;
+    
+    
+    background-image:url("../images/homepage.png")  ;
+    
     background-size: cover;
     object-position: center;
     background-repeat: no-repeat;
     box-sizing: border-box;
-   }
+    background-position: 28% center;
 
+    }
+.center-rocklogo{
+    display:flex;
+    width:60%;
+
+    justify-content: center;
+    align-items: center;
+}
+.rocko-center{
+    width:100%;
+    display: flex;
+    flex-flow:column;
+    justify-content: flex-end;
+    align-items:flex-end;
+    padding-right:10%;
+    box-sizing:border-box;
+    
+
+}
+
+.ROCKO svg{
+    width:90%;
+    display: flex;
+    justify-content: flex-end;
+}
+.svg{
+    display: flex;
+    justify-content: flex-end;
+}
 .div1{
-height: 90vh;
-}
-.ROCKO svg {
-    width: 100vw; 
-
-}
+    height: 90vh;
+    }
 .ROCKO-MOBILE svg {
     width: 100vw; 
     padding-left: 8vw;
@@ -207,10 +236,11 @@ height: 90vh;
 @media (max-width: 650px) {
     .top_part{
 
-        background-image:url("../images/background-mob.png")  ;
+        background-image:url("../images/homepage.png")  ;
         background-repeat: no-repeat;
         background-size: 100vw 85vh;
 background-color: #0E0E0E;
+
 
     }
 }
@@ -220,10 +250,15 @@ background-color: #0E0E0E;
     }
     .alcher_logo img{
  
-        height: 5vh;
-        width: 5vw;
+        height: 8vh;
+        width: 7vw;
     
     }
+    .skull{
+        left:2vw;
+    }
+   
+    
  
     
 }
@@ -233,8 +268,13 @@ background-color: #0E0E0E;
     }
     .skull img{
         height: 10vh;
-        /* width: 12vw; */
+        
       }
+      
+    .skull{
+        left:2vw;
+    }
+   
 }
 @media (max-width: 700px){
     .nav_bar_grid{
@@ -256,9 +296,11 @@ background-color: #0E0E0E;
     .ROCKO{
         display: flex;
      
-        padding-top: 84vh;
+        padding-top:50vh;
      
-       }    
+       } 
+       
+       
 }
 
 /* about_us */
@@ -383,7 +425,20 @@ background-color: #0E0E0E;
 }
 
 #footer {
-    height: 6vw;
+    MAX-height: 100vh;
+    font-size: 1.3vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #711011;
+    color: #C6B394;
+    align-items: center;
+    
+}
+
+.footer2{
+    
+    height: 6vh;
     font-size: 1.3vw;
     width: 100%;
     display: flex;
@@ -391,7 +446,29 @@ background-color: #0E0E0E;
     background-color: #711011;
     color: #C6B394;
     align-items: center;
-    padding-left: 8%;
+    padding-left: 25vw;
+
+}
+.footer-iit{
+    margin-top: 2%;
+    font-size:1.625vw;
+}
+.footer-alcher{
+    font-size: 3.172vw;
+    font-weight: 1000;
+    width:80%;
+    border-bottom: 2px solid #C5B29399;
+    text-align: center;
+    
+
+}
+.footer-logo{
+    margin-top:2% ;
+}
+.footer-description{
+    text-align: center;
+    font-weight: 50;
+    padding-bottom: 1vw;;
 }
 
 #footer-icons {
