@@ -233,7 +233,7 @@ margin-top: -26vh;
     width: 125px;
     height: 200px;
 }
-@media (max-width: 650px) {
+@media (max-width: 650px) { 
     .top_part{
 
         background-image:url("../images/homepage.png")  ;
