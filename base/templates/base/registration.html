@@ -624,7 +624,7 @@
                     <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer> {% endcomment %}
-    <footer id="mobile-footer">
+    {% comment %} <footer id="mobile-footer">
         <div style="display: flex; flex-flow: row;">
             <i class="bi bi-telephone" style="margin-right: 5%;"></i>
             <div style="color: #C6B394; margin-right: 15vw">+917903022011</div>
@@ -644,7 +644,7 @@
                     <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
                     <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
-    </footer>
+    </footer> {% endcomment %}
 </body>
 
 
@@ -728,7 +728,7 @@
 
 <!-- </html> -->
 
-<script src="{% static '/js/nav.js' %}"></script>
+{% comment %} <script src="{% static '/js/nav.js' %}"></script> {% endcomment %}
 {% comment %} <script>
     function samefunc(e) {
         const PhoneNumber = document.getElementsByName("phone_" + e)[0]

@@ -154,6 +154,13 @@ background: var(transparent);
 color: var(--clr-primary-5);
 padding-left: 1.5rem;
 }
+#popup-open-button-mobile-view{
+    color: var(--clr-primary-1);
+    cursor: pointer;
+}
+#popup-open-button-mobile-view:hover{
+    color: var(--clr-primary-5);
+}
 .links {
 height: 0;
 overflow: hidden;
@@ -201,8 +208,10 @@ padding-right: 10vw;
     justify-content: space-evenly;
     box-sizing: border-box;
     position: fixed;
-    background-color: #18181899;
-
+    background-color:#585c5c;
+    z-index:2;
+    
+    
 }
 a{
     color: rgba(198, 179, 148, 1);

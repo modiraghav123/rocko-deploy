@@ -5,12 +5,12 @@ body {
 }
 
 .skull {
-    position: absolute;
+    position: fixed;
      left: 6.6vw;
     top:2vh;
     height: 5vh;
     width: 5vw;
-    z-index: 1;
+    z-index: 3;
 
 }
 .skull img{
@@ -25,11 +25,12 @@ body {
 
 }
 .alcher_logo{
-    position: absolute;
+    position: fixed;
     height: 5vh;
     width: 2vw;
     right: 10.5vw;
     top:2vh;
+    z-index:3;
 }
 
 .top_part{
@@ -39,24 +40,13 @@ body {
     align-items: center;
   
     overflow-x: hidden;
+    
 }
 
 
 
 
-.links2{
-    height: 13vh;
-    font-size: 1.5vw;
-padding-left: 10vw;
-padding-right: 10vw;
-    align-items:center ;
-    display: flex;
-    width: 100vw;
-    justify-content: space-evenly;
-    box-sizing: border-box;
-    position: fixed;
-    background-color: #d0aaaa; 
-}
+
 .nav_bar_text{
     color: rgba(198, 179, 148, 1);
     font-family: Poppins , sans-serif;
@@ -153,7 +143,7 @@ margin-top: -26vh;
     background-repeat: no-repeat;
     box-sizing: border-box;
     background-position: 28% center;
-
+    
     }
 .center-rocklogo{
     display:flex;
@@ -191,11 +181,11 @@ margin-top: -26vh;
     padding-left: 8vw;
 
 }
-.register-button{
+.register-button-mobile-view{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border: 1px solid rgb(13, 13, 13);
     padding: 10px 15px;
     font-family: 'Poppins';
     font-style: normal;
@@ -425,7 +415,7 @@ background-color: #0E0E0E;
 }
 
 #footer {
-    MAX-height: 100vh;
+    
     font-size: 1.3vw;
     width: 100%;
     display: flex;

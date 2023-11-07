@@ -84,3 +84,26 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
+
+
+
+
+document.querySelector("#popup-open-button").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
+
+document.querySelector(".popup-close-btn").addEventListener("click",function(){
+    document.querySelector(".popup").classList.remove("active");
+});
+
+
+document.querySelector("#popup-open-button-mobile-view").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
+
+document.querySelector(".register-button-mobile-view").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
