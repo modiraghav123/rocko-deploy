@@ -128,9 +128,9 @@
     }
 
     .head-style {
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 18px
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 18px;
     }
 
     .row-view {
@@ -138,7 +138,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin: auto;
+        margin: auto; 
+        
     }
     .rem{
         justify-content: space-between;
@@ -147,10 +148,10 @@
     }
 
     .page-heading {
-        {% comment %} height: 134px; {% endcomment %}
+         height: 134px; 
         width: 100%;
         padding:1vh;
-        padding-top:13vh;
+        
         background-color: #282826;
         color: white;
         font-family: 'Poppins';
@@ -159,7 +160,52 @@
         font-size: 64px;
         line-height: 96px;
         text-align: center;
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
     }
+    
+   
+    
+    .counter{
+         height:42px;
+         min-width:133px;
+         max-width:133px;
+         border-radius: 50px 50px 50px 50px;
+         border: 1px solid black;
+         display:flex;
+         flex-direction:row;
+         justify-content:center;
+         align-items:center;
+         padding:0.5vw;
+         padding-top:3vh;
+         padding-bottom:3vh;
+
+         
+
+    }
+    .counter span{
+        width:100%;
+        text-align:center;
+        font-weight:600;
+        cursor:pointer;
+    }
+    .counter span.num{
+        font-size:1.3vw;
+        pointer-events:none;
+        text-align:center;
+    }
+    .artist-type{
+        display:flex;
+        flex-direction:row;
+        justify-content:left;
+        
+        align-items:center;
+        padding-right:11vw;
+        padding-bottom:2vw;
+
+    }
+   
 
     .register-button {
         height: 40px;
@@ -182,6 +228,38 @@
         margin-bottom:28px;
     }
 
+    .artist-checkbox{
+        display:flex;
+        flex-direction:row;
+        justify-content:left;
+        align-items:center;
+        width:150px;
+        height:50px;
+        border-radius:10px;
+        margin-bottom:20px;
+        
+        
+    }
+    .checkbox{
+        width:22px;
+        
+        
+    }
+        
+    input[type="checkbox"] {
+        transform: scale(2.5); 
+        
+        margin-left:18px; 
+    }
+       
+
+    input[type='checkbox'] {
+        accent-color: #34D67E;
+         
+    }
+    
+    
+   
     @media only screen and (orientation: portrait) {
         .namep{
             margin-bottom:9px;
@@ -205,6 +283,16 @@
         .input-text-field {
             min-width: none;
             width: 100%;
+        }
+        .page-heading img{
+            display:none;
+        }
+        
+        
+    }
+    @media (max-width: 350px){
+        .registration{
+            font-size:43px;
         }
     }
 
@@ -235,7 +323,8 @@
         background-image: url("{%static "images/rocko.png"%}");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain;
+        background-size: 50% auto;
+        
     }
 
     .rem-btn {
@@ -282,7 +371,7 @@
 </head>
 
 <body>
-    <div class="nav_bar_grid">
+    {% comment %} <div class="nav_bar_grid">
         <div class="skull">
             <img src="{% static 'images/nav_bar_skull.png' %}">
         </div>
@@ -300,16 +389,10 @@
         <div class="alcher_logo" >
             <img src="{% static 'images/alcher_logo.png' %}">
         </div>
-    </div>
-    <div class="nav_mob_view" style="padding-top: 2vh; padding:1vh;background-color: #282826;">
-        <div class="nav-header">
-            <img src="{% static 'images/nav_bar_skull.png' %}"alt="" class="logo" alt="logo" />
-
-            <button class="nav-toggle">
-                <i class="fas fa-bars " style="font-size:30px;"></i>
-            </button>
-        </div>
-        <ul class="links ">
+    </div> {% endcomment %}
+    {% comment %} <div class="nav_mob_view" style="padding-top: 2vh; padding:1vh;background-color: #282826;">
+        
+        {% comment %} <ul class="links ">
             <li>
                 <a href="{% url 'index'%}">Home</a>
             </li>
@@ -322,15 +405,26 @@
             <li>
                 <a href="{% url 'index'%}#contact_us">Contact us</a>
             </li>
-        </ul>
-    </div>
-    <div class="page-heading">Registration</div>
-    <br><br>
+        </ul> {% endcomment %}
+    
+    
+    <div class="page-heading registration" >Registration</div>
+    <br><br><br>
     <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content" class="reg-form-all">
         {% csrf_token %}
         <div class="row-view">
-
-            <div class="sections m-5">
+            <div class="sections " >
+                <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:175px; ">Team Details</h1>
+                <p style="padding-top:1vh;">All fields marked with <span class="red-star"> *</span> are mandatory.</p>
+            </div>
+            <div class="sections " ></div>
+        </div>
+        <br><br>
+        <div class="row-view">
+            
+            
+            <div class="sections ">
+                
 
                 <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
 
@@ -340,9 +434,17 @@
 
                     <input class="input-text-field " required type="text" name="teamName" />
                 </p>
-
-            </div>
-            <div class="sections m-5">
+                <p>
+                    <label for="team_name" class="head-style ">Previous Performance Link</label>
+                    <span class="red-star"> *</span>
+                    <input class="input-text-field " required type="text" name="performance" />
+                </p>
+           
+                
+             </div>
+        
+            <div class="sections ">
+                
                 <p>
                     <label for="city" class="head-style ">City</label>
                     <span class="red-star"> *</span>
@@ -350,24 +452,81 @@
                     <input class="input-text-field " required type="text" name="city" />
                 </p>
             </div>
+            
         </div>
+       <br>
         <div class="row-view">
-            <div class="sections m-5">
-                <p>
-                    <label for="team_name" class="head-style ">Previous Performance Link</label>
-                    <span class="red-star"> *</span>
-                    <input class="input-text-field " required type="text" name="performance" />
-                </p>
+            <div class="sections ">
+                <label for="no-of-members" class="head-style ">Number of Members</label>
+                <span class="red-star"> *</span>
             </div>
-            <div class="sections m-5"></div>
+            <div class="sections ">
+            </div>
         </div>
+        <br>
+        
         <div class="row-view">
-            <div class="sections m-5">
-                <br>
-                <div>
-                    <h1 style="font-weight:bold; font-size: 18px;">Leader's Data</h1>
-                </div>
-                <br />
+            
+            <div class="sections " >
+
+                    <div class="artist-type" >
+                        <label for="Drummer" class="head-style " style="margin-right:20px;">Drummer</label>
+                        <div class="counter">
+                            <img class="minus-1" src={% static '/images/minus.png' %}>
+                            <span class="num-1">0</span>
+                            <img class="plus-1" src={% static '/images/plus.png' %}>
+                        </div>
+                    </div>
+            
+
+                    <div class="artist-type">
+                        <label for="Bassist" class="head-style " style="margin-right:38px;">Bassist</label>
+                        <div class="counter">
+                            <img class="minus-2" src={% static '/images/minus.png' %}>
+                            <span class="num-2">0</span>
+                            <img class="plus-2" src={% static '/images/plus.png' %}>
+                        </div>
+                    </div>
+            </div>
+            
+
+        
+            <div class="sections " >
+
+                    <div class="artist-type">
+                        <label for="Guitarist" class="head-style " style="margin-right:26px;">Guitarist</label>
+                        <div class="counter">
+                            <img class="minus-3" src={% static '/images/minus.png' %}>
+                            <span class="num-3">0</span>
+                            <img class="plus-3" src={% static '/images/plus.png' %}>
+                        </div>
+                    </div>
+            
+
+                    <div class="artist-type">
+                        <label for="Vocalist" class="head-style " style="margin-right:30px;">Vocalist</label>
+                        <div class="counter">
+                            <img class="minus-4" src={% static '/images/minus.png' %}>
+                            <span class="num-4">0</span>
+                            <img class="plus-4" src={% static '/images/plus.png' %}>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="row-view">
+            <div class="sections " >
+                <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:190px; ">Leader Details</h1>
+                
+            </div>
+            <div class="sections " ></div>
+        </div>
+        <br>
+        <div class="row-view">
+            <div class="sections ">
+                
+                
                 <div class="Leader_form">
 
                     <p>
@@ -377,30 +536,56 @@
                         <input class="input-text-field " required type="text" name="name" />
                     </p>
                     <p>
-                        <label for="email_leader" class="head-style ">Email</label>
+                        <label for="phone_leader" class="head-style ">Phone</label>
                         <span class="red-star"> *</span>
 
-                        <input class="input-text-field " required type="email" name="email" />
+                        <input class="input-text-field " required type="email" name="phoneNumber" />
                     </p>
                 </div>
 
             </div>
-            <div class="sections m-5">
-                <br><br><br>
+            
+            <div class="sections">
+                
                 <div class="Leader_form">
 
                     <p>
-                        <label for="phone_leader" class="head-style ">Phone</label>
-                        <span class="red-star"> *</span>
-
-                        <input class="input-text-field " required type="text" name="phoneNumber" />
-                    </p>
-                    <p>
                         <label for="gender_leader" class="head-style ">Gender</label>
                         <span class="red-star"> *</span>
+
                         <input class="input-text-field " required type="text" name="gender" />
                     </p>
+                    <p>
+                        <label for="email_leader" class="head-style ">Email ID</label>
+                        <span class="red-star"> *</span>
+                        <input class="input-text-field " required type="text" name="email" />
+                    </p>
                 </div>
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row-view" style="width:83%" >
+            <div class="artist-checkbox" >
+                
+                <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue" style="margin-right:20px;">
+                <label for="check-drummer" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
+            </div>
+            <div class="artist-checkbox">
+                
+                <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue" style="margin-right:30px;">
+                <label for="check-bassist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
+            </div>
+            <div class="artist-checkbox">
+                
+                <input type="checkbox" class="checkbox"  name="check-guitarist" value="checkboxValue" style="margin-right:20px;">
+                <label for="check-guitarist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
+            </div>
+            <div class="artist-checkbox">
+                
+                <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue" style="margin-right:20px;">
+                <label for="check-vocalist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
             </div>
 
         </div>
@@ -417,11 +602,11 @@
             </div>
             <div class="sections m-5"></div>
         </div>{% endcomment %}
-        <div class="row-view" style="padding:2.5%;">
+        <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
             <button type="submit" class=" register-button"style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
         </div> 
     </form>
-    <footer id="footer">
+    {% comment %} <footer id="footer">
         <i class="bi bi-globe2" style="font-size: 2vw;"></i>
         <a href="https://alcheringa.in" target="_blank"
             style="color: #C6B394; padding-left: 1%; padding-right: 5%;">alcheringa.in</a>
@@ -438,8 +623,8 @@
                     <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
                     <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
-    </footer>
-    <footer id="mobile-footer">
+    </footer> {% endcomment %}
+    {% comment %} <footer id="mobile-footer">
         <div style="display: flex; flex-flow: row;">
             <i class="bi bi-telephone" style="margin-right: 5%;"></i>
             <div style="color: #C6B394; margin-right: 15vw">+917903022011</div>
@@ -459,7 +644,7 @@
                     <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
                     <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
-    </footer>
+    </footer> {% endcomment %}
 </body>
 
 
@@ -543,7 +728,7 @@
 
 <!-- </html> -->
 
-<script src="{% static '/js/nav.js' %}"></script>
+{% comment %} <script src="{% static '/js/nav.js' %}"></script> {% endcomment %}
 {% comment %} <script>
     function samefunc(e) {
         const PhoneNumber = document.getElementsByName("phone_" + e)[0]
@@ -807,5 +992,5 @@
         document.getElementById("no_of_members").value = currNoOfMem + 1;
     }
 </script> {% endcomment %} 
-
+<script src="{% static 'js/registrationpage.js' %}"></script>
 </html>

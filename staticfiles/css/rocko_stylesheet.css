@@ -1,0 +1,453 @@
+html,
+body {
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+.skull {
+    position: absolute;
+     left: 3.6vw;
+    top:3vh;
+    height: 5vh;
+    width: 5vw;
+    z-index: 1;
+
+}
+.skull img{
+ 
+    height: 8vh;
+
+}
+.alcher_logo img{
+ 
+    height: 5vh;
+    max-width: none;
+
+}
+.alcher_logo{
+    position: absolute;
+    height: 5vh;
+    width: 2vw;
+    right: 6.5vw;
+    top:4.2vh;
+}
+.top_part{
+    position: relative;
+width: 100vw; 
+    
+    align-items: center;
+  
+    overflow-x: hidden;
+}
+
+
+
+
+.links2{
+    height: 13vh;
+    font-size: 1.5vw;
+padding-left: 10vw;
+padding-right: 10vw;
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #0E0E0E;
+}
+.nav_bar_text{
+    color: rgba(198, 179, 148, 1);
+    font-family: Poppins , sans-serif;
+    font-size: 1.5vw;
+   
+
+}
+.event_name{
+    align-items: center;
+    display: flex;
+    width:100vw;
+}
+.height{
+    width: 100vw;
+    height: 100vh;
+}
+.align12{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+.svg-button{
+    display: flex;
+   align-items: center;
+flex-direction: column;
+justify-content: space-evenly;   
+width: 100vw;
+    height: 120vh;
+margin-top: -26vh;
+    
+}
+@media (min-height:355px) {
+    .svg-button{
+    height: 100vh;
+
+    }
+    
+}
+
+@media (min-height:450px) {
+    .svg-button{
+    height: 83vh;
+
+    }
+}
+@media (min-height:630px) {
+    .svg-button{
+    height: 58vh;
+
+    }
+}
+@media (min-height:700px) {
+    .svg-button{
+    height: 52vh;
+
+    }
+}
+.ROCKO-MOBILE{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+     flex-direction: column;
+     width: 100vw;
+     padding-top: 70vh;
+     box-sizing: border-box;
+     
+
+}
+.svg-img {
+    padding-top: 15vw;
+    background-image:url("../images/left-skull.png"),url("../images/right-skull.png")  ;
+
+    background-repeat: no-repeat;
+    background-size: 30% 30%;
+    background-position: 100% 0% , 0% 100%;
+    padding-bottom: 20vw;
+    
+}
+.ROCKO{
+    display: flex;
+   justify-content: center;
+   align-items: baseline;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 77vh;
+    background-image:url("../images/hero2.png")  ;
+    background-size: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+   }
+
+.div1{
+height: 90vh;
+}
+.ROCKO svg {
+    width: 100vw; 
+
+}
+.ROCKO-MOBILE svg {
+    width: 100vw; 
+    padding-left: 8vw;
+
+}
+.register-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 10px 15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+
+
+}
+
+
+.ROCKO-MOBILE svg {
+    width: 100vw; 
+    padding-left: 8vw;
+}
+
+.button-1{
+    /* width: 40vw; */
+    /* height: 6vh; */
+    height: 50px;
+    background-color: #0E0E0E;
+    border:2px solid #C6B394;
+}
+.piano{
+    position: relative;
+    background-color: #0E0E0E;
+
+}
+.right-skull{
+    position: absolute;
+
+    bottom: 26%;
+}
+.right-skull img{
+    width: 125px;
+    height: 200px;
+}
+@media (max-width: 650px) {
+    .top_part{
+
+        background-image:url("../images/background-mob.png")  ;
+        background-repeat: no-repeat;
+        background-size: 100vw 85vh;
+background-color: #0E0E0E;
+
+    }
+}
+@media (max-width: 800px){
+    .nav_bar_grid{
+        font-size: 1.85vw;
+    }
+    .alcher_logo img{
+ 
+        height: 5vh;
+        width: 5vw;
+    
+    }
+ 
+    
+}
+@media (max-width: 1000px){
+    .nav_bar_grid{
+        font-size: 1.7vw;
+    }
+    .skull img{
+        height: 10vh;
+        /* width: 12vw; */
+      }
+}
+@media (max-width: 700px){
+    .nav_bar_grid{
+        font-size: 2vw;
+    }
+    .skull{
+     
+        left: 3vw;
+
+   
+   }
+  .skull img{
+    height: 8vh;
+    width: 10vw;
+  }
+
+}
+@media (min-width:1200px) {
+    .ROCKO{
+        display: flex;
+     
+        padding-top: 84vh;
+     
+       }    
+}
+
+/* about_us */
+
+#about_us {
+    font-family: 'Poppins';
+    background-color: #0E0E0E;
+    color: #C6B394;
+    padding-bottom: 4vw;
+}
+
+#about_us_wide {
+    display: block;
+    background-image:url("../images/Vector2.png")  ;
+    background-repeat: no-repeat;
+    background-size: 43% 89%;
+    background-position: 0% 7vw;
+}
+
+#about-heading {
+    font-size: 2vw;
+    padding: 7vw 12vw 5vw 12vw;
+    width: auto;
+    height: fit-content;
+    background-image:url("../images/Vector3.png")  ;
+    background-repeat: no-repeat;
+    background-position: 99%;
+    background-size: contain;
+}
+
+#about-main-heading {
+    border-left: 0.8vw solid #711011;
+    padding-left: 2.8%;
+    margin-bottom: 5%;
+}
+
+#about-details {
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+#images-inline {
+    display: flex;
+    flex-flow: row;
+    position: relative;
+    padding-left: 8vw;
+    padding-right: 4wv;
+}
+
+#about-us-mobile {
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    #about-heading {
+        font-size: 2.7vw;
+    }
+
+    #about_us_wide {
+        display: none;
+    }
+
+    #about-us-mobile {
+        display: block;
+        background-image:url("../images/Vector3.png")  ;
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position: 99% 6%;
+        padding-bottom: 8vw;
+    }
+
+    #about-heading {
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: 90% 130%;
+    }
+}
+
+#contact_us {
+    font-family: 'Poppins';
+    background-color: #0E0E0E;
+    color: #C6B394;
+}
+
+#contact_us_wide {
+    display: block;
+}
+
+#contact-main {
+    background-image:url("../images/left-skull1.svg")  ;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: contain;
+}
+
+#contact-heading {
+    font-size: 1.7vw;
+    padding: 7vw 12vw 5vw 12vw;
+    width: auto;
+    height: fit-content;
+    background-repeat: no-repeat;
+    background-position: 99%;
+    background-size: contain;
+}
+
+#contact-main-heading {
+    border-left: 0.5vw solid #711011;
+    padding-left: 2.8%;
+    margin-bottom: 5%;
+}
+
+#contact-images {
+    display: flex;
+    flex-flow: row;
+    padding-left: 30vw;
+    padding-bottom: 8vw;
+    background-image:url("../images/drums.png")  ;
+    background-repeat: no-repeat;
+    background-size: 25vw;
+    background-position: 0vw 6vw;
+}
+
+#footer {
+    height: 6vw;
+    font-size: 1.3vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #711011;
+    color: #C6B394;
+    align-items: center;
+    padding-left: 8%;
+}
+
+#footer-icons {
+    font-size: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#mobile-footer{
+    display: none;
+}
+
+#contact-us-mobile {
+    display: none;
+}
+
+@media (max-width: 580px) {
+
+    #footer{
+        display: none;
+    }
+    #contact-heading {
+        font-size: 2vw;
+        margin-bottom: 5vw;
+    }
+
+    #contact_us_wide {
+        display: none;
+    }
+
+    #contact-us-mobile {
+        display: block;
+        padding-top: 7vw;
+    }
+
+    #mobile-img-contact {
+        padding-top: 15vw;
+        background-image: url('../images/left-skull1.svg'), url('../images/right-skull.png');
+        background-repeat: no-repeat;
+        background-size: 40% 40%;
+        background-position: 100% 0% , 0% 0%;
+        padding-bottom: 20vw;
+    }
+
+    #mobile-footer{
+        font-size: 3.3vw;
+        background-color: #711011;
+        width: 100%;
+        height: 46vw;
+        padding-top: 7%;
+        padding-bottom: 2%;
+        height: auto;
+        color: #C6B394;
+        display: flex;
+        flex-flow: column;
+        justify-items: center;
+        align-items: center;
+    }
+}
