@@ -232,8 +232,7 @@ margin-top: -26vh;
    
 }
 .piano-loader.hide {
-   
-    opacity: 0;
+    display: none;
   }
 
 @keyframes scaled {
