@@ -7,7 +7,7 @@
     <!-- stylesheet  for header rocko-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static '/css/rocko_stylesheet.css' %}">
-     <link rel="stylesheet" href="{% static '/css/registration.css' %}"> 
+    <link rel="stylesheet" href="{% static '/css/registration.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-     <link
+    <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <title>Rock-O-Phonix</title>
@@ -89,71 +89,74 @@
 <body>
     <div class="popup">
         <div class="registration-page">
-            <div class=" page-heading registration" >
+            <div class=" page-heading registration">
                 <h1 class="page-heading registration">Registration<h1>
-                <div class="popup-close-btn page-heading registration">&times;</div>
+                        <div class="popup-close-btn page-heading registration">&times;</div>
             </div>
             <br><br><br>
-            <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content" class="reg-form-all">
-            {% csrf_token %}
-            <div class="row-view">
-                <div class="sections " >
-                    <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:175px; ">Team Details</h1>
-                    <p style="padding-top:1vh;">All fields marked with <span class="red-star"> *</span> are mandatory.</p>
+            <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content"
+                class="reg-form-all">
+                {% csrf_token %}
+                <div class="row-view">
+                    <div class="sections ">
+                        <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:175px; ">Team
+                            Details</h1>
+                        <p style="padding-top:1vh;">All fields marked with <span class="red-star"> *</span> are
+                            mandatory.</p>
+                    </div>
+                    <div class="sections "></div>
                 </div>
-                <div class="sections " ></div>
-            </div>
-            <br><br>
-            <div class="row-view">
-                
-                
-                <div class="sections ">
-                    
+                <br><br>
+                <div class="row-view">
 
-                    <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
 
-                    <p>
-                        <label for="team_name" class="head-style ">Team Name</label>
+                    <div class="sections ">
+
+
+                        <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
+
+                        <p>
+                            <label for="team_name" class="head-style ">Team Name</label>
+                            <span class="red-star"> *</span>
+
+                            <input class="input-text-field " required type="text" name="teamName" />
+                        </p>
+                        <p>
+                            <label for="team_name" class="head-style ">Previous Performance Link</label>
+                            <span class="red-star"> *</span>
+                            <input class="input-text-field " required type="text" name="performance" />
+                        </p>
+
+
+                    </div>
+
+                    <div class="sections ">
+
+                        <p>
+                            <label for="city" class="head-style ">City</label>
+                            <span class="red-star"> *</span>
+
+                            <input class="input-text-field " required type="text" name="city" />
+                        </p>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row-view">
+                    <div class="sections ">
+                        <label for="no-of-members" class="head-style ">Number of Members</label>
                         <span class="red-star"> *</span>
+                    </div>
+                    <div class="sections ">
+                    </div>
+                </div>
+                <br>
 
-                        <input class="input-text-field " required type="text" name="teamName" />
-                    </p>
-                    <p>
-                        <label for="team_name" class="head-style ">Previous Performance Link</label>
-                        <span class="red-star"> *</span>
-                        <input class="input-text-field " required type="text" name="performance" />
-                    </p>
-            
-                    
-                </div>
-            
-                <div class="sections ">
-                    
-                    <p>
-                        <label for="city" class="head-style ">City</label>
-                        <span class="red-star"> *</span>
+                <div class="row-view">
 
-                        <input class="input-text-field " required type="text" name="city" />
-                    </p>
-                </div>
-                
-            </div>
-            <br>
-            <div class="row-view">
-                <div class="sections ">
-                    <label for="no-of-members" class="head-style ">Number of Members</label>
-                    <span class="red-star"> *</span>
-                </div>
-                <div class="sections ">
-                </div>
-            </div>
-            <br>
-            
-            <div class="row-view">
-                
-                <div class="sections " >
+                    <div class="sections ">
 
-                        <div class="artist-type" >
+                        <div class="artist-type">
                             <label for="Drummer" class="head-style " style="margin-right:20px;">Drummer</label>
                             <div class="counter">
                                 <img class="minus-1" src={% static '/images/minus.png' %}>
@@ -161,7 +164,7 @@
                                 <img class="plus-1" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
-                
+
 
                         <div class="artist-type">
                             <label for="Bassist" class="head-style " style="margin-right:38px;">Bassist</label>
@@ -171,11 +174,11 @@
                                 <img class="plus-2" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
-                </div>
-                
+                    </div>
 
-            
-                <div class="sections " >
+
+
+                    <div class="sections ">
 
                         <div class="artist-type">
                             <label for="Guitarist" class="head-style " style="margin-right:26px;">Guitarist</label>
@@ -185,7 +188,7 @@
                                 <img class="plus-3" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
-                
+
 
                         <div class="artist-type">
                             <label for="Vocalist" class="head-style " style="margin-right:30px;">Vocalist</label>
@@ -195,100 +198,110 @@
                                 <img class="plus-4" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <br>
+                <br>
 
-            <div class="row-view">
-                <div class="sections " >
-                    <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:190px; ">Leader Details</h1>
-                    
+                <div class="row-view">
+                    <div class="sections ">
+                        <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:190px; ">
+                            Leader Details</h1>
+
+                    </div>
+                    <div class="sections "></div>
                 </div>
-                <div class="sections " ></div>
-            </div>
-            <br>
-            <div class="row-view">
-                <div class="sections ">
-                    
-                    
-                    <div class="Leader_form">
+                <br>
+                <div class="row-view">
+                    <div class="sections ">
 
-                        <p>
-                            <label for="name_leader" class="head-style ">Name</label>
-                            <span class="red-star"> *</span>
 
-                            <input class="input-text-field " required type="text" name="name" />
-                        </p>
-                        <p>
-                            <label for="phone_leader" class="head-style ">Phone</label>
-                            <span class="red-star"> *</span>
+                        <div class="Leader_form">
 
-                            <input class="input-text-field " required type="email" name="phoneNumber" />
-                        </p>
+                            <p>
+                                <label for="name_leader" class="head-style ">Name</label>
+                                <span class="red-star"> *</span>
+
+                                <input class="input-text-field " required type="text" name="name" />
+                            </p>
+                            <p>
+                                <label for="phone_leader" class="head-style ">Phone</label>
+                                <span class="red-star"> *</span>
+
+                                <input class="input-text-field " required type="email" name="phoneNumber" />
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="sections">
+
+                        <div class="Leader_form">
+
+                            <p>
+                                <label for="gender_leader" class="head-style ">Gender</label>
+                                <span class="red-star"> *</span>
+
+                                <input class="input-text-field " required type="text" name="gender" />
+                            </p>
+                            <p>
+                                <label for="email_leader" class="head-style ">Email ID</label>
+                                <span class="red-star"> *</span>
+                                <input class="input-text-field " required type="text" name="email" />
+                            </p>
+                        </div>
                     </div>
 
                 </div>
-                
-                <div class="sections">
-                    
-                    <div class="Leader_form">
+                <br>
 
-                        <p>
-                            <label for="gender_leader" class="head-style ">Gender</label>
-                            <span class="red-star"> *</span>
+                <div class="row-view" style="width:83%">
+                    <div class="artist-checkbox">
 
-                            <input class="input-text-field " required type="text" name="gender" />
-                        </p>
-                        <p>
-                            <label for="email_leader" class="head-style ">Email ID</label>
-                            <span class="red-star"> *</span>
-                            <input class="input-text-field " required type="text" name="email" />
-                        </p>
+                        <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue"
+                            style="margin-right:20px;">
+                        <label for="check-drummer"
+                            style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
                     </div>
-                </div>
+                    <div class="artist-checkbox">
 
-            </div>
-            <br>
+                        <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue"
+                            style="margin-right:30px;">
+                        <label for="check-bassist"
+                            style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
+                    </div>
+                    <div class="artist-checkbox">
 
-            <div class="row-view" style="width:83%" >
-                <div class="artist-checkbox" >
-                    
-                    <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue" style="margin-right:20px;">
-                    <label for="check-drummer" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
-                </div>
-                <div class="artist-checkbox">
-                    
-                    <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue" style="margin-right:30px;">
-                    <label for="check-bassist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
-                </div>
-                <div class="artist-checkbox">
-                    
-                    <input type="checkbox" class="checkbox"  name="check-guitarist" value="checkboxValue" style="margin-right:20px;">
-                    <label for="check-guitarist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
-                </div>
-                <div class="artist-checkbox">
-                    
-                    <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue" style="margin-right:20px;">
-                    <label for="check-vocalist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
-                </div>
+                        <input type="checkbox" class="checkbox" name="check-guitarist" value="checkboxValue"
+                            style="margin-right:20px;">
+                        <label for="check-guitarist"
+                            style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
+                    </div>
+                    <div class="artist-checkbox">
 
-            </div>
-            {% comment %} <div id="member_form">
-            </div> {% endcomment %}
+                        <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue"
+                            style="margin-right:20px;">
+                        <label for="check-vocalist"
+                            style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
+                    </div>
 
-            {% comment %} <div class="row-view" style="display: flex;; ">
-                <div class="sections m-5">
-                    <button onclick="addMember()" type="button" class=" register-button" style="font-size:18px">
-                        <i class="fa-solid fa-plus"></i>
-                        <i class="fa-solid fa-user" style="margin-right: 10px;"></i>
-                        Add member
-                    </button>
                 </div>
-                <div class="sections m-5"></div>
-            </div>{% endcomment %}
-            <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
-                <button type="submit" class=" register-button"style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
-            </div> 
+                {% comment %} <div id="member_form">
+                </div> {% endcomment %}
+
+                {% comment %} <div class="row-view" style="display: flex;; ">
+                    <div class="sections m-5">
+                        <button onclick="addMember()" type="button" class=" register-button" style="font-size:18px">
+                            <i class="fa-solid fa-plus"></i>
+                            <i class="fa-solid fa-user" style="margin-right: 10px;"></i>
+                            Add member
+                        </button>
+                    </div>
+                    <div class="sections m-5"></div>
+                </div>{% endcomment %}
+                <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
+                    <button type="submit" class=" register-button"
+                        style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
+                </div>
             </form>
         </div>
     </div>
@@ -305,7 +318,7 @@
                 <div class="nav_bar_text">
                     <a id="popup-open-button" class="nav_link reg" style="cursor:pointer;">Registration</a>
                 </div>
-                
+
                 <div class="nav_bar_text">
                     <a href="#about_us" class="nav_link">About us</a>
                 </div>
@@ -313,14 +326,14 @@
                     <a href="#contact_us" class="nav_link">Contact Us</a>
                 </div>
             </div>
-            <div class="alcher_logo" >
-                <a href="https://alcheringa.in/">                <img src="{% static 'images/alcher_logo.png' %}">
+            <div class="alcher_logo">
+                <a href="https://alcheringa.in/"> <img src="{% static 'images/alcher_logo.png' %}">
                 </a>
             </div>
         </div>
         <div class="nav_mob_view" style="padding-top: 1vh;">
             <div class="nav-header">
-                <img src="{% static 'images/nav_bar_skull.png' %}"alt="" class="logo" alt="logo" />
+                <img src="{% static 'images/nav_bar_skull.png' %}" alt="" class="logo" alt="logo" />
 
                 <button class="nav-toggle">
                     <i class="fas fa-bars "></i>
@@ -341,116 +354,137 @@
                 </li>
             </ul>
         </div>
-  
+
         <div class="event_name">
             <div class="ROCKO">
-            <div class="rocko-center" > 
-                <div  class="center-rocklogo"><img src={% static '/images/rock-logo.png' %}></div>
-                <div class="svg">
-                    <svg width="800" height="125" viewBox="0 0 800 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g class="rock ">
-                            <path
-                                d="M74.3809 123.256H54.8803L44.9546 74.3397H36.2464V123.256H17.1069V1.39288H46.007C54.2509 1.39288 60.9781 3.82788 66.1989 8.70819C71.9975 14.0528 74.9072 21.5951 74.9072 31.3454V44.4077C74.9072 54.2715 72.0079 61.8758 66.1989 67.2101C65.3838 68.0252 64.4552 68.7784 63.4131 69.4697L74.3809 123.256ZM55.7573 31.3351C55.7573 27.2699 54.8906 24.3706 53.1469 22.6269C51.6405 21.234 49.2571 20.5324 46.007 20.5324H36.2567V55.1795H46.007C49.2571 55.1795 51.6405 54.4779 53.1469 53.085C54.8906 51.4651 55.7573 48.5555 55.7573 44.3768V31.3351Z"
-                                fill="white" />
-                            <path
-                                d="M113.547 124.649C105.19 124.649 98.4626 122.276 93.3553 117.509C87.5464 111.938 84.6471 104.333 84.6471 94.707V29.9422C84.6471 20.3157 87.5464 12.7115 93.3553 7.13991C98.4626 2.38341 105.19 0 113.547 0C121.905 0 128.632 2.38341 133.739 7.13991C139.538 12.7115 142.447 20.3157 142.447 29.9422V94.707C142.447 104.344 139.548 111.948 133.739 117.509C128.642 122.276 121.905 124.649 113.547 124.649ZM113.547 19.1498C110.297 19.1498 107.914 19.8411 106.407 21.234C104.664 22.8642 103.797 25.7635 103.797 29.9422V94.707C103.797 98.8857 104.664 101.785 106.407 103.415C107.914 104.808 110.297 105.499 113.547 105.499C116.911 105.499 119.294 104.808 120.687 103.415C122.431 101.909 123.298 99.0095 123.298 94.707V29.9422C123.298 25.65 122.431 22.7507 120.687 21.234C119.294 19.8514 116.921 19.1498 113.547 19.1498Z"
-                                fill="white" />
-                            <path
-                                d="M182.491 124.649C174.36 124.649 167.633 122.276 162.299 117.509C156.49 111.711 153.591 104.106 153.591 94.707V29.9422C153.591 20.5427 156.49 12.9385 162.299 7.13991C167.633 2.38341 174.371 0 182.491 0C190.848 0 197.575 2.38341 202.683 7.13991C208.481 12.7115 211.391 20.3157 211.391 29.9422V40.7346H192.241V29.9422C192.241 25.65 191.426 22.7507 189.806 21.234C188.3 19.8411 185.865 19.1498 182.491 19.1498C179.241 19.1498 176.857 19.8411 175.351 21.234C173.607 22.8642 172.74 25.7635 172.74 29.9422V94.707C172.74 98.8857 173.607 101.785 175.351 103.415C176.857 104.808 179.241 105.499 182.491 105.499C185.854 105.499 188.289 104.808 189.806 103.415C191.426 101.909 192.241 99.0095 192.241 94.707V79.0343H211.391V94.707C211.391 104.344 208.492 111.948 202.683 117.509C197.575 122.276 190.848 124.649 182.491 124.649Z"
-                                fill="white" />
-                            <path
-                                d="M284.162 123.256H263.619L248.824 84.255L242.21 99.4016V123.256H223.06V1.39288H242.21V50.8357L263.444 1.39288H284.162L259.616 59.1931L284.162 123.256Z"
-                                fill="white" />
-                            <path d="M310.803 51.1865V70.3363H279.468V51.1865H310.803Z" fill="white" />
-                            <path
-                                d="M346.843 124.649C338.485 124.649 331.758 122.276 326.651 117.509C320.842 111.938 317.943 104.333 317.943 94.707V29.9422C317.943 20.3157 320.842 12.7115 326.651 7.13991C331.748 2.38341 338.485 0 346.843 0C355.2 0 361.927 2.38341 367.035 7.13991C372.833 12.7115 375.743 20.3157 375.743 29.9422V94.707C375.743 104.344 372.844 111.948 367.035 117.509C361.927 122.276 355.19 124.649 346.843 124.649ZM346.843 19.1498C343.593 19.1498 341.209 19.8411 339.703 21.234C337.959 22.8642 337.092 25.7635 337.092 29.9422V94.707C337.092 98.8857 337.959 101.785 339.703 103.415C341.209 104.808 343.593 105.499 346.843 105.499C350.206 105.499 352.59 104.808 353.983 103.415C355.726 101.909 356.593 99.0095 356.593 94.707V29.9422C356.593 25.65 355.726 22.7507 353.983 21.234C352.579 19.8514 350.206 19.1498 346.843 19.1498Z"
-                                fill="white" />
-                            <path d="M414.208 51.1865V70.3363H382.872V51.1865H414.208Z" fill="white" />
-                            <path
-                                d="M442.066 123.256H422.916V1.39288H451.816C460.06 1.39288 466.787 3.82788 472.008 8.70819C477.806 14.0528 480.716 21.5951 480.716 31.3454V44.5728C480.716 54.4366 477.817 62.0408 472.008 67.3751C466.901 72.1316 460.173 74.5151 451.816 74.5151H442.066V123.256ZM442.066 55.3652H451.816C455.066 55.3652 457.449 54.6739 458.956 53.281C460.7 51.6611 461.566 48.7515 461.566 44.5728V31.3351C461.566 27.2699 460.7 24.3706 458.956 22.6269C457.449 21.234 455.066 20.5324 451.816 20.5324H442.066V55.3652Z"
-                                fill="white" />
-                            <path
-                                d="M548.958 1.39288V123.256H529.808V70.3363H510.307V123.256H491.158V1.39288H510.307V51.1865H529.808V1.39288H548.958Z"
-                                fill="white" />
-                            <path
-                                d="M590.219 124.649C581.861 124.649 575.134 122.276 570.027 117.509C564.218 111.938 561.319 104.333 561.319 94.707V29.9422C561.319 20.3157 564.218 12.7115 570.027 7.13991C575.134 2.38341 581.861 0 590.219 0C598.576 0 605.303 2.38341 610.411 7.13991C616.209 12.7115 619.119 20.3157 619.119 29.9422V94.707C619.119 104.344 616.22 111.948 610.411 117.509C605.303 122.276 598.576 124.649 590.219 124.649ZM590.219 19.1498C586.969 19.1498 584.585 19.8411 583.079 21.234C581.335 22.8642 580.468 25.7635 580.468 29.9422V94.707C580.468 98.8857 581.335 101.785 583.079 103.415C584.585 104.808 586.969 105.499 590.219 105.499C593.582 105.499 595.966 104.808 597.359 103.415C599.102 101.909 599.969 99.0095 599.969 94.707V29.9422C599.969 25.65 599.102 22.7507 597.359 21.234C595.966 19.8514 593.582 19.1498 590.219 19.1498Z"
-                                fill="white" />
-                            <path
-                                d="M690.322 123.256H679.179L649.928 61.4527V123.256H630.778V1.39288H641.921L671.172 63.021V1.39288H690.322V123.256Z"
-                                fill="white" />
-                            <path d="M722.699 123.256H703.549V1.39288H722.699V123.256Z" fill="white" />
-                            <path
-                                d="M779.633 123.256L766.055 87.2162L752.652 123.256H732.284L754.922 62.4948L732.274 1.39288H752.641L766.044 37.4329L779.447 1.39288H799.99L777.187 62.5051L799.99 123.267H779.633V123.256Z"
-                                fill="white" />
-                            <path d="M17.1069 1.39288H0L17.1069 13.6195V1.39288Z" fill="white" />
-                            <path d="M422.916 1.39288H405.809L422.916 13.6195V1.39288Z" fill="white" />
-                            <path d="M54.22 119.965L51.7231 123.256H54.8803L54.22 119.965Z" fill="white" />
-                            <path d="M192.241 79.0342H186.927L192.241 86.525V79.0342Z" fill="white" />
-                            <path d="M17.1069 115.095L8.85266 123.339L17.1069 123.256V115.095Z" fill="white" />
-                            <path d="M223.06 115.095L214.806 123.339L223.06 123.256V115.095Z" fill="white" />
-                            <path d="M422.916 115.085L414.662 123.339L422.916 123.256V115.085Z" fill="white" />
-                            <path d="M491.158 115.085L482.914 123.339L491.158 123.256V115.085Z" fill="white" />
-                            <path d="M630.788 115.074L622.534 123.329L630.788 123.246V115.074Z" fill="white" />
-                            <path d="M491.158 9.56459L482.914 1.31036L491.158 1.39291V9.56459Z" fill="white" />
-                            <path d="M223.06 9.56459L214.806 1.31036L223.06 1.39291V9.56459Z" fill="white" />
-                            <path d="M548.958 115.085L557.212 123.339L548.958 123.256V115.085Z" fill="white" />
-                            <path d="M548.958 9.64711L557.212 1.39288L548.958 1.47543V9.64711Z" fill="white" />
-                            <path d="M690.322 9.55428L698.576 1.30005L690.322 1.38259V9.55428Z" fill="white" />
-                        </g>
-                    </svg>
+                <div class="rocko-center">
+                    <div class="center-rocklogo"><img src={% static '/images/rock-logo.png' %}></div>
+                    <div class="svg">
+                        <svg width="800" height="125" viewBox="0 0 800 125" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g class="rock ">
+                                <path
+                                    d="M74.3809 123.256H54.8803L44.9546 74.3397H36.2464V123.256H17.1069V1.39288H46.007C54.2509 1.39288 60.9781 3.82788 66.1989 8.70819C71.9975 14.0528 74.9072 21.5951 74.9072 31.3454V44.4077C74.9072 54.2715 72.0079 61.8758 66.1989 67.2101C65.3838 68.0252 64.4552 68.7784 63.4131 69.4697L74.3809 123.256ZM55.7573 31.3351C55.7573 27.2699 54.8906 24.3706 53.1469 22.6269C51.6405 21.234 49.2571 20.5324 46.007 20.5324H36.2567V55.1795H46.007C49.2571 55.1795 51.6405 54.4779 53.1469 53.085C54.8906 51.4651 55.7573 48.5555 55.7573 44.3768V31.3351Z"
+                                    fill="white" />
+                                <path
+                                    d="M113.547 124.649C105.19 124.649 98.4626 122.276 93.3553 117.509C87.5464 111.938 84.6471 104.333 84.6471 94.707V29.9422C84.6471 20.3157 87.5464 12.7115 93.3553 7.13991C98.4626 2.38341 105.19 0 113.547 0C121.905 0 128.632 2.38341 133.739 7.13991C139.538 12.7115 142.447 20.3157 142.447 29.9422V94.707C142.447 104.344 139.548 111.948 133.739 117.509C128.642 122.276 121.905 124.649 113.547 124.649ZM113.547 19.1498C110.297 19.1498 107.914 19.8411 106.407 21.234C104.664 22.8642 103.797 25.7635 103.797 29.9422V94.707C103.797 98.8857 104.664 101.785 106.407 103.415C107.914 104.808 110.297 105.499 113.547 105.499C116.911 105.499 119.294 104.808 120.687 103.415C122.431 101.909 123.298 99.0095 123.298 94.707V29.9422C123.298 25.65 122.431 22.7507 120.687 21.234C119.294 19.8514 116.921 19.1498 113.547 19.1498Z"
+                                    fill="white" />
+                                <path
+                                    d="M182.491 124.649C174.36 124.649 167.633 122.276 162.299 117.509C156.49 111.711 153.591 104.106 153.591 94.707V29.9422C153.591 20.5427 156.49 12.9385 162.299 7.13991C167.633 2.38341 174.371 0 182.491 0C190.848 0 197.575 2.38341 202.683 7.13991C208.481 12.7115 211.391 20.3157 211.391 29.9422V40.7346H192.241V29.9422C192.241 25.65 191.426 22.7507 189.806 21.234C188.3 19.8411 185.865 19.1498 182.491 19.1498C179.241 19.1498 176.857 19.8411 175.351 21.234C173.607 22.8642 172.74 25.7635 172.74 29.9422V94.707C172.74 98.8857 173.607 101.785 175.351 103.415C176.857 104.808 179.241 105.499 182.491 105.499C185.854 105.499 188.289 104.808 189.806 103.415C191.426 101.909 192.241 99.0095 192.241 94.707V79.0343H211.391V94.707C211.391 104.344 208.492 111.948 202.683 117.509C197.575 122.276 190.848 124.649 182.491 124.649Z"
+                                    fill="white" />
+                                <path
+                                    d="M284.162 123.256H263.619L248.824 84.255L242.21 99.4016V123.256H223.06V1.39288H242.21V50.8357L263.444 1.39288H284.162L259.616 59.1931L284.162 123.256Z"
+                                    fill="white" />
+                                <path d="M310.803 51.1865V70.3363H279.468V51.1865H310.803Z" fill="white" />
+                                <path
+                                    d="M346.843 124.649C338.485 124.649 331.758 122.276 326.651 117.509C320.842 111.938 317.943 104.333 317.943 94.707V29.9422C317.943 20.3157 320.842 12.7115 326.651 7.13991C331.748 2.38341 338.485 0 346.843 0C355.2 0 361.927 2.38341 367.035 7.13991C372.833 12.7115 375.743 20.3157 375.743 29.9422V94.707C375.743 104.344 372.844 111.948 367.035 117.509C361.927 122.276 355.19 124.649 346.843 124.649ZM346.843 19.1498C343.593 19.1498 341.209 19.8411 339.703 21.234C337.959 22.8642 337.092 25.7635 337.092 29.9422V94.707C337.092 98.8857 337.959 101.785 339.703 103.415C341.209 104.808 343.593 105.499 346.843 105.499C350.206 105.499 352.59 104.808 353.983 103.415C355.726 101.909 356.593 99.0095 356.593 94.707V29.9422C356.593 25.65 355.726 22.7507 353.983 21.234C352.579 19.8514 350.206 19.1498 346.843 19.1498Z"
+                                    fill="white" />
+                                <path d="M414.208 51.1865V70.3363H382.872V51.1865H414.208Z" fill="white" />
+                                <path
+                                    d="M442.066 123.256H422.916V1.39288H451.816C460.06 1.39288 466.787 3.82788 472.008 8.70819C477.806 14.0528 480.716 21.5951 480.716 31.3454V44.5728C480.716 54.4366 477.817 62.0408 472.008 67.3751C466.901 72.1316 460.173 74.5151 451.816 74.5151H442.066V123.256ZM442.066 55.3652H451.816C455.066 55.3652 457.449 54.6739 458.956 53.281C460.7 51.6611 461.566 48.7515 461.566 44.5728V31.3351C461.566 27.2699 460.7 24.3706 458.956 22.6269C457.449 21.234 455.066 20.5324 451.816 20.5324H442.066V55.3652Z"
+                                    fill="white" />
+                                <path
+                                    d="M548.958 1.39288V123.256H529.808V70.3363H510.307V123.256H491.158V1.39288H510.307V51.1865H529.808V1.39288H548.958Z"
+                                    fill="white" />
+                                <path
+                                    d="M590.219 124.649C581.861 124.649 575.134 122.276 570.027 117.509C564.218 111.938 561.319 104.333 561.319 94.707V29.9422C561.319 20.3157 564.218 12.7115 570.027 7.13991C575.134 2.38341 581.861 0 590.219 0C598.576 0 605.303 2.38341 610.411 7.13991C616.209 12.7115 619.119 20.3157 619.119 29.9422V94.707C619.119 104.344 616.22 111.948 610.411 117.509C605.303 122.276 598.576 124.649 590.219 124.649ZM590.219 19.1498C586.969 19.1498 584.585 19.8411 583.079 21.234C581.335 22.8642 580.468 25.7635 580.468 29.9422V94.707C580.468 98.8857 581.335 101.785 583.079 103.415C584.585 104.808 586.969 105.499 590.219 105.499C593.582 105.499 595.966 104.808 597.359 103.415C599.102 101.909 599.969 99.0095 599.969 94.707V29.9422C599.969 25.65 599.102 22.7507 597.359 21.234C595.966 19.8514 593.582 19.1498 590.219 19.1498Z"
+                                    fill="white" />
+                                <path
+                                    d="M690.322 123.256H679.179L649.928 61.4527V123.256H630.778V1.39288H641.921L671.172 63.021V1.39288H690.322V123.256Z"
+                                    fill="white" />
+                                <path d="M722.699 123.256H703.549V1.39288H722.699V123.256Z" fill="white" />
+                                <path
+                                    d="M779.633 123.256L766.055 87.2162L752.652 123.256H732.284L754.922 62.4948L732.274 1.39288H752.641L766.044 37.4329L779.447 1.39288H799.99L777.187 62.5051L799.99 123.267H779.633V123.256Z"
+                                    fill="white" />
+                                <path d="M17.1069 1.39288H0L17.1069 13.6195V1.39288Z" fill="white" />
+                                <path d="M422.916 1.39288H405.809L422.916 13.6195V1.39288Z" fill="white" />
+                                <path d="M54.22 119.965L51.7231 123.256H54.8803L54.22 119.965Z" fill="white" />
+                                <path d="M192.241 79.0342H186.927L192.241 86.525V79.0342Z" fill="white" />
+                                <path d="M17.1069 115.095L8.85266 123.339L17.1069 123.256V115.095Z" fill="white" />
+                                <path d="M223.06 115.095L214.806 123.339L223.06 123.256V115.095Z" fill="white" />
+                                <path d="M422.916 115.085L414.662 123.339L422.916 123.256V115.085Z" fill="white" />
+                                <path d="M491.158 115.085L482.914 123.339L491.158 123.256V115.085Z" fill="white" />
+                                <path d="M630.788 115.074L622.534 123.329L630.788 123.246V115.074Z" fill="white" />
+                                <path d="M491.158 9.56459L482.914 1.31036L491.158 1.39291V9.56459Z" fill="white" />
+                                <path d="M223.06 9.56459L214.806 1.31036L223.06 1.39291V9.56459Z" fill="white" />
+                                <path d="M548.958 115.085L557.212 123.339L548.958 123.256V115.085Z" fill="white" />
+                                <path d="M548.958 9.64711L557.212 1.39288L548.958 1.47543V9.64711Z" fill="white" />
+                                <path d="M690.322 9.55428L698.576 1.30005L690.322 1.38259V9.55428Z" fill="white" />
+                            </g>
+                        </svg>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
-        
-        <div class="ROCKO-MOBILE" id="Rocko-mob" >
-          <div class="svg-button svg-img">
-                <div class="rocko-svg" >
-                     <svg  height="300" width="250"viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <div class="ROCKO-MOBILE" id="Rocko-mob">
+            <div class="svg-button svg-img">
+                <div class="rocko-svg">
+                    <svg height="300" width="250" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g class="rock ">
-                        <path d="M16.6478 179.359H7.85352V123.275H21.123C24.9065 123.275 27.9981 124.398 30.3949 126.641C33.0581 129.098 34.3926 132.568 34.3926 137.056V143.146C34.3926 147.686 33.061 151.185 30.3949 153.642C28.0502 155.833 24.9586 156.927 21.123 156.927H16.6478V179.359ZM16.6478 148.113H21.123C22.6138 148.113 23.7081 147.794 24.3999 147.152C25.1989 146.404 25.5983 145.069 25.5983 143.146V137.056C25.5983 135.188 25.1989 133.85 24.3999 133.05C23.7052 132.409 22.6138 132.089 21.123 132.089H16.6478V148.113Z" fill="white"/>
-                        <path d="M65.7309 123.275V179.359H56.9367V155.003H47.9832V179.359H39.189V123.275H47.9832V146.189H56.9367V123.275H65.7309Z" fill="white"/>
-                        <path d="M84.6743 180C80.8359 180 77.7443 178.906 75.4024 176.716C72.7364 174.151 71.4048 170.655 71.4048 166.219V136.415C71.4048 131.982 72.7364 128.483 75.4024 125.918C77.7472 123.728 80.8388 122.634 84.6743 122.634C88.5099 122.634 91.6015 123.728 93.9462 125.918C96.6094 128.483 97.9438 131.982 97.9438 136.415V166.219C97.9438 170.652 96.6123 174.151 93.9462 176.716C91.6015 178.906 88.5128 180 84.6743 180ZM84.6743 131.448C83.1806 131.448 82.0893 131.767 81.3975 132.408C80.5985 133.157 80.199 134.492 80.199 136.415V166.219C80.199 168.143 80.5985 169.477 81.3975 170.226C82.0893 170.867 83.1835 171.186 84.6743 171.186C86.2201 171.186 87.3114 170.867 87.9512 170.226C88.7501 169.532 89.1496 168.195 89.1496 166.219V136.415C89.1496 134.439 88.7501 133.105 87.9512 132.408C87.3114 131.77 86.2201 131.448 84.6743 131.448Z" fill="white"/>
-                        <path d="M130.64 179.359H125.525L112.096 150.918V179.359H103.302V123.275H108.417L121.846 151.638V123.275H130.64V179.359Z" fill="white"/>
-                        <path d="M145.508 179.359H136.713V123.275H145.508V179.359Z" fill="white"/>
-                        <path d="M171.647 179.359L165.412 162.776L159.258 179.359H149.905L160.297 151.397L149.905 123.275H159.258L165.412 139.859L171.566 123.275H181L170.527 151.397L181 179.359H171.647Z" fill="white"/>
-                        <path d="M7.85345 123.275H0L7.85345 128.904V123.275Z" fill="white"/>
-                        <path d="M7.85368 175.599L4.06445 179.397L7.85368 179.359V175.599Z" fill="white"/>
-                        <path d="M39.1892 175.599L35.4028 179.397L39.1892 179.359V175.599Z" fill="white"/>
-                        <path d="M103.302 175.593L99.5127 179.391L103.302 179.353V175.593Z" fill="white"/>
-                        <path d="M39.1892 127.035L35.4028 123.238L39.1892 123.275V127.035Z" fill="white"/>
-                        <path d="M65.731 175.599L69.5202 179.397L65.731 179.359V175.599Z" fill="white"/>
-                        <path d="M65.731 127.073L69.5202 123.275L65.731 123.316V127.073Z" fill="white"/>
-                        <path d="M130.64 127.033L134.426 123.235L130.64 123.273V127.033Z" fill="white"/>
-                        <path d="M73.9518 84.8721V93.686H59.562V84.8721H73.9518Z" fill="white"/>
-                        <path d="M90.5015 118.683C86.663 118.683 83.5714 117.589 81.2296 115.399C78.5635 112.834 77.2319 109.338 77.2319 104.902V75.0979C77.2319 70.6649 78.5635 67.166 81.2296 64.6013C83.5743 62.4109 86.6659 61.3172 90.5015 61.3172C94.3399 61.3172 97.4286 62.4109 99.7734 64.6013C102.437 67.166 103.771 70.6649 103.771 75.0979V104.902C103.771 109.335 102.439 112.834 99.7734 115.399C97.4286 117.589 94.337 118.683 90.5015 118.683ZM90.5015 70.131C89.0078 70.131 87.9165 70.4502 87.2246 71.0913C86.4257 71.8399 86.0262 73.1744 86.0262 75.0979V104.902C86.0262 106.826 86.4257 108.16 87.2246 108.909C87.9165 109.55 89.0107 109.869 90.5015 109.869C92.0473 109.869 93.1386 109.55 93.7783 108.909C94.5773 108.215 94.9768 106.878 94.9768 104.902V75.0979C94.9768 73.1222 94.5773 71.7876 93.7783 71.0913C93.1386 70.4502 92.0444 70.131 90.5015 70.131Z" fill="white"/>
-                        <path d="M121.438 84.8721V93.686H107.048V84.8721H121.438Z" fill="white"/>
-                        <path d="M59.5622 84.8721L53.9521 93.686H59.5622V84.8721Z" fill="white"/>
-                        <path d="M121.438 93.686L127.045 84.8721H121.438V93.686Z" fill="white"/>
-                        <path d="M59.415 56.7245H50.4615L45.9052 34.2111H41.9075V56.7245H33.1133V0.641174H46.3828C50.1662 0.641174 53.2578 1.76394 55.6547 4.00658C58.3179 6.46391 59.6523 9.93376 59.6523 14.4219V20.4304C59.6523 24.9708 58.3208 28.4696 55.6547 30.9269C55.2813 31.3012 54.8557 31.6493 54.3752 31.9685L59.415 56.7245ZM50.861 14.4219C50.861 12.5536 50.4615 11.2161 49.6626 10.4154C48.9707 9.77419 47.8765 9.45506 46.3857 9.45506H41.9104V25.4001H46.3857C47.8765 25.4001 48.9707 25.0781 49.6626 24.4398C50.4615 23.6913 50.861 22.3568 50.861 20.4333V14.4219Z" fill="white"/>
-                        <path d="M77.3999 57.3628C73.5615 57.3628 70.4699 56.269 68.128 54.0786C65.462 51.514 64.1304 48.018 64.1304 43.582V13.7808C64.1304 9.34771 65.462 5.84885 68.128 3.28417C70.4699 1.09376 73.5615 0 77.3999 0C81.2383 0 84.327 1.09376 86.6718 3.28417C89.335 5.84885 90.6694 9.34771 90.6694 13.7808V43.5849C90.6694 48.018 89.3379 51.5169 86.6718 54.0815C84.327 56.269 81.2354 57.3628 77.3999 57.3628ZM77.3999 8.81389C75.9062 8.81389 74.8149 9.13302 74.123 9.77419C73.3241 10.5227 72.9246 11.8573 72.9246 13.7808V43.5849C72.9246 45.5084 73.3241 46.843 74.123 47.5915C74.8149 48.2327 75.9091 48.5518 77.3999 48.5518C78.9457 48.5518 80.037 48.2327 80.6768 47.5915C81.4757 46.8981 81.8752 45.5607 81.8752 43.5849V13.7808C81.8752 11.805 81.4757 10.4705 80.6768 9.77419C80.037 9.13302 78.9457 8.81389 77.3999 8.81389Z" fill="white"/>
-                        <path d="M109.057 57.3628C105.326 57.3628 102.234 56.269 99.7852 54.0786C97.1192 51.4095 95.7876 47.9106 95.7876 43.582V13.7808C95.7876 9.45506 97.1192 5.95619 99.7852 3.28417C102.234 1.09376 105.326 0 109.057 0C112.896 0 115.984 1.09376 118.329 3.28417C120.992 5.84885 122.327 9.34771 122.327 13.7808V18.7476H113.532V13.7808C113.532 11.805 113.159 10.4705 112.412 9.77419C111.72 9.13302 110.6 8.81389 109.054 8.81389C107.561 8.81389 106.469 9.13302 105.777 9.77419C104.978 10.5227 104.579 11.8573 104.579 13.7808V43.5849C104.579 45.5084 104.978 46.843 105.777 47.5915C106.469 48.2327 107.563 48.5518 109.054 48.5518C110.6 48.5518 111.717 48.2327 112.412 47.5915C113.159 46.8981 113.532 45.5607 113.532 43.5849V36.3754H122.327V43.5849C122.327 48.018 120.995 51.5169 118.329 54.0815C115.984 56.269 112.893 57.3628 109.057 57.3628Z" fill="white"/>
-                        <path d="M155.74 56.7245H146.306L139.512 38.7776L136.476 45.7463V56.7216H127.682V0.641174H136.476V23.3954L146.228 0.641174H155.74L144.468 27.2395L155.74 56.7245Z" fill="white"/>
-                        <path d="M33.1132 0.641174H25.2598L33.1132 6.26663V0.641174Z" fill="white"/>
-                        <path d="M113.532 36.3725H111.095L113.532 39.8192V36.3725Z" fill="white"/>
-                        <path d="M127.682 4.39824L123.893 0.603455L127.682 0.64117V4.39824Z" fill="white"/>
-                        <path d="M50.1546 55.2072L49.0083 56.7245H50.4615L50.1546 55.2072Z" fill="white"/>
-                        <path d="M33.113 52.9646L29.3267 56.7622L33.113 56.7245V52.9646Z" fill="white"/>
-                        <path d="M127.682 52.9646L123.893 56.7622L127.682 56.7245V52.9646Z" fill="white"/>
-                        
+                            <path
+                                d="M16.6478 179.359H7.85352V123.275H21.123C24.9065 123.275 27.9981 124.398 30.3949 126.641C33.0581 129.098 34.3926 132.568 34.3926 137.056V143.146C34.3926 147.686 33.061 151.185 30.3949 153.642C28.0502 155.833 24.9586 156.927 21.123 156.927H16.6478V179.359ZM16.6478 148.113H21.123C22.6138 148.113 23.7081 147.794 24.3999 147.152C25.1989 146.404 25.5983 145.069 25.5983 143.146V137.056C25.5983 135.188 25.1989 133.85 24.3999 133.05C23.7052 132.409 22.6138 132.089 21.123 132.089H16.6478V148.113Z"
+                                fill="white" />
+                            <path
+                                d="M65.7309 123.275V179.359H56.9367V155.003H47.9832V179.359H39.189V123.275H47.9832V146.189H56.9367V123.275H65.7309Z"
+                                fill="white" />
+                            <path
+                                d="M84.6743 180C80.8359 180 77.7443 178.906 75.4024 176.716C72.7364 174.151 71.4048 170.655 71.4048 166.219V136.415C71.4048 131.982 72.7364 128.483 75.4024 125.918C77.7472 123.728 80.8388 122.634 84.6743 122.634C88.5099 122.634 91.6015 123.728 93.9462 125.918C96.6094 128.483 97.9438 131.982 97.9438 136.415V166.219C97.9438 170.652 96.6123 174.151 93.9462 176.716C91.6015 178.906 88.5128 180 84.6743 180ZM84.6743 131.448C83.1806 131.448 82.0893 131.767 81.3975 132.408C80.5985 133.157 80.199 134.492 80.199 136.415V166.219C80.199 168.143 80.5985 169.477 81.3975 170.226C82.0893 170.867 83.1835 171.186 84.6743 171.186C86.2201 171.186 87.3114 170.867 87.9512 170.226C88.7501 169.532 89.1496 168.195 89.1496 166.219V136.415C89.1496 134.439 88.7501 133.105 87.9512 132.408C87.3114 131.77 86.2201 131.448 84.6743 131.448Z"
+                                fill="white" />
+                            <path
+                                d="M130.64 179.359H125.525L112.096 150.918V179.359H103.302V123.275H108.417L121.846 151.638V123.275H130.64V179.359Z"
+                                fill="white" />
+                            <path d="M145.508 179.359H136.713V123.275H145.508V179.359Z" fill="white" />
+                            <path
+                                d="M171.647 179.359L165.412 162.776L159.258 179.359H149.905L160.297 151.397L149.905 123.275H159.258L165.412 139.859L171.566 123.275H181L170.527 151.397L181 179.359H171.647Z"
+                                fill="white" />
+                            <path d="M7.85345 123.275H0L7.85345 128.904V123.275Z" fill="white" />
+                            <path d="M7.85368 175.599L4.06445 179.397L7.85368 179.359V175.599Z" fill="white" />
+                            <path d="M39.1892 175.599L35.4028 179.397L39.1892 179.359V175.599Z" fill="white" />
+                            <path d="M103.302 175.593L99.5127 179.391L103.302 179.353V175.593Z" fill="white" />
+                            <path d="M39.1892 127.035L35.4028 123.238L39.1892 123.275V127.035Z" fill="white" />
+                            <path d="M65.731 175.599L69.5202 179.397L65.731 179.359V175.599Z" fill="white" />
+                            <path d="M65.731 127.073L69.5202 123.275L65.731 123.316V127.073Z" fill="white" />
+                            <path d="M130.64 127.033L134.426 123.235L130.64 123.273V127.033Z" fill="white" />
+                            <path d="M73.9518 84.8721V93.686H59.562V84.8721H73.9518Z" fill="white" />
+                            <path
+                                d="M90.5015 118.683C86.663 118.683 83.5714 117.589 81.2296 115.399C78.5635 112.834 77.2319 109.338 77.2319 104.902V75.0979C77.2319 70.6649 78.5635 67.166 81.2296 64.6013C83.5743 62.4109 86.6659 61.3172 90.5015 61.3172C94.3399 61.3172 97.4286 62.4109 99.7734 64.6013C102.437 67.166 103.771 70.6649 103.771 75.0979V104.902C103.771 109.335 102.439 112.834 99.7734 115.399C97.4286 117.589 94.337 118.683 90.5015 118.683ZM90.5015 70.131C89.0078 70.131 87.9165 70.4502 87.2246 71.0913C86.4257 71.8399 86.0262 73.1744 86.0262 75.0979V104.902C86.0262 106.826 86.4257 108.16 87.2246 108.909C87.9165 109.55 89.0107 109.869 90.5015 109.869C92.0473 109.869 93.1386 109.55 93.7783 108.909C94.5773 108.215 94.9768 106.878 94.9768 104.902V75.0979C94.9768 73.1222 94.5773 71.7876 93.7783 71.0913C93.1386 70.4502 92.0444 70.131 90.5015 70.131Z"
+                                fill="white" />
+                            <path d="M121.438 84.8721V93.686H107.048V84.8721H121.438Z" fill="white" />
+                            <path d="M59.5622 84.8721L53.9521 93.686H59.5622V84.8721Z" fill="white" />
+                            <path d="M121.438 93.686L127.045 84.8721H121.438V93.686Z" fill="white" />
+                            <path
+                                d="M59.415 56.7245H50.4615L45.9052 34.2111H41.9075V56.7245H33.1133V0.641174H46.3828C50.1662 0.641174 53.2578 1.76394 55.6547 4.00658C58.3179 6.46391 59.6523 9.93376 59.6523 14.4219V20.4304C59.6523 24.9708 58.3208 28.4696 55.6547 30.9269C55.2813 31.3012 54.8557 31.6493 54.3752 31.9685L59.415 56.7245ZM50.861 14.4219C50.861 12.5536 50.4615 11.2161 49.6626 10.4154C48.9707 9.77419 47.8765 9.45506 46.3857 9.45506H41.9104V25.4001H46.3857C47.8765 25.4001 48.9707 25.0781 49.6626 24.4398C50.4615 23.6913 50.861 22.3568 50.861 20.4333V14.4219Z"
+                                fill="white" />
+                            <path
+                                d="M77.3999 57.3628C73.5615 57.3628 70.4699 56.269 68.128 54.0786C65.462 51.514 64.1304 48.018 64.1304 43.582V13.7808C64.1304 9.34771 65.462 5.84885 68.128 3.28417C70.4699 1.09376 73.5615 0 77.3999 0C81.2383 0 84.327 1.09376 86.6718 3.28417C89.335 5.84885 90.6694 9.34771 90.6694 13.7808V43.5849C90.6694 48.018 89.3379 51.5169 86.6718 54.0815C84.327 56.269 81.2354 57.3628 77.3999 57.3628ZM77.3999 8.81389C75.9062 8.81389 74.8149 9.13302 74.123 9.77419C73.3241 10.5227 72.9246 11.8573 72.9246 13.7808V43.5849C72.9246 45.5084 73.3241 46.843 74.123 47.5915C74.8149 48.2327 75.9091 48.5518 77.3999 48.5518C78.9457 48.5518 80.037 48.2327 80.6768 47.5915C81.4757 46.8981 81.8752 45.5607 81.8752 43.5849V13.7808C81.8752 11.805 81.4757 10.4705 80.6768 9.77419C80.037 9.13302 78.9457 8.81389 77.3999 8.81389Z"
+                                fill="white" />
+                            <path
+                                d="M109.057 57.3628C105.326 57.3628 102.234 56.269 99.7852 54.0786C97.1192 51.4095 95.7876 47.9106 95.7876 43.582V13.7808C95.7876 9.45506 97.1192 5.95619 99.7852 3.28417C102.234 1.09376 105.326 0 109.057 0C112.896 0 115.984 1.09376 118.329 3.28417C120.992 5.84885 122.327 9.34771 122.327 13.7808V18.7476H113.532V13.7808C113.532 11.805 113.159 10.4705 112.412 9.77419C111.72 9.13302 110.6 8.81389 109.054 8.81389C107.561 8.81389 106.469 9.13302 105.777 9.77419C104.978 10.5227 104.579 11.8573 104.579 13.7808V43.5849C104.579 45.5084 104.978 46.843 105.777 47.5915C106.469 48.2327 107.563 48.5518 109.054 48.5518C110.6 48.5518 111.717 48.2327 112.412 47.5915C113.159 46.8981 113.532 45.5607 113.532 43.5849V36.3754H122.327V43.5849C122.327 48.018 120.995 51.5169 118.329 54.0815C115.984 56.269 112.893 57.3628 109.057 57.3628Z"
+                                fill="white" />
+                            <path
+                                d="M155.74 56.7245H146.306L139.512 38.7776L136.476 45.7463V56.7216H127.682V0.641174H136.476V23.3954L146.228 0.641174H155.74L144.468 27.2395L155.74 56.7245Z"
+                                fill="white" />
+                            <path d="M33.1132 0.641174H25.2598L33.1132 6.26663V0.641174Z" fill="white" />
+                            <path d="M113.532 36.3725H111.095L113.532 39.8192V36.3725Z" fill="white" />
+                            <path d="M127.682 4.39824L123.893 0.603455L127.682 0.64117V4.39824Z" fill="white" />
+                            <path d="M50.1546 55.2072L49.0083 56.7245H50.4615L50.1546 55.2072Z" fill="white" />
+                            <path d="M33.113 52.9646L29.3267 56.7622L33.113 56.7245V52.9646Z" fill="white" />
+                            <path d="M127.682 52.9646L123.893 56.7622L127.682 56.7245V52.9646Z" fill="white" />
+
                         </g>
                     </svg>
-                    </div>
-                    <div class="align12 " >
-                        <button class="button-1"> <a  class="register-button-mobile-view">Register Now!</a> </button>
-                    </div>
                 </div>
-                <!-- <div class="right-skull" >
+                <div class="align12 ">
+                    <button class="button-1"> <a class="register-button-mobile-view">Register Now!</a> </button>
+                </div>
+            </div>
+            <!-- <div class="right-skull" >
                 <img src="images/Vector2.png" alt="">
             </div> -->
 
-            </div>
         </div>
+    </div>
     </div>
 
     <div class="piano" id="piano">
@@ -518,7 +552,7 @@
                 fill="#CDCDCD" />
             <path
                 d="M6.74871 7.17453C6.74871 7.08691 8.50851 7.02849 8.591 7.02849H27.7013C27.7838 7.02849 27.8663 7.02849 27.9213 7.0577C28.6362 7.17453 29.1861 7.81714 29.1861 8.60579V225.514C29.1861 225.572 29.2411 227.442 29.2961 227.442L29.5711 230.216C29.5711 230.947 30.066 231.618 30.506 232.086C30.9459 232.553 31.7983 232.845 32.4857 232.845H44.5844C44.6393 232.845 46.4266 232.904 46.4266 232.962L49.9187 233.342C50.6611 233.342 51.2386 234.189 51.2386 234.978V329.908C51.2386 330.141 51.0461 336.597 50.8261 336.597C50.8261 338.174 49.1488 339.459 47.664 339.459H14.4753C14.2553 339.459 8.28853 339.255 8.28853 339.021C6.69372 339.021 5.40137 337.151 5.40137 335.457C5.42886 335.516 5.42886 8.60579 6.74871 7.17453Z"
-                fill="#D6D6D6" />                   
+                fill="#D6D6D6" />
             <path
                 d="M6.88671 7.11612C6.88671 7.0577 8.7015 7.02849 8.729 7.02849H27.6193C27.7018 7.02849 27.7843 7.02849 27.8393 7.0577C28.5542 7.17453 29.1041 7.81714 29.1041 8.60579V225.28C29.1041 225.309 29.1316 227.266 29.1591 227.266L29.2966 230.187C29.2966 230.947 29.6816 231.648 30.1765 232.144C30.644 232.641 31.4139 232.962 32.1288 232.962H44.2274C44.2549 232.962 46.0972 232.991 46.0972 233.02L49.7818 233.225C50.5517 233.225 51.1841 234.014 51.1841 234.831V329.645C51.1841 329.762 51.1016 336.45 50.9916 336.45C50.9916 338.115 49.4793 339.459 47.9395 339.459H14.8058C14.6958 339.459 8.53652 339.371 8.53652 339.255C6.85922 339.255 5.48438 337.56 5.48438 335.779C5.51187 335.72 5.51187 8.60579 6.88671 7.11612Z"
                 fill="#DEDEDE" />
@@ -20779,141 +20813,185 @@
 
     <audio id="audio"></audio>
 
-    <div id="about_us" >
+    <!-- About us  -->
+    <div id="about_us">
         <div id="about_us_wide">
-            <div id="about-heading">
-                <h1 id = "about-main-heading">About Us</h1>
-                <p id="about-details" style="z-index: 1;">Rock O Phonix, one of Alcheringa's signature events, is a national-level semi-professional band competition called the Holy Grail of Rock and has grown tremendously due to the region's rock-loving populace.  Rock aficionados don't need to look for heaven on earth because there will be an explosive 40,000 watts of the raw sound blast, odd outfits, and a sizable crowd head-banging.</p>
-            </div>
-            <div id="images-inline">
-                <img src="{% static '/images/image 24.png' %}" type="img/png" style="height: 15vw; width: 24vw;">
-                <img src="{% static '/images/image 2.png' %}" type="img/png"
-                    style="height: 17vw; width: 28vw; position: absolute; top: 28%; left: 31.6%;">
-                <img src="{% static '/images/image 26.png' %}" type="img/png"
-                    style="height: 15vw; width: 10vw; position: absolute; top: 70%; left: 22.2%;">
-                <img src="{% static '/images/image 1.png' %}" type="img/png"
-                    style="height: 19vw; width: 32vw; position: absolute; top: -2%; left: 59.3%;">
-            </div>
-            <br><br><br><br>
-            <div>
-                <img src="{% static 'images/Frame.png' %}" type="img/png" style="height: 22vw; width: 32vw; margin-left: 62%;">
+            <div id="about-heading_wide">
+                <h1 id="about-main-heading">About Us</h1>
+                <p id="about-details" style="z-index: 1;"> Alcheringa is the annual cultural festival of the Indian<br>
+                    Institute of Technology, Guwahati. A splendid idea realised <br>by a group of students in 1996 at
+                    IITG marked dawn of one of<br> Asia’s most exhilarating and significant cultural college fests
+                    <br>as we know it today. </p>
             </div>
         </div>
         <div id="about-us-mobile" class="about-us-mobile">
             <div id="about-heading">
-                <h1 style="border-left: 8px solid #711011; padding-left: 4%">About Us</h1>
-            </div>
-            <div
-                style="position: relative; background-image: url('{% static '/images/Vector.png'%}'); background-repeat: no-repeat; background-position: 0% 100%; background-size: 27%;">
-                <img src="{% static "/images/image 24.png"%}" type="img/png"
-                    style="margin: 2vw 0px 0px 13vw; width: 38%; height: 26%;">
-                <img src="{% static "/images/image 2.png"%}" type="img/png"
-                    style="margin: 2vw 0px 0px 13vw; width: 52%; height: 34%; margin-top: -7%; margin-left: 38%;">
-            </div>
-            <div style="text-align: center; padding: 3vw 15vw 8vw 15vw;">
-                Rock O Phonix, one of Alcheringa's signature events, is a national-level semi-professional band competition called the Holy Grail of Rock and has grown tremendously due to the region's rock-loving populace.  Rock aficionados don't need to look for heaven on earth because there will be an explosive 40,000 watts of the raw sound blast, odd outfits, and a sizable crowd head-banging.
+                <h1 style="border-left: 8px solid #711011; padding-left: 4%;padding-top:2% ;">About Us</h1>
             </div>
 
-            <div
-                style="position: relative;margin-top:2% ;background-image:url('static/images/Frame.png'); background-repeat: no-repeat; background-position: 98% 0%; background-size: 29%;">
-                <img src="{% static 'images/image 26.png' %}" type="img/png"
-                    style="margin: 2vw 0px 0px 13vw; width: 28%; height: 42%;">
-                <img src="{% static "/images/image 1.png"%}" type="img/png"
-                    style="margin: 2vw 0px 0px 13vw; width: 52%; height: 34%; margin-top: -24%; margin-left: 37%;">
+            <div style="text-align: left; padding: 7vw 18vw 4vw 10vw;">
+                Alcheringa is the annual cultural festival of the Indian Institute of Technology, Guwahati. A splendid
+                idea realised by a group of students in 1996 at IITG marked dawn of one of Asia’s most exhilarating and
+                significant cultural college fests as we know it today.
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div style="margin-bottom: 5vh;">
+        <h1 class="gallery-main-heading-mob" style="color: #C6B394;">Gallery</h1>
+    </div>
+    <div class="gallery-main">
+        <h1 class="gallery-main-heading">Gallery</h1>
+   
+        <div class="main-slider">
+
+
+            <div class="border1">
+
+            </div>
+            <div class="border2">
+
+            </div>
+
+            <div class="slider">
+
+                <div class="slide-track">
+
+                    <div class="slide sec1">
+                        <img src="{% static '/images/paris2.jpg' %}">
+                    </div>
+                    <div class="slide sec2">
+                        <img src="{% static '/images/paris3.jpg' %}">
+                    </div>
+                    <div class="slide sec1">
+                        <img src="{% static '/images/paris4.jpg' %}">
+                    </div>
+                    <div class="slide sec2">
+                        <img src="{% static '/images/paris5.jpg' %}">
+                    </div>
+                    <div class="slide sec1">
+                        <img src="{% static '/images/paris2.jpg' %}">
+                    </div>
+                    <div class="slide sec2">
+                        <img src="{% static '/images/paris3.jpg' %}">
+                    </div>
+                    <div class="slide sec1">
+                        <img src="{% static '/images/paris4.jpg' %}">
+                    </div>
+                    <div class="slide sec2">
+                        <img src="{% static '/images/paris5.jpg' %}">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-
+  
     <div id="contact_us">
+   
+        <div id="contact-main-heading">
+
+            <h1 id="c-heading">Contact Us</h1>
+        </div>
+    
         <div id="contact_us_wide">
             <div id="contact-main">
-                <div id="contact-heading">
-                    <h1 id="contact-main-heading">Contact Us</h1>
+             
+                <div class="contact-img">
+                    <img src="{% static '/images/contact.png' %}" alt="">
                 </div>
-                <div id="contact-images">
-                    <img src="{% static '/images/rahul.png' %}" style="margin-right: 3vw; width: 14vw; height: 18vw;">
-                    <!-- <img src="{% static '/images/joseph.png' %}" style="margin-right: 15vw; width: 14vw; height: 18vw;"> -->
-                    <img src="{% static '/images/alcherlogo.png' %}" style="width: 16vw; height: 19vw">
-                </div>
-            </div>
-            <footer id="footer">
-                <img class="footer-logo"src="{% static '/images/alcherlogo.png' %}" style="width: 16vw; height: 19vw">
-                <div class="footer-iit">IIT GUWAHATI'S</div>
-                <div class="footer-alcher">ALCHERINGA</div>
-                <hr>
-                <div class="footer2">
-                    <i class="bi bi-globe2" style="font-size: 2vw;"></i>
-                    <a href="https://alcheringa.in" target="_blank"
-                        style="color: #C6B394; padding-left: 1%; padding-right: 5%;">alcheringa.in</a>
-                    <i class="bi bi-envelope"  style="font-size: 2vw;"></i>
-                    <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 5%;">
-                    <a href="emailto: rocko@alcheringa.in ">rocko@alcheringa.in</a></p>
-                    <i class="bi bi-telephone"  style="font-size: 2vw;"></i>
-                    <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 15%;">+917903022011
-                    </p>
-                </div>
-                <br>
-                <div id="footer-icons">
-                    <a href="https://twitter.com/alcheringaiitg"  target="_blank"><i class="bi bi-threads" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><i class="bi bi-youtube"></i></a>
-                    <a href="https://www.facebook.com/rockophonix/" target="_blank"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://www.instagram.com/rockophonix_alcheriitg/" target="_blank"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://twitter.com/alcheringaiitg"  target="_blank"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
-                </div>
-                <br>
+                    <div id="contact-text">
+                        <p>Name - abcd</p>
+                        <p>mailid</p>
+                        <p>1234567</p>
+                    </div>
                 
-                <div class="footer-description">COPYRIGHTS © 2024 ALCHERINGA ALL RIGHTS RESERVED<br>
-                    Designed by Team Creatives and Developed by Team WebOps</div>
-            </footer>
-        </div>
-        <div id="contact-us-mobile" class="contact-us-mobile">
-            <div id="contact-heading">
-                <h1 style="border-left: 8px solid #711011; padding-left: 4%">Contact Us</h1>
             </div>
-            <div id="mobile-img-contact" class="mobile-img-contact">
-                <div style="display:flex; flex-direction: row; justify-content: center; margin-bottom: 20vw;">
-                    <img src="{% static '/images/rahul.png' %}" style="width: 30vw; height:38vw; margin-right: 6vw;">
-                    <!-- <img src="{% static '/images/joseph.png' %}" style="width: 30vw; height:38vw"> -->
-                </div>
-                <div style="display:flex; flex-direction: row; justify-content: center; padding-bottom: vw;">
-                    <img src="{% static '/images/alcherlogo.png' %}" style="width: 42vw; height: 51vw">
-                </div>
-            </div>
-            <footer id="mobile-footer">
-                <div >
-                    <img src="{% static '/images/alcherlogo.png' %}" style="width: 42vw; height: 51vw ;padding-bottom:3vw;">
-                </div>
-                <div style="display: flex; flex-flow: row;">
-                    <i class="bi bi-telephone" style="margin-right: 5%;"></i>
-                    <div style="color: #C6B394; margin-right: 15vw">+917903022011</div>
-                    <i class="bi bi-search" style="margin-right: 5%;"></i>
-                    <a href="https://alcheringa.in" target="_blank" style="color: #C6B394">alcheringa.in</a>
-                </div>
-                <div style="display: flex; flex-flow: row; padding-top: 2%; padding-bottom: 5vw;"> 
-                    <i class="bi bi-envelope" style="margin-right: 4%; font-size: 5vw"></i>
-                    <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 5%;">
-                        <a href="emailto: rocko@alcheringa.in ">rocko@alcheringa.in</a>
-                    </p>
-                </div>
-                <div>Social Media</div>
-                <div style="font-size: 5vw; margin-top: 2%">
-                   
-                    <a target="_blank" href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
-                    <a target="_blank" href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
-                    <a target="_blank" href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
-                    <a target="_blank" href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
-                </div>
-            </footer>
         </div>
+    </div>
+    <div id="contact-us-mobile" class="contact-us-mobile" style="color: #C6B394;">
+        <div id="contact-heading">
+            <h1 style="border-left: 8px solid #711011; padding-left: 4%;padding-top:2% ;">Contact Us</h1>
+        </div>
+        <div class="contact-img-mob">
+            <img src="{% static '/images/contact.png' %}" alt="">
+        </div>
+            <div id="contact-text-mob">
+                <div>Name - abcd</div>
+                <div>mailid</div>
+                <div>1234567</div>
+            </div>
+        </div>
+
     </div>
 
 
-    
+    <footer id="footer">
+        <img class="footer-logo" src="{% static '/images/alcherlogo.png' %}" style="width: 16vw; height: 19vw">
+        <div class="footer-iit">IIT GUWAHATI'S</div>
+        <div class="footer-alcher">ALCHERINGA</div>
+        <hr>
+        <div class="footer2">
+            <i class="bi bi-globe2" style="font-size: 2vw;"></i>
+            <a href="https://alcheringa.in" target="_blank"
+                style="color: #C6B394; padding-left: 1%; padding-right: 5%;">alcheringa.in</a>
+            <i class="bi bi-envelope" style="font-size: 2vw;"></i>
+            <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 5%;">
+                <a href="emailto: rocko@alcheringa.in ">rocko@alcheringa.in</a>
+            </p>
+            <i class="bi bi-telephone" style="font-size: 2vw;"></i>
+            <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 15%;">+917903022011
+            </p>
+        </div>
+        <br>
+        <div id="footer-icons">
+            <a href="https://twitter.com/alcheringaiitg" target="_blank"><i class="bi bi-threads"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.facebook.com/rockophonix/" target="_blank"><i class="bi bi-facebook"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://www.instagram.com/rockophonix_alcheriitg/" target="_blank"><i class="bi bi-instagram"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://twitter.com/alcheringaiitg" target="_blank"><i class="bi bi-twitter"
+                    style="margin-left: 3.5vw;"></i></a>
+        </div>
+        <br>
+
+        <div class="footer-description">COPYRIGHTS © 2024 ALCHERINGA ALL RIGHTS RESERVED<br>
+            Designed by Team Creatives and Developed by Team WebOps</div>
+    </footer>
 
 
 
 
+    <footer id="mobile-footer">
+        <div >
+            <img src="{% static '/images/alcherlogo.png' %}" style="width: 42vw; height: 51vw ;padding-bottom:3vw;">
+        </div>
+        <div style="display: flex; flex-flow: row;">
+            <i class="bi bi-telephone" style="margin-right: 5%;"></i>
+            <div style="color: #C6B394; margin-right: 15vw">+917903022011</div>
+            <i class="bi bi-search" style="margin-right: 5%;"></i>
+            <a href="https://alcheringa.in" target="_blank" style="color: #C6B394">alcheringa.in</a>
+        </div>
+        <div style="display: flex; flex-flow: row; padding-top: 2%; padding-bottom: 5vw;"> 
+            <i class="bi bi-envelope" style="margin-right: 4%; font-size: 5vw"></i>
+            <p style="color: #C6B394; padding-left: 1%; padding-top: 1.3vw; padding-right: 5%;">
+                <a href="emailto: rocko@alcheringa.in ">rocko@alcheringa.in</a>
+            </p>
+        </div>
+        <div>Social Media</div>
+        <div style="font-size: 5vw; margin-top: 2%">
+           
+            <a target="_blank" href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
+            <a target="_blank" href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
+            <a target="_blank" href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
+            <a target="_blank" href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
+        </div>
+    </footer>
 
 
 
@@ -20977,212 +21055,213 @@
 
     <script src="{% static '/js/nav.js' %}"></script>
     <script src="{% static '/js/registrationpage.js' %}"></script>
-    {% comment %} <script src="{% static '/js/piano.js' %}"></script> {% endcomment %}
+    {% comment %}
+    <script src="{% static '/js/piano.js' %}"></script> {% endcomment %}
     <script>
         const audio = document.getElementById('audio');
         audio.volume = 0.015;
 
-const elm1 = document.getElementById(`1_wk`);
-elm1.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/1 white key.mp3' %}";
-    audio.play();
-    console.log(`playing1`);
-});
+        const elm1 = document.getElementById(`1_wk`);
+        elm1.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/1 white key.mp3' %}";
+            audio.play();
+            console.log(`playing1`);
+        });
 
-const elm2 = document.getElementById(`2_wk`)
-elm2.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/2 white key.mp3' %}";
-    audio.play();
-    console.log(`playing2`);
-});
+        const elm2 = document.getElementById(`2_wk`)
+        elm2.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/2 white key.mp3' %}";
+            audio.play();
+            console.log(`playing2`);
+        });
 
-const elm3 = document.getElementById(`4_wk`)
-elm3.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/3 white key.mp3' %}";
-    audio.play();
-    console.log(`playing3`);
-});
+        const elm3 = document.getElementById(`4_wk`)
+        elm3.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/3 white key.mp3' %}";
+            audio.play();
+            console.log(`playing3`);
+        });
 
-const elm4 = document.getElementById(`4_wk`)
-elm4.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/4 white key.mp3' %}";
-    audio.play();
-    console.log(`playing4`);
-});
+        const elm4 = document.getElementById(`4_wk`)
+        elm4.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/4 white key.mp3' %}";
+            audio.play();
+            console.log(`playing4`);
+        });
 
-const elm5 = document.getElementById(`5_wk`)
-elm5.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/5 white key.mp3' %}";
-    audio.play();
-    console.log(`playing5`);
-});
+        const elm5 = document.getElementById(`5_wk`)
+        elm5.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/5 white key.mp3' %}";
+            audio.play();
+            console.log(`playing5`);
+        });
 
-const elm6 = document.getElementById(`6_wk`)
-elm6.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/6 white key.mp3' %}";
-    audio.play();
-    console.log(`playing6`);
-});
+        const elm6 = document.getElementById(`6_wk`)
+        elm6.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/6 white key.mp3' %}";
+            audio.play();
+            console.log(`playing6`);
+        });
 
-const elm7 = document.getElementById(`7_wk`)
-elm7.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/7 white key.mp3' %}";
-    audio.play();
-    console.log(`playing7`);
-});
+        const elm7 = document.getElementById(`7_wk`)
+        elm7.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/7 white key.mp3' %}";
+            audio.play();
+            console.log(`playing7`);
+        });
 
-const elm8 = document.getElementById(`8_wk`)
-elm8.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/8 white key.mp3' %}";
-    audio.play();
-    console.log(`playing8`);
-});
+        const elm8 = document.getElementById(`8_wk`)
+        elm8.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/8 white key.mp3' %}";
+            audio.play();
+            console.log(`playing8`);
+        });
 
-const elm9 = document.getElementById(`9_wk`)
-elm9.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/9 white key.mp3' %}";
-    audio.play();
-    console.log(`playing9`);
-});
+        const elm9 = document.getElementById(`9_wk`)
+        elm9.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/9 white key.mp3' %}";
+            audio.play();
+            console.log(`playing9`);
+        });
 
-const elm10 = document.getElementById(`10_wk`)
-elm10.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/10 white key.mp3' %}";
-    audio.play();
-    console.log(`playing10`);
-});
+        const elm10 = document.getElementById(`10_wk`)
+        elm10.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/10 white key.mp3' %}";
+            audio.play();
+            console.log(`playing10`);
+        });
 
-const elm11 = document.getElementById('11_wk')
-elm11.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/11 white key.mp3' %}";
-    audio.play();
-    console.log(`playing11`);
-});
+        const elm11 = document.getElementById('11_wk')
+        elm11.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/11 white key.mp3' %}";
+            audio.play();
+            console.log(`playing11`);
+        });
 
-const elm12 = document.getElementById(`12_wk`)
-elm12.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/12 white key.mp3' %}";
-    audio.play();
-    console.log(`playing12`);
-});
+        const elm12 = document.getElementById(`12_wk`)
+        elm12.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/12 white key.mp3' %}";
+            audio.play();
+            console.log(`playing12`);
+        });
 
-const elm13 = document.getElementById(`13_wk`)
-elm13.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/13 white key.mp3' %}";
-    audio.play();
-    console.log(`playing13`);
-});
+        const elm13 = document.getElementById(`13_wk`)
+        elm13.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/13 white key.mp3' %}";
+            audio.play();
+            console.log(`playing13`);
+        });
 
-const elm14 = document.getElementById(`14_wk`)
-elm14.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/14 white key.mp3' %}";
-    audio.play();
-    console.log(`playing14`);
-});
+        const elm14 = document.getElementById(`14_wk`)
+        elm14.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/14 white key.mp3' %}";
+            audio.play();
+            console.log(`playing14`);
+        });
 
-const elm15 = document.getElementById(`15_wk`)
-elm15.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/15 white key.mp3' %}";
-    audio.play();
-    console.log(`playing15`);
-});
+        const elm15 = document.getElementById(`15_wk`)
+        elm15.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/15 white key.mp3' %}";
+            audio.play();
+            console.log(`playing15`);
+        });
 
-const elm16 = document.getElementById(`16_wk`)
-elm16.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/16 white key.mp3' %}";
-    audio.play();
-    console.log(`playing16`);
-});
+        const elm16 = document.getElementById(`16_wk`)
+        elm16.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/16 white key.mp3' %}";
+            audio.play();
+            console.log(`playing16`);
+        });
 
-const elm17 = document.getElementById(`17_wk`)
-elm17.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/17 white key.mp3' %}";
-    audio.play();
-    console.log(`playing17`);
-});
+        const elm17 = document.getElementById(`17_wk`)
+        elm17.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/17 white key.mp3' %}";
+            audio.play();
+            console.log(`playing17`);
+        });
 
-const elm18 = document.getElementById(`18_wk`)
-elm18.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/18 white key.mp3' %}";
-    audio.play();
-    console.log(`playing18`);
-});
+        const elm18 = document.getElementById(`18_wk`)
+        elm18.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/18 white key.mp3' %}";
+            audio.play();
+            console.log(`playing18`);
+        });
 
-const elm19 = document.getElementById(`19_wk`)
-elm19.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/19 white key.mp3' %}";
-    audio.play();
-    console.log(`playing19`);
-});
+        const elm19 = document.getElementById(`19_wk`)
+        elm19.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/19 white key.mp3' %}";
+            audio.play();
+            console.log(`playing19`);
+        });
 
-const elm20 = document.getElementById(`20_wk`)
-elm20.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/20 white key.mp3' %}";
-    audio.play();
-    console.log(`playing20`);
-});
+        const elm20 = document.getElementById(`20_wk`)
+        elm20.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/20 white key.mp3' %}";
+            audio.play();
+            console.log(`playing20`);
+        });
 
-const elm21 = document.getElementById(`21_wk`)
-elm21.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/21 white key.mp3' %}";
-    audio.play();
-    console.log(`playing21`);
-});
+        const elm21 = document.getElementById(`21_wk`)
+        elm21.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/21 white key.mp3' %}";
+            audio.play();
+            console.log(`playing21`);
+        });
 
-const elm22 = document.getElementById(`22_wk`)
-elm22.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/22 white key.mp3' %}";
-    audio.play();
-    console.log(`playing22`);
-});
+        const elm22 = document.getElementById(`22_wk`)
+        elm22.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/22 white key.mp3' %}";
+            audio.play();
+            console.log(`playing22`);
+        });
 
-const elm23 = document.getElementById(`23_wk`)
-elm23.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/23 white key.mp3' %}";
-    audio.play();
-    console.log(`playing23`);
-});
+        const elm23 = document.getElementById(`23_wk`)
+        elm23.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/23 white key.mp3' %}";
+            audio.play();
+            console.log(`playing23`);
+        });
 
-const elm24 = document.getElementById(`24_wk`)
-elm24.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/24 white key.mp3' %}";
-    audio.play();
-    console.log(`playing24`);
-});
+        const elm24 = document.getElementById(`24_wk`)
+        elm24.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/24 white key.mp3' %}";
+            audio.play();
+            console.log(`playing24`);
+        });
 
-const elm25 = document.getElementById(`25_wk`)
-elm25.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/25 white key.mp3' %}";
-    audio.play();
-    console.log(`playing25`);
-});
+        const elm25 = document.getElementById(`25_wk`)
+        elm25.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/25 white key.mp3' %}";
+            audio.play();
+            console.log(`playing25`);
+        });
 
-const elm26 = document.getElementById(`26_wk`)
-elm26.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/26 white key.mp3' %}";
-    audio.play();
-    console.log(`playing26`);
-});
+        const elm26 = document.getElementById(`26_wk`)
+        elm26.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/26 white key.mp3' %}";
+            audio.play();
+            console.log(`playing26`);
+        });
 
-const elm27 = document.getElementById(`27_wk`)
-elm27.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/27 white key.mp3' %}";
-    audio.play();
-    console.log(`playing27`);
-});
+        const elm27 = document.getElementById(`27_wk`)
+        elm27.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/27 white key.mp3' %}";
+            audio.play();
+            console.log(`playing27`);
+        });
 
-const elm28 = document.getElementById(`28_wk`)
-elm28.addEventListener("mouseenter",function(){
-    audio.src = "{% static '/audio/White_keys/28 white key.mp3' %}";
-    audio.play();
-    console.log(`playing18`);
-});
+        const elm28 = document.getElementById(`28_wk`)
+        elm28.addEventListener("mouseenter", function () {
+            audio.src = "{% static '/audio/White_keys/28 white key.mp3' %}";
+            audio.play();
+            console.log(`playing18`);
+        });
 
 
 
 
     </script>
-  
+
 </body>
 
 </html>

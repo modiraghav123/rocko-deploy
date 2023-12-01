@@ -65,7 +65,7 @@ box-sizing: border-box;
 }
 body {
 
-background: var(--clr-grey-10);
+
 color: var(--clr-grey-1);
 font-family: Poppins , sans-serif;
 
@@ -209,7 +209,7 @@ padding-right: 10vw;
     box-sizing: border-box;
     position: fixed;
     background-color:#585c5c;
-    z-index:2;
+    z-index:3;
     
     
 }
