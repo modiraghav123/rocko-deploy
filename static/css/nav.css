@@ -231,6 +231,7 @@ a{
      }
    
     }
+   
     @media (min-width: 650px){
       
         
@@ -245,6 +246,9 @@ a{
          }
          #piano{
             display: none;
+        }
+        .piano-loader{
+       display: none;
         }
         .piano  svg{
             display: none;

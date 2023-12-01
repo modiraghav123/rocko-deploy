@@ -488,6 +488,10 @@
     </div>
 
     <div class="piano" id="piano">
+        <div class="piano-loader">
+
+            <img src="{% static '/images/Frame 97.png' %}" alt="">
+        </div>
         <svg class="heigth" viewBox="0 0 1440 352" fill="none" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <path
@@ -20992,67 +20996,6 @@
             <a target="_blank" href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="{% static '/js/nav.js' %}"></script>
     <script src="{% static '/js/registrationpage.js' %}"></script>
     {% comment %}
@@ -21060,7 +21003,14 @@
     <script>
         const audio = document.getElementById('audio');
         audio.volume = 0.015;
+        window.onload = function() {
+  setTimeout(loader, 2000);
+};
 
+
+        function loader() {
+            document.querySelector(".piano-loader").classList.add("hide");
+        }
         const elm1 = document.getElementById(`1_wk`);
         elm1.addEventListener("mouseenter", function () {
             audio.src = "{% static '/audio/White_keys/1 white key.mp3' %}";

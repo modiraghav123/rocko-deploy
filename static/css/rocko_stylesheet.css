@@ -215,6 +215,40 @@ margin-top: -26vh;
     background-color: #0E0E0E;
 
 }
+.piano-loader{
+    width: 100vw;
+    height: 51.5vh;
+    background-color: #0E0E0E;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+.piano-loader img{
+    animation:scaled 3s linear infinite;
+    height: 15vh;
+   
+}
+.piano-loader.hide {
+   
+    opacity: 0;
+  }
+
+@keyframes scaled {
+    0% {
+        transform: rotate( 0deg ) scale( 1 );
+      }
+     
+      50% {
+        transform: rotate( 15deg ) scale( 2 );
+      }
+      100% {
+        transform: rotate( -15deg ) scale( 3 );
+      }
+}
+
 .right-skull{
     position: absolute;
 
@@ -424,7 +458,6 @@ animation:move-rtl 10s linear infinite;
 @keyframes move-rtl {
 0%{
 transform:translateX(0);
-
 }
 100%{
 transform:translateX(calc(-100%));
