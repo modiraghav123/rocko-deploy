@@ -240,12 +240,17 @@ margin-top: -26vh;
     0% {
         transform: rotate( 0deg ) scale( 1 );
       }
-     
-      50% {
+      25% {
         transform: rotate( 15deg ) scale( 2 );
       }
+      50% {
+        transform: rotate( 0deg ) scale( 3 );
+      }
+      75% {
+        transform: rotate( -15deg ) scale( 2 );
+      }
       100% {
-        transform: rotate( -15deg ) scale( 3 );
+        transform: rotate( 0deg ) scale( 1 );
       }
 }
 
