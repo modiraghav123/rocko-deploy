@@ -208,8 +208,9 @@ padding-right: 10vw;
     justify-content: space-evenly;
     box-sizing: border-box;
     position: fixed;
-    background-color:#585c5c;
+    background-color: hsla(0,0%,10%,.5);
     z-index:3;
+    backdrop-filter: blur(4px);
     
     
 }
