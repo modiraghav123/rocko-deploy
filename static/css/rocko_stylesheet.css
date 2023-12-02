@@ -425,6 +425,18 @@ height : 37vw;
         background-position: 90% 130%;
     }
     }
+    @media (max-width:600px){
+      #about_us_wide {
+        display: none;
+    }
+      #about-heading {
+        font-size: 2.7vw;
+            border-bottom: 0.5vw solid #711011;
+                margin-right:55%;
+                border-left:none;
+                    margin-left: 10%;
+    }
+    }
 .gallery-main{
 background-color:#0E0E0E;
 padding: 2vw 0vw;
@@ -533,6 +545,18 @@ padding-bottom:0;
  margin-bottom :2%;
 
 
+}
+.slide{
+height:35vw;
+width:57vw;
+}
+.border1{
+height:43vw;
+left:12%;
+}
+.border2{
+height:43vw;
+left:83%;
 }
 .gallery-main-heading{
   display: none;
@@ -679,10 +703,22 @@ margin-top:0;
 margin-right:63%;
 margin-left:10%;
 }
-.plogo{
-padding-right:0;}
-.mlogo{
-padding-right:0;}
+.mail-mob{
+display:flex;
+align:center;
+font-size:1.5vw;
+}
+.phone-mob{
+display:flex;
+align:center;
+font-size:1.5vw;
+}
+.plogo-mob{
+padding-right:0;
+}
+.mlogo-mob{
+padding-right:0;
+}
     #contact_us{
         display: none;
     }
@@ -728,7 +764,10 @@ padding-right:0;}
     }
 
   
-
+#contact-heading{
+margin-right:45%;
+margin-left:10%;
+}
   
     #mobile-footer{
         font-size: 3.3vw;
