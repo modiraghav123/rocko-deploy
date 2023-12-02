@@ -103,7 +103,9 @@ box-shadow: var(--light-shadow);
 
 }
 .logo{
-    max-height: 10vh;
+    max-height: 14vh;
+    padding-top: 1vh;;
+    padding-bottom: 2vh;
 }
 .nav-header {
 display: flex;
@@ -111,6 +113,9 @@ align-items: right;
 justify-content: space-between;
 padding: 1rem;
 padding-bottom: 0px;
+backdrop-filter: blur(4px);
+background-color: hsla(0,0%,1%,.1);
+height:100px;
 }
 .nav-toggle {
     font-size: 3vw;
@@ -121,6 +126,7 @@ background:transparent;
 border-color: transparent;
 transition: var(--transition);
 cursor: pointer;
+
 }
 .nav-toggle:hover {
 color: var(--clr-primary-1);
@@ -164,10 +170,16 @@ padding-left: 1.5rem;
 .links {
 height: 0;
 overflow: hidden;
-transition:all 0.6s linear
+transition:all 0.6s linear;
+align-items: flex-end;
+    flex-flow: column;
+    width: 100%;
+    position: absolute;
+    display: flex;
 }
 .show-links {
 height: 13rem;
+
 }
 @media screen and (min-width: 650px) {
 .nav-center {
@@ -187,6 +199,7 @@ display: none;
 .links {
 height: auto;
 display: flex;
+position: absolute;
 }
 .links a {
 padding: 0;
@@ -208,8 +221,9 @@ padding-right: 10vw;
     justify-content: space-evenly;
     box-sizing: border-box;
     position: fixed;
-    background-color:#585c5c;
+    background-color: hsla(0,0%,10%,.5);
     z-index:3;
+    backdrop-filter: blur(4px);
     
     
 }

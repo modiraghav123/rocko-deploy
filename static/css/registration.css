@@ -352,17 +352,19 @@ ul.ks-cboxtags li label:focus {
 
 
 .popup{
-    position:fixed;
+    position:absolute;
     left:0px;
     width:0%;
     height:0%;
     transform:translateY(-50%);
     top:50%;
-    overflow-y: auto;
+    overflow:hidden;
+    
     z-index:5;
     background: #fff;
 
 }
+
 .registration-page{
     opacity: 0;
 
@@ -377,7 +379,7 @@ ul.ks-cboxtags li label:focus {
 }
 .popup.active .registration-page{
     opacity: 1;
-    transition: all 300ms ease-in-out 1500ms;
+    transition: all 600ms ease-in-out 1500ms;
     
 }
 
@@ -386,13 +388,43 @@ ul.ks-cboxtags li label:focus {
     0%{
         width:0%;
         height:0%;
+        
     }
     50%{
-        width:100%;
-        height:2px;
+        width:80%;
+        height:5px;
+        margin-left: 10%;
+        margin-right: 10%;
+        
+        
     }
     100%{
-        width:100%;
-        height:100%;
+        width:80%;
+        height:auto;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 450px;;        
+        
+    }
+}
+@media screen and (max-width: 710px) {
+    @keyframes popupAnimation {
+        0% {
+            width: 0%;
+            height: 0%;
+        }
+        50% {
+            width: 80%;
+            height: 5px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        100% {
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 720px;
+        }
     }
 }

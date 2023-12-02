@@ -131,13 +131,13 @@ margin-top: -26vh;
 .ROCKO{
     display: flex;
     flex-flow:column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
     
     
-    background-image:url("../images/homepage.png")  ;
+    background-image:url("../images/homepage.jpg")  ;
     
     background-size: cover;
     object-position: center;
@@ -157,10 +157,11 @@ margin-top: -26vh;
     width:100%;
     display: flex;
     flex-flow:column;
-    justify-content: flex-end;
-    align-items:flex-end;
-    padding-right:10%;
+    justify-content: flex-start;
+    align-items:flex-start;
+    padding-left:10%;
     box-sizing:border-box;
+    
     
 
 }
@@ -265,9 +266,11 @@ margin-top: -26vh;
 @media (max-width: 650px) { 
     .top_part{
 
-        background-image:url("../images/homepage.png")  ;
+        background-image:url("../images/homepage.jpg")  ;
         background-repeat: no-repeat;
-        background-size: 100vw 85vh;
+        background-size: auto;
+        background-position: center;
+        image-rendering: pixelated;
 background-color: #0E0E0E;
 
 
@@ -325,7 +328,17 @@ background-color: #0E0E0E;
     .ROCKO{
         display: flex;
      
-        padding-top:50vh;
+        padding-top:35vh;
+     
+       } 
+       
+       
+}
+@media (max-width:1200px) {
+    .ROCKO{
+        display: flex;
+     
+        padding-top:30vh;
      
        } 
        
@@ -668,6 +681,19 @@ margin-top:0;
 }
 .footer-alcher{
     font-size: 3.172vw;
+    font-weight: 1000;
+    width:80%;
+    border-bottom: 2px solid #C5B29399;
+    text-align: center;
+    
+
+}
+.mobile-footer-iit{
+    margin-top: 2%;
+    font-size:2vw;
+}
+.mobile-footer-alcher{
+    font-size: 4vw;
     font-weight: 1000;
     width:80%;
     border-bottom: 2px solid #C5B29399;
