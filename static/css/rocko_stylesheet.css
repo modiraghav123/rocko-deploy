@@ -268,7 +268,9 @@ margin-top: -26vh;
 
         background-image:url("../images/homepage.jpg")  ;
         background-repeat: no-repeat;
-        background-size: 100vw 85vh;
+        background-size: auto;
+        background-position: center;
+        image-rendering: pixelated;
 background-color: #0E0E0E;
 
 
@@ -633,6 +635,19 @@ margin-left: 10%;
 }
 .footer-alcher{
     font-size: 3.172vw;
+    font-weight: 1000;
+    width:80%;
+    border-bottom: 2px solid #C5B29399;
+    text-align: center;
+    
+
+}
+.mobile-footer-iit{
+    margin-top: 2%;
+    font-size:2vw;
+}
+.mobile-footer-alcher{
+    font-size: 4vw;
     font-weight: 1000;
     width:80%;
     border-bottom: 2px solid #C5B29399;
