@@ -450,6 +450,20 @@ height : 37vw;
                     margin-left: 10%;
     }
     }
+    @media(max-width:400px){
+     #about_us_wide {
+        display: none;
+    }
+      #about-heading {
+        font-size: 2.7vw;
+            border-bottom: 0.5vw solid #711011;
+                margin-right:45%;
+                border-left:none;
+                    margin-left: 10%;
+                   margin-top:3%;
+
+    }
+    }
 .gallery-main{
 background-color:#0E0E0E;
 padding: 2vw 0vw;
@@ -736,6 +750,7 @@ font-size:1.5vw;
 }
 .phone-mob{
 display:flex;
+justify-content: space evenly;
 align:center;
 font-size:1.5vw;
 }
@@ -778,7 +793,7 @@ padding-right:0;
         }
 
 }
-@media (max-width: 580px) {
+@media (max-width: 400px) {
 
     #footer{
         display: none;
@@ -791,7 +806,7 @@ padding-right:0;
 
   
 #contact-heading{
-margin-right:45%;
+margin-right:38%;
 margin-left:10%;
 }
   
@@ -809,4 +824,19 @@ margin-left:10%;
         justify-items: center;
         align-items: center;
     }
+}
+@media (max-width: 150px){
+  #footer{
+        display: none;
+    }
+
+
+    #contact_us_wide {
+        display: none;
+    }
+#contact-heading{
+margin-right:10%;
+margin-left:10%;
+}
+
 }
