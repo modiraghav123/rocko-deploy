@@ -288,11 +288,23 @@ input[type='checkbox'] {
     
 }
 
-@media (max-width: 460px){
+@media (min-width: 351px) and (max-width: 460px){
     .registration{
         font-size:38px;
     }
 }
+@media (min-width: 461px) and (max-width: 580px){
+    .registration{
+        font-size: 45px;
+    }
+}
+@media (max-width:350px){
+    .registration{
+        font-size: 30px;
+    }
+     
+}
+
 
 .modal-list2-active {
     cursor: pointer;
