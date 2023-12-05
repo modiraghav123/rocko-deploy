@@ -422,10 +422,10 @@ height : 37vw;
     #about-us-mobile {
         display: block;
 
-        background-image:url("../images/rocko.svg")  ;
+        background-image:url("../images/skullfinal.png")  ;
         background-repeat: no-repeat;
-        background-size: 28%;
-        background-position: 100% 20%;
+        background-size: 70%;
+        background-position: 190% 25%;
         padding-bottom: 4vw;
       
         /* backface-visibility: initial; */
@@ -448,6 +448,7 @@ height : 37vw;
                 margin-right:55%;
                 border-left:none;
                     margin-left: 10%;
+                      padding-top:2%;
     }
     }
     @media(max-width:400px){
@@ -461,6 +462,7 @@ height : 37vw;
                 border-left:none;
                     margin-left: 10%;
                    margin-top:3%;
+                   padding-top:2%;
 
     }
     }
@@ -768,6 +770,10 @@ padding-right:0;
         flex-direction: column;
         align-content: center;
         padding-top: 7vw;
+        background-image:url("../images/skullfinal.png")  ;
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: -170% 35%;
     }
     #contact-text-mob{
         font-size:1rem;
@@ -825,7 +831,7 @@ margin-left:10%;
         align-items: center;
     }
 }
-@media (max-width: 150px){
+@media (max-width: 300px){
   #footer{
         display: none;
     }
@@ -835,7 +841,22 @@ margin-left:10%;
         display: none;
     }
 #contact-heading{
-margin-right:10%;
+margin-right:30%;
+margin-left:10%;
+}
+
+}
+@media (max-width: 500px){
+  #footer{
+        display: none;
+    }
+
+
+    #contact_us_wide {
+        display: none;
+    }
+#contact-heading{
+margin-right:42%;
 margin-left:10%;
 }
 
