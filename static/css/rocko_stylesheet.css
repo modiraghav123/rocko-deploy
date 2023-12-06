@@ -351,7 +351,7 @@ background-color: #0E0E0E;
     font-family: 'Poppins';
     background-color: #0E0E0E;
     color: #C6B394;
-    padding-bottom: 4vw;
+   
 }
 
 #about_us_wide {
@@ -380,15 +380,16 @@ height : 37vw;
 #about-main-heading {
     border-bottom: 0.5vw solid #711011;
     padding-left: 0;
-    margin-right:80%;
-    margin-bottom: 5%;
+   
+    
     font-size: 3.3vw;
-    /* border-bottom: 10px; */
+ 
     margin-left:0%;
 }
 
 #about-details {
     text-align:left;
+    margin-top: 5%;
     padding-left:0vh;
     font-size: 1.5vw;
 }
@@ -408,11 +409,10 @@ height : 37vw;
 @media (max-width: 760px) {
 
     #about-heading {
-        font-size: 2.7vw;
-            border-bottom: 0.5vw solid #711011;
-                margin-right:68%;
-                border-left:none;
-                    margin-left: 10%;
+        font-size: calc(1.375rem + 1.5vw);
+          
+             
+                 
     }
 
     #about_us_wide {
@@ -442,28 +442,11 @@ height : 37vw;
       #about_us_wide {
         display: none;
     }
-      #about-heading {
-        font-size: 2.7vw;
-            border-bottom: 0.5vw solid #711011;
-                margin-right:55%;
-                border-left:none;
-                    margin-left: 10%;
-                      padding-top:2%;
-    }
+  
     }
     @media(max-width:400px){
      #about_us_wide {
         display: none;
-    }
-      #about-heading {
-        font-size: 2.7vw;
-            border-bottom: 0.5vw solid #711011;
-                margin-right:45%;
-                border-left:none;
-                    margin-left: 10%;
-                   margin-top:3%;
-                   padding-top:2%;
-
     }
     }
 .gallery-main{
@@ -477,7 +460,7 @@ color:#C6B394;
 .gallery-main-heading {
     border-bottom: 0.5vw solid #711011;
     padding-left: 0;
-    margin-right:78%;
+    
     margin-bottom: 7vw;
     margin-left:10%;
     font-size: 3.3vw;
@@ -562,10 +545,10 @@ z-index:2;
 height:5vw;
 
      }
-
      .gallery-main-heading-mob{
-     display: none;
-    }
+        display: none;
+       }
+
 @media (max-width: 760px){
 #gallery{
 padding-left:3vw;
@@ -591,10 +574,8 @@ left:83%;
   display: none;
 }
 .gallery-main-heading-mob{
-  border-bottom: 0.5vw solid #711011;
-    margin-left: 10%;
-    padding-top:2% ;
-    display: initial;
+    font-size: calc(1.375rem + 1.5vw);
+   display: initial;
 }
 
 }
@@ -646,7 +627,7 @@ margin-right:1vw;}
     border-bottom: 0.5vw solid #711011;
     padding-left: 0;
     font-size: 3.3vw;
-    margin-right: 75%;
+    
   
     margin-left: 0%;
 }
@@ -742,19 +723,18 @@ margin-top:0;
 
 @media (max-width: 760px) {
 #contact-heading{
-margin-right:63%;
-margin-left:10%;
+    font-size: calc(1.375rem + 1.5vw);
+ 
 }
 .mail-mob{
 display:flex;
-align:center;
-font-size:1.5vw;
+gap: 2vw;
+
 }
 .phone-mob{
 display:flex;
-justify-content: space evenly;
-align:center;
-font-size:1.5vw;
+gap: 2vw;
+
 }
 .plogo-mob{
 padding-right:0;
@@ -775,19 +755,7 @@ padding-right:0;
         background-size: 80%;
         background-position: -175% 35%;
     }
-    #contact-text-mob{
-        font-size:1rem;
-      display: flex;
-      flex-direction: column;
-
-     justify-content: center;
-     align-items: center;
-     margin-right:25%;
-     margin-left:25%;
-        }
-        #contact-text-mob div{
-            width: 40vw;
-        }
+   
     .contact-img-mob{
         width: 100%;
         display: flex;
@@ -795,7 +763,7 @@ padding-right:0;
         margin: 5% 0%;
     }
     .contact-img-mob img{ 
-            width: 40vw;
+            width: 45vw;
         }
 
 }
@@ -811,10 +779,7 @@ padding-right:0;
     }
 
   
-#contact-heading{
-margin-right:38%;
-margin-left:10%;
-}
+
   
     #mobile-footer{
         font-size: 3.3vw;
@@ -840,10 +805,7 @@ margin-left:10%;
     #contact_us_wide {
         display: none;
     }
-#contact-heading{
-margin-right:30%;
-margin-left:10%;
-}
+
 
 }
 @media (max-width: 500px){
@@ -855,9 +817,6 @@ margin-left:10%;
     #contact_us_wide {
         display: none;
     }
-#contact-heading{
-margin-right:42%;
-margin-left:10%;
-}
+
 
 }
