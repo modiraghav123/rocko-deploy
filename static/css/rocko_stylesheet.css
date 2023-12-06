@@ -411,7 +411,8 @@ height : 37vw;
     #about-heading {
         font-size: calc(1.375rem + 1.5vw);
           
-             
+        border-bottom: 0.5vw solid #711011;
+    
                  
     }
 
@@ -537,7 +538,6 @@ z-index:2;
     color: #C6B394;
     padding-bottom: 4vw;
     border-bottom: 0.5vw solid #711011;
-    
     margin-left: 19%;
     margin-right:73%;
     padding-left:0vw;
@@ -576,6 +576,8 @@ left:83%;
 .gallery-main-heading-mob{
     font-size: calc(1.375rem + 1.5vw);
    display: initial;
+   border-bottom: 0.5vw solid #711011;
+   
 }
 
 }
@@ -724,7 +726,7 @@ margin-top:0;
 @media (max-width: 760px) {
 #contact-heading{
     font-size: calc(1.375rem + 1.5vw);
- 
+    border-bottom: 0.5vw solid #711011;
 }
 .mail-mob{
 display:flex;
