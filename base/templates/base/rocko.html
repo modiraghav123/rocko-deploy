@@ -94,7 +94,7 @@
                         <div class="popup-close-btn page-heading registration">&times;</div>
             </div>
             <br><br><br>
-            <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content"
+            <form method="POST" id="info" action="{% url 'index' %}" id="RollForm" class="rg form-content"
                 class="reg-form-all">
                 {% csrf_token %}
                 <div class="row-view">
@@ -113,17 +113,17 @@
                     <div class="sections ">
 
 
-                        <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
+                        
 
                         <p>
                             <label for="team_name" class="head-style ">Team Name</label>
                             <span class="red-star"> *</span>
-                            <input class="input-text-field " required type="text" name="teamName" />
+                            <input class="input-text-field " required type="text" name="team_name" />
                         </p>
                         <p>
                             <label for="team_name" class="head-style ">Previous Performance Link</label>
                             <span class="red-star"> *</span>
-                            <input class="input-text-field " required type="text" name="performance" />
+                            <input class="input-text-field " required type="text" name="prev_link" />
                         </p>
 
 
@@ -159,6 +159,7 @@
                             <div class="counter">
                                 <img class="minus-1" src={% static '/images/minus.png' %}>
                                 <span class="num-1">0</span>
+                                <input class="num_input-1 "  type="hidden" value="0" name="num_drummer"/>
                                 <img class="plus-1" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
@@ -167,6 +168,7 @@
                             <div class="counter">
                                 <img class="minus-2" src={% static '/images/minus.png' %}>
                                 <span class="num-2">0</span>
+                                <input class="num_input-2 "  type="hidden" value="0" name="num_bassist"/>
                                 <img class="plus-2" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
@@ -181,6 +183,7 @@
                             <div class="counter">
                                 <img class="minus-3" src={% static '/images/minus.png' %}>
                                 <span class="num-3">0</span>
+                                <input class="num_input-3 "  type="hidden" value="0" name="num_guitarist"/>
                                 <img class="plus-3" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
@@ -191,6 +194,7 @@
                             <div class="counter">
                                 <img class="minus-4" src={% static '/images/minus.png' %}>
                                 <span class="num-4">0</span>
+                                <input class="num_input-4 "  type="hidden" value="0" name="num_vocalist"/>
                                 <img class="plus-4" src={% static '/images/plus.png' %}>
                             </div>
                         </div>
@@ -217,13 +221,13 @@
                                 <label for="name_leader" class="head-style ">Name</label>
                                 <span class="red-star"> *</span>
 
-                                <input class="input-text-field " required type="text" name="name" />
+                                <input class="input-text-field " required type="text" name="leaders_name" />
                             </p>
                             <p>
                                 <label for="phone_leader" class="head-style ">Phone</label>
                                 <span class="red-star"> *</span>
 
-                                <input class="input-text-field " required type="email" name="phoneNumber" />
+                                <input class="input-text-field " required type="text" name="leaders_contact_number" />
                             </p>
                         </div>
 
@@ -237,12 +241,12 @@
                                 <label for="gender_leader" class="head-style ">Gender</label>
                                 <span class="red-star"> *</span>
 
-                                <input class="input-text-field " required type="text" name="gender" />
+                                <input class="input-text-field " required type="text" name="leaders_gender" />
                             </p>
                             <p>
                                 <label for="email_leader" class="head-style ">Email ID</label>
                                 <span class="red-star"> *</span>
-                                <input class="input-text-field " required type="text" name="email" />
+                                <input class="input-text-field " required type="email" name="leaders_email" />
                             </p>
                         </div>
                     </div>
@@ -253,28 +257,28 @@
                 <div class="row-view" style="width:83%">
                     <div class="artist-checkbox">
 
-                        <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue"
+                        <input type="checkbox" class="checkbox" name="drummer" 
                             style="margin-right:20px;">
                         <label for="check-drummer"
                             style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
                     </div>
                     <div class="artist-checkbox">
 
-                        <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue"
+                        <input type="checkbox" class="checkbox" name="bassist" 
                             style="margin-right:30px;">
                         <label for="check-bassist"
                             style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
                     </div>
                     <div class="artist-checkbox">
 
-                        <input type="checkbox" class="checkbox" name="check-guitarist" value="checkboxValue"
+                        <input type="checkbox" class="checkbox" name="guitarist" 
                             style="margin-right:20px;">
                         <label for="check-guitarist"
                             style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
                     </div>
                     <div class="artist-checkbox">
 
-                        <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue"
+                        <input type="checkbox" class="checkbox" name="vocalist" 
                             style="margin-right:20px;">
                         <label for="check-vocalist"
                             style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
@@ -294,7 +298,17 @@
                     </div>
                     <div class="sections m-5"></div>
                 </div>{% endcomment %}
-                <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
+                
+        </div>
+                <div class="row-view" style="padding:2.5%; display: flex;flex-direction: row;">
+                <button class="button-addmember" style="padding-right:2rem ;padding-left: 2rem;padding-top: 0.5rem;padding-bottom: 0.5rem;display: flex;flex-direction: row;font-weight: 600;background-color:C6B394;" onclick="addMem()">
+                <img
+                    class="person-addmember"
+                    src="{% static 'images\Frame 74.png' %}"
+                />
+                <p style="margin-bottom:0rem;padding-left: 0.5rem;" > Add Member</p>
+                </button>
+                </button>
                     <button type="submit" class=" register-button"
                         style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
                 </div>
@@ -20994,6 +21008,7 @@
             <a target="_blank" href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer>
+    <script src="{% static '/js/main.js' %}"></script>
     <script src="{% static '/js/nav.js' %}"></script>
     <script src="{% static '/js/registrationpage.js' %}"></script>
     {% comment %}
