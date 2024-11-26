@@ -147,7 +147,7 @@
     }
 
     .page-heading {
-        {% comment %} height: 134px; {% endcomment %}
+        /* {% comment %} height: 134px; {% endcomment %} */
         width: 100%;
         padding:1vh;
         padding-top:13vh;
@@ -232,11 +232,13 @@
     }
 
     .form-content {
-        background-image: url("{%static "images/rocko.png"%}");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
+    background-image: url("{% static 'images/rocko.png' %}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 100vh; /* Adjust height if needed */
+    width: 100%; /* Adjust width if needed */
+} 
 
     .rem-btn {
         padding-top: 1.5vw;

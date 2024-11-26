@@ -27,7 +27,14 @@
 
 </head>
 <style>
+   
+    
     /* svg styles */
+    #otp,
+    #verifyOtpBtn {
+        display: none;
+        /* Initially hide OTP input and button */
+    }
 
     g path {
         animation: mymove 0.7s infinite;
@@ -87,6 +94,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
 
 <body>
+    
+
     <div class="popup">
         <div class="registration-page">
             <div class=" page-heading registration">
@@ -121,7 +130,7 @@
                             <input class="input-text-field " required type="text" name="teamName" />
                         </p>
                         <p>
-                            <label for="team_name" class="head-style ">Previous Performance Link</label>
+                            <label for="performance" class="head-style ">Previous Performance Link</label>
                             <span class="red-star"> *</span>
                             <input class="input-text-field " required type="text" name="performance" />
                         </p>
@@ -223,7 +232,7 @@
                                 <label for="phone_leader" class="head-style ">Phone</label>
                                 <span class="red-star"> *</span>
 
-                                <input class="input-text-field " required type="email" name="phoneNumber" />
+                                <input class="input-text-field " required type="string" name="phoneNumber" />
                             </p>
                         </div>
 
@@ -242,13 +251,42 @@
                             <p>
                                 <label for="email_leader" class="head-style ">Email ID</label>
                                 <span class="red-star"> *</span>
-                                <input class="input-text-field " required type="text" name="email" />
+                                <input class="input-text-field " required type="text" name="email" id="email"/>
                             </p>
                         </div>
                     </div>
 
                 </div>
                 <br>
+               
+                
+                <div class="row-view" style="width: 83%;">
+
+
+                    <!-- Send OTP Button -->
+                    <button type="button" id="sendOtpBtn" class="register-button" style="margin-top: 10px;"
+                        onclick="sendOTP()">
+                        Send OTP
+                    </button>
+
+                    <!-- OTP Input (hidden initially) -->
+                    <p style="margin-top: 10px; display: none;" id="otpInputContainer">
+                        <label for="otp" class="head-style">Enter OTP</label>
+                        <input class="input-text-field" type="text" name="otp" id="otp" required
+                            style="display: none;" />
+                    </p>
+
+                    <button type="button" id="verifyOtpBtn" class="register-button"
+                        style="margin-top: 10px; display: none;" onclick="verifyOTP()">
+                        Verify OTP
+                    </button>
+
+                    <!-- Messages -->
+                    <p id="otpMessage"></p>
+                    <p id="verifyOtpMessage"></p>
+                    
+                </div>
+                <div id="registerMessage" style="color: red; margin-top: 10px;"></div>
 
                 <div class="row-view" style="width:83%">
                     <div class="artist-checkbox">
@@ -21031,11 +21069,119 @@
     {% comment %}
     <script src="{% static '/js/piano.js' %}"></script> {% endcomment %}
     <script>
+        function sendOTP() {
+            const email = document.getElementById('email').value;
+            const otpMessageElement = document.getElementById('otpMessage');
+            if (!email) {
+                if (otpMessageElement) {
+                otpMessageElement.innerText = 'Please enter a valid email address.';
+                }
+                return;
+            }
+            fetch("{% url 'send_otp' %}", {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': '{{ csrf_token }}',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({ 'email': email })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (otpMessageElement) {
+                        otpMessageElement.innerText = data.message;
+                    }
+            if (data.status === 'success') {
+                const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+                const otpInput = document.getElementById('otp');
+                const otpInputContainer = document.getElementById('otpInputContainer');
+
+                if (verifyOtpBtn) verifyOtpBtn.style.display = 'block';
+                if (otpInput) otpInput.style.display = 'block';
+                if (otpInputContainer) otpInputContainer.style.display = 'block';
+                }
+            })
+            .catch(error => {
+                if (otpMessageElement) {
+                otpMessageElement.innerText = 'Error sending OTP: ' + error.message;
+            }
+
+            });
+        }
+
+        function verifyOTP() {
+        const email = document.getElementById('email').value;
+        const otp = document.getElementById('otp').value;
+        const verifyOtpMessageElement = document.getElementById('verifyOtpMessage');
+        const otpFeedbackMessageElement = document.getElementById('otpFeedbackMessage');
+        fetch("{% url 'verify_otp' %}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({ 'email': email, 'otp': otp })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (verifyOtpMessageElement) {
+                verifyOtpMessageElement.innerText = data.message;
+            }
+            
+            if (data.status === 'success') {
+                const sendOtpBtn = document.getElementById('sendOtpBtn');
+                if (sendOtpBtn) sendOtpBtn.style.display = 'none';
+                // document.getElementById('verifyOtpBtn').style.display = 'none'; // Hide verify OTP button
+                // document.getElementById('otpInputContainer').style.display = 'none'; // Hide OTP input
+            }
+            else {
+                if (otpFeedbackMessageElement) {
+                    otpFeedbackMessageElement.innerText = 'Error: ' + data.message;
+                }
+            }
+        })
+        .catch(error => {
+            if (verifyOtpMessageElement) {
+                verifyOtpMessageElement.innerText = 'Error verifying OTP: ' + error.message;
+            }
+           
+        });
+    }
+
+    function register() {
+        const email = document.getElementById('email').value;
+        const registerMessageElement = document.getElementById('registerMessage');
+        
+        fetch("{% url 'register' %}", {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({ 'email': email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                window.location.href = data.redirect_url;
+            } else if (registerMessageElement) {
+                registerMessageElement.innerText = data.message;
+            }
+        })
+        .catch(error => {
+            if (registerMessageElement) {
+                registerMessageElement.innerText = 'Error registering: ' + error.message;
+            }
+        });
+    }
+                
+         
         const audio = document.getElementById('audio');
         audio.volume = 0.015;
         window.onload = function () {
             setTimeout(loader, 2000);
         };
+
 
 
         function loader() {

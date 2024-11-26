@@ -110,13 +110,15 @@
         border-width: 2px;
         font-size: 16px;
     }
-    label{
-        align-items:center;
-        font-size: 12px; 
+
+    label {
+        align-items: center;
+        font-size: 12px;
         font-weight: 500;
     }
-    input[type='checkbox']{
-        margin-right:2px;
+
+    input[type='checkbox'] {
+        margin-right: 2px;
     }
 
     .drop-down {
@@ -138,20 +140,21 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin: auto; 
-        
+        margin: auto;
+
     }
-    .rem{
+
+    .rem {
         justify-content: space-between;
-        width:75%;
-        align-items:center;
+        width: 75%;
+        align-items: center;
     }
 
     .page-heading {
-         height: 134px; 
+        height: 134px;
         width: 100%;
-        padding:1vh;
-        
+        padding: 1vh;
+
         background-color: #282826;
         color: white;
         font-family: 'Poppins';
@@ -160,56 +163,59 @@
         font-size: 64px;
         line-height: 96px;
         text-align: center;
-        display:flex;
-        justify-content:space-evenly;
-        align-items:center;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
-    
-   
-    
-    .counter{
-         height:42px;
-         min-width:133px;
-         max-width:133px;
-         border-radius: 50px 50px 50px 50px;
-         border: 1px solid black;
-         display:flex;
-         flex-direction:row;
-         justify-content:center;
-         align-items:center;
-         padding:0.5vw;
-         padding-top:3vh;
-         padding-bottom:3vh;
 
-         
 
-    }
-    .counter span{
-        width:100%;
-        text-align:center;
-        font-weight:600;
-        cursor:pointer;
-    }
-    .counter span.num{
-        font-size:1.3vw;
-        pointer-events:none;
-        text-align:center;
-    }
-    .artist-type{
-        display:flex;
-        flex-direction:row;
-        justify-content:left;
-        
-        align-items:center;
-        padding-right:11vw;
-        padding-bottom:2vw;
+
+    .counter {
+        height: 42px;
+        min-width: 133px;
+        max-width: 133px;
+        border-radius: 50px 50px 50px 50px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5vw;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+
+
 
     }
-   
+
+    .counter span {
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .counter span.num {
+        font-size: 1.3vw;
+        pointer-events: none;
+        text-align: center;
+    }
+
+    .artist-type {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+        align-items: center;
+        padding-right: 11vw;
+        padding-bottom: 2vw;
+
+    }
+
 
     .register-button {
         height: 40px;
-        align-items:center;
+        align-items: center;
         background: #C6B394;
         font-style: normal;
         font-weight: 500;
@@ -224,46 +230,49 @@
     ul.ks-cboxtags li label:focus {
         box-shadow: 0 4px 15px 0 #C6B394;
     }
-    .namep{
-        margin-bottom:28px;
+
+    .namep {
+        margin-bottom: 28px;
     }
 
-    .artist-checkbox{
-        display:flex;
-        flex-direction:row;
-        justify-content:left;
-        align-items:center;
-        width:150px;
-        height:50px;
-        border-radius:10px;
-        margin-bottom:20px;
-        
-        
+    .artist-checkbox {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        width: 150px;
+        height: 50px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+
+
     }
-    .checkbox{
-        width:22px;
-        
-        
+
+    .checkbox {
+        width: 22px;
+
+
     }
-        
+
     input[type="checkbox"] {
-        transform: scale(2.5); 
-        
-        margin-left:18px; 
+        transform: scale(2.5);
+
+        margin-left: 18px;
     }
-       
+
 
     input[type='checkbox'] {
         accent-color: #34D67E;
-         
+
     }
-    
-    
-   
+
+
+
     @media only screen and (orientation: portrait) {
-        .namep{
-            margin-bottom:9px;
+        .namep {
+            margin-bottom: 9px;
         }
+
         .row-view {
             flex-direction: column;
             justify-content: space-around;
@@ -277,22 +286,24 @@
 
         .page-heading {
             font-size: 56px;
-            padding-top:0vh;
+            padding-top: 0vh;
         }
 
         .input-text-field {
             min-width: none;
             width: 100%;
         }
-        .page-heading img{
-            display:none;
+
+        .page-heading img {
+            display: none;
         }
-        
-        
+
+
     }
-    @media (max-width: 350px){
-        .registration{
-            font-size:43px;
+
+    @media (max-width: 350px) {
+        .registration {
+            font-size: 43px;
         }
     }
 
@@ -320,11 +331,10 @@
     }
 
     .form-content {
-        background-image: url("{%static "images/rocko.png"%}");
+        background-image: url("{% static 'images/rocko.png' %}");
         background-repeat: no-repeat;
         background-position: center;
         background-size: 50% auto;
-        
     }
 
     .rem-btn {
@@ -348,10 +358,11 @@
     }
 </style>
 {% load static%}
+
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -383,15 +394,15 @@
                 <a href="{% url 'index' %}#about_us" class="nav_link">About us</a>
             </div>
             <div class="nav_bar_text">
-                <a href="{% url 'index' %}#contact_us"class="nav_link">Contact Us</a>
+                <a href="{% url 'index' %}#contact_us" class="nav_link">Contact Us</a>
             </div>
         </div>
-        <div class="alcher_logo" >
+        <div class="alcher_logo">
             <img src="{% static 'images/alcher_logo.png' %}">
         </div>
     </div> {% endcomment %}
     {% comment %} <div class="nav_mob_view" style="padding-top: 2vh; padding:1vh;background-color: #282826;">
-        
+
         {% comment %} <ul class="links ">
             <li>
                 <a href="{% url 'index'%}">Home</a>
@@ -406,70 +417,72 @@
                 <a href="{% url 'index'%}#contact_us">Contact us</a>
             </li>
         </ul> {% endcomment %}
-    
-    
-    <div class="page-heading registration" >Registration</div>
-    <br><br><br>
-    <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content" class="reg-form-all">
-        {% csrf_token %}
-        <div class="row-view">
-            <div class="sections " >
-                <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:175px; ">Team Details</h1>
-                <p style="padding-top:1vh;">All fields marked with <span class="red-star"> *</span> are mandatory.</p>
+
+
+        <div class="page-heading registration">Registration</div>
+        <br><br><br>
+        <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content" class="reg-form-all">
+            {% csrf_token %}
+            <div class="row-view">
+                <div class="sections ">
+                    <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:175px; ">Team
+                        Details</h1>
+                    <p style="padding-top:1vh;">All fields marked with <span class="red-star"> *</span> are mandatory.
+                    </p>
+                </div>
+                <div class="sections "></div>
             </div>
-            <div class="sections " ></div>
-        </div>
-        <br><br>
-        <div class="row-view">
-            
-            
-            <div class="sections ">
-                
+            <br><br>
+            <div class="row-view">
 
-                <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
 
-                <p>
-                    <label for="team_name" class="head-style ">Team Name</label>
+                <div class="sections ">
+
+
+                    <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
+
+                    <p>
+                        <label for="team_name" class="head-style ">Team Name</label>
+                        <span class="red-star"> *</span>
+
+                        <input class="input-text-field " required type="text" name="teamName" />
+                    </p>
+                    <p>
+                        <label for="team_name" class="head-style ">Previous Performance Link</label>
+                        <span class="red-star"> *</span>
+                        <input class="input-text-field " required type="text" name="performance" />
+                    </p>
+
+
+                </div>
+
+                <div class="sections ">
+
+                    <p>
+                        <label for="city" class="head-style ">City</label>
+                        <span class="red-star"> *</span>
+
+                        <input class="input-text-field " required type="text" name="city" />
+                    </p>
+                </div>
+
+            </div>
+            <br>
+            <div class="row-view">
+                <div class="sections ">
+                    <label for="no-of-members" class="head-style ">Number of Members</label>
                     <span class="red-star"> *</span>
-
-                    <input class="input-text-field " required type="text" name="teamName" />
-                </p>
-                <p>
-                    <label for="team_name" class="head-style ">Previous Performance Link</label>
-                    <span class="red-star"> *</span>
-                    <input class="input-text-field " required type="text" name="performance" />
-                </p>
-           
-                
-             </div>
-        
-            <div class="sections ">
-                
-                <p>
-                    <label for="city" class="head-style ">City</label>
-                    <span class="red-star"> *</span>
-
-                    <input class="input-text-field " required type="text" name="city" />
-                </p>
+                </div>
+                <div class="sections ">
+                </div>
             </div>
-            
-        </div>
-       <br>
-        <div class="row-view">
-            <div class="sections ">
-                <label for="no-of-members" class="head-style ">Number of Members</label>
-                <span class="red-star"> *</span>
-            </div>
-            <div class="sections ">
-            </div>
-        </div>
-        <br>
-        
-        <div class="row-view">
-            
-            <div class="sections " >
+            <br>
 
-                    <div class="artist-type" >
+            <div class="row-view">
+
+                <div class="sections ">
+
+                    <div class="artist-type">
                         <label for="Drummer" class="head-style " style="margin-right:20px;">Drummer</label>
                         <div class="counter">
                             <img class="minus-1" src={% static '/images/minus.png' %}>
@@ -477,7 +490,7 @@
                             <img class="plus-1" src={% static '/images/plus.png' %}>
                         </div>
                     </div>
-            
+
 
                     <div class="artist-type">
                         <label for="Bassist" class="head-style " style="margin-right:38px;">Bassist</label>
@@ -487,11 +500,11 @@
                             <img class="plus-2" src={% static '/images/plus.png' %}>
                         </div>
                     </div>
-            </div>
-            
+                </div>
 
-        
-            <div class="sections " >
+
+
+                <div class="sections ">
 
                     <div class="artist-type">
                         <label for="Guitarist" class="head-style " style="margin-right:26px;">Guitarist</label>
@@ -501,7 +514,7 @@
                             <img class="plus-3" src={% static '/images/plus.png' %}>
                         </div>
                     </div>
-            
+
 
                     <div class="artist-type">
                         <label for="Vocalist" class="head-style " style="margin-right:30px;">Vocalist</label>
@@ -511,43 +524,44 @@
                             <img class="plus-4" src={% static '/images/plus.png' %}>
                         </div>
                     </div>
+                </div>
             </div>
-        </div>
-        <br>
+            <br>
 
-        <div class="row-view">
-            <div class="sections " >
-                <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:190px; ">Leader Details</h1>
-                
+            <div class="row-view">
+                <div class="sections ">
+                    <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:190px; ">Leader
+                        Details</h1>
+
+                </div>
+                <div class="sections "></div>
             </div>
-            <div class="sections " ></div>
-        </div>
-        <br>
-        <div class="row-view">
-            <div class="sections ">
-                
-                
-                <div class="Leader_form">
+            <br>
+            <div class="row-view">
+                <div class="sections ">
 
-                    <p>
-                        <label for="name_leader" class="head-style ">Name</label>
-                        <span class="red-star"> *</span>
 
-                        <input class="input-text-field " required type="text" name="name" />
-                    </p>
-                    <p>
-                        <label for="phone_leader" class="head-style ">Phone</label>
-                        <span class="red-star"> *</span>
+                    <div class="Leader_form">
 
-                        <input class="input-text-field " required type="email" name="phoneNumber" />
-                    </p>
+                        <p>
+                            <label for="name_leader" class="head-style ">Name</label>
+                            <span class="red-star"> *</span>
+
+                            <input class="input-text-field " required type="text" name="name" />
+                        </p>
+                        <p>
+                            <label for="phone_leader" class="head-style ">Phone</label>
+                            <span class="red-star"> *</span>
+
+                            <input class="input-text-field " required type="number" name="phoneNumber" />
+                        </p>
+                    </div>
+
                 </div>
 
-            </div>
-            
-            <div class="sections">
-                
-                <div class="Leader_form">
+                <div class="sections">
+
+                    
 
                     <p>
                         <label for="gender_leader" class="head-style ">Gender</label>
@@ -563,65 +577,84 @@
                 </div>
             </div>
 
+    </div>
+    <br>
+
+
+
+    <div class="sections ">
+        <h2>Verify OTP</h2>
+        <form method="POST">
+           
+            <label for="otp">Enter the OTP sent to your email:</label>
+            <input type="number" name="otp" id="otp" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+    </div>
+    
+    <div class="row-view" style="width:83%">
+        <div class="artist-checkbox">
+
+            <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue"
+                style="margin-right:20px;">
+            <label for="check-drummer" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
         </div>
-        <br>
+        <div class="artist-checkbox">
 
-        <div class="row-view" style="width:83%" >
-            <div class="artist-checkbox" >
-                
-                <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue" style="margin-right:20px;">
-                <label for="check-drummer" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
-            </div>
-            <div class="artist-checkbox">
-                
-                <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue" style="margin-right:30px;">
-                <label for="check-bassist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
-            </div>
-            <div class="artist-checkbox">
-                
-                <input type="checkbox" class="checkbox"  name="check-guitarist" value="checkboxValue" style="margin-right:20px;">
-                <label for="check-guitarist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
-            </div>
-            <div class="artist-checkbox">
-                
-                <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue" style="margin-right:20px;">
-                <label for="check-vocalist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
-            </div>
-
+            <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue"
+                style="margin-right:30px;">
+            <label for="check-bassist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
         </div>
-        {% comment %} <div id="member_form">
-        </div> {% endcomment %}
+        <div class="artist-checkbox">
 
-        {% comment %} <div class="row-view" style="display: flex;; ">
-            <div class="sections m-5">
-                <button onclick="addMember()" type="button" class=" register-button" style="font-size:18px">
-                    <i class="fa-solid fa-plus"></i>
-                    <i class="fa-solid fa-user" style="margin-right: 10px;"></i>
-                     Add member
-                 </button>
-            </div>
-            <div class="sections m-5"></div>
-        </div>{% endcomment %}
-        <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
-            <button type="submit" class=" register-button"style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
-        </div> 
+            <input type="checkbox" class="checkbox" name="check-guitarist" value="checkboxValue"
+                style="margin-right:20px;">
+            <label for="check-guitarist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
+        </div>
+        <div class="artist-checkbox">
+
+            <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue"
+                style="margin-right:20px;">
+            <label for="check-vocalist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
+        </div>
+
+    </div>
+    {% comment %} <div id="member_form">
+    </div> {% endcomment %}
+
+    {% comment %} <div class="row-view" style="display: flex;; ">
+        <div class="sections m-5">
+            <button onclick="addMember()" type="button" class=" register-button" style="font-size:18px">
+                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-user" style="margin-right: 10px;"></i>
+                Add member
+            </button>
+        </div>
+        <div class="sections m-5"></div>
+    </div>{% endcomment %}
+    <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
+        <button type="submit" class=" register-button"
+            style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
+    </div>
     </form>
     {% comment %} <footer id="footer">
         <i class="bi bi-globe2" style="font-size: 2vw;"></i>
         <a href="https://alcheringa.in" target="_blank"
             style="color: #C6B394; padding-left: 1%; padding-right: 5%;">alcheringa.in</a>
-        <i class="bi bi-envelope"  style="font-size: 2vw;"></i>
+        <i class="bi bi-envelope" style="font-size: 2vw;"></i>
         <p style="color: #C6B394; padding-left: 1%;  padding-right: 5%;">
             rocko@alcheringa.in
         </p>
-        <i class="bi bi-telephone"  style="font-size: 2vw;"></i>
+        <i class="bi bi-telephone" style="font-size: 2vw;"></i>
         <p style="color: #C6B394; padding-left: 1%;  padding-right: 15%;">+917903022011
         </p>
         <div id="footer-icons">
             <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
-                    <a href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
+            <a href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer> {% endcomment %}
     {% comment %} <footer id="mobile-footer">
@@ -631,7 +664,7 @@
             <i class="bi bi-search" style="margin-right: 5%;"></i>
             <a href="https://alcheringa.in" target="_blank" style="color: #C6B394">alcheringa.in</a>
         </div>
-        <div style="display: flex; flex-flow: row; padding-top: 2%; padding-bottom: 5vw;"> 
+        <div style="display: flex; flex-flow: row; padding-top: 2%; padding-bottom: 5vw;">
             <i class="bi bi-envelope" style="margin-right: 4%; font-size: 5vw"></i>
             <p style="color: #C6B394; padding-left: 1%;  padding-right: 5%;">
                 rocko@alcheringa.in
@@ -640,9 +673,11 @@
         <div>Social Media</div>
         <div style="font-size: 5vw; margin-top: 2%">
             <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
-                    <a href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram" style="margin-left: 3.5vw;"></i></a>
-                    <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
+            <a href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram"
+                    style="margin-left: 3.5vw;"></i></a>
+            <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
         </div>
     </footer> {% endcomment %}
 </body>
@@ -728,8 +763,10 @@
 
 <!-- </html> -->
 
-{% comment %} <script src="{% static '/js/nav.js' %}"></script> {% endcomment %}
-{% comment %} <script>
+{% comment %}
+<script src="{% static '/js/nav.js' %}"></script> {% endcomment %}
+{% comment %}
+<script>
     function samefunc(e) {
         const PhoneNumber = document.getElementsByName("phone_" + e)[0]
         const Email = document.getElementsByName("email_" + e)[0]
@@ -737,21 +774,21 @@
         const PhoneNumberCheck = document.getElementsByName("check_phone_" + e)[0]
         const EmailCheck = document.getElementsByName("check_email_" + e)[0]
         const GenderCheck = document.getElementsByName("check_gender_" + e)[0]
-  
+
         if (PhoneNumberCheck.checked) {
-          const leadPhoneNumber = document.getElementsByName("phoneNumber")[0].value
-          PhoneNumber.value = leadPhoneNumber
+            const leadPhoneNumber = document.getElementsByName("phoneNumber")[0].value
+            PhoneNumber.value = leadPhoneNumber
         }
         if (EmailCheck.checked) {
-          const leadEmail = document.getElementsByName("email")[0].value
-          Email.value = leadEmail
+            const leadEmail = document.getElementsByName("email")[0].value
+            Email.value = leadEmail
         }
         if (GenderCheck.checked) {
-          const leadGender= document.getElementsByName("gender")[0].value
-          Gender.value = leadGender
+            const leadGender = document.getElementsByName("gender")[0].value
+            Gender.value = leadGender
         }
-  
-      }
+
+    }
     let currNoOfMem = -1;
     function addMember() {
 
@@ -784,17 +821,17 @@
         inp2.setAttribute("type", "email");
 
         const check2p = document.createElement("p");
-        check2p.setAttribute("style","display:flex;");
+        check2p.setAttribute("style", "display:flex;");
         const check2 = document.createElement("input");
         check2.setAttribute("name", `check_email_${currNoOfMem}`);
         check2.setAttribute("id", `check_email_${currNoOfMem}`);
         check2.setAttribute("type", "checkbox");
         check2.setAttribute("onclick", `samefunc(${currNoOfMem})`);
         const check2label = document.createElement("Label");
-        check2label.innerHTML="Same As Leader";
+        check2label.innerHTML = "Same As Leader";
         check2p.appendChild(check2);
         check2p.appendChild(check2label);
-    
+
         var label3 = document.createElement("Label");
         label3.setAttribute("id", `label3_${currNoOfMem}`);
         label3.setAttribute("class", "head-style");
@@ -809,14 +846,14 @@
         inp3.setAttribute("class", "input-text-field ");
 
         const check3p = document.createElement("p");
-        check3p.setAttribute("style","display:flex;");
+        check3p.setAttribute("style", "display:flex;");
         const check3 = document.createElement("input");
         check3.setAttribute("name", `check_phone_${currNoOfMem}`);
         check3.setAttribute("id", `check_phone_${currNoOfMem}`);
         check3.setAttribute("type", "checkbox");
         check3.setAttribute("onclick", `samefunc(${currNoOfMem})`);
         const check3label = document.createElement("Label");
-        check3label.innerHTML="Same As Leader";
+        check3label.innerHTML = "Same As Leader";
         check3p.appendChild(check3);
         check3p.appendChild(check3label);
 
@@ -835,27 +872,27 @@
         inp4.setAttribute("class", "input-text-field ");
 
         const check4p = document.createElement("p");
-        check4p.setAttribute("style","display:flex;");
+        check4p.setAttribute("style", "display:flex;");
         const check4 = document.createElement("input");
         check4.setAttribute("name", `check_gender_${currNoOfMem}`);
         check4.setAttribute("id", `check_gender_${currNoOfMem}`);
         check4.setAttribute("type", "checkbox");
         check4.setAttribute("onclick", `samefunc(${currNoOfMem})`);
         const check4label = document.createElement("Label");
-        check4label.innerHTML="Same As Leader";
+        check4label.innerHTML = "Same As Leader";
         check4p.appendChild(check4);
         check4p.appendChild(check4label);
-        
+
 
         const rem_but = document.createElement("BUTTON");
         rem_but.setAttribute("type", "button");
         rem_but.setAttribute("class", "register-button ");
-        rem_but.innerHTML=`<i class="fa fa-minus-circle mr-2"></i>Remove Member`
+        rem_but.innerHTML = `<i class="fa fa-minus-circle mr-2"></i>Remove Member`
 
 
         rem_but.setAttribute("name", `remove_${currNoOfMem}`);
         rem_but.setAttribute("id", `remove_${currNoOfMem}`);
-        rem_but.setAttribute("style","font-size:18px;width:auto")
+        rem_but.setAttribute("style", "font-size:18px;width:auto")
         rem_but.setAttribute("value", currNoOfMem);
         rem_but.setAttribute(
             "onclick",
@@ -873,15 +910,15 @@
 
         let but_div = document.createElement("div");
         var rem = document.createElement("p");
-        rem.setAttribute("class","row-view rem")
+        rem.setAttribute("class", "row-view rem")
         currMember.appendChild(rem);
 
-         {% comment %} to be continued {% endcomment %}
-        {% comment %} var MemID=document.createElement("span");
-        MemID.innerHTML=`Member ${currNoOfMem+1}` 
+
+        var MemID = document.createElement("span");
+        MemID.innerHTML = `Member ${currNoOfMem + 1}`
         MemID.setAttribute("style", `font-size:18px; font-weight:bold;`)
         MemID.setAttribute("id", `memberhead_${currNoOfMem}`)
-        rem.append(MemID ); 
+        rem.append(MemID);
 
         but_div.append(rem);
         currMember.appendChild(but_div);
@@ -911,7 +948,7 @@
         phone_p.appendChild(label3);
         phone_p.appendChild(inp3);
         phone_p.appendChild(check3p);
-        
+
         currMember.appendChild(phone_p);
         var gender_p = document.createElement("p");
         gender_p.appendChild(label4);
@@ -927,7 +964,7 @@
         rowview.setAttribute("class", "row-view");
         currMember.appendChild(rowview);
         phone_gender.setAttribute("class", "sections m-5");
-        
+
         rollForm.appendChild(currMember);
         document.getElementById("no_of_members").value = currNoOfMem + 1;
     }
@@ -956,9 +993,9 @@
             let currMemberCheckEmail = document.getElementById(`check_email_${i}`);
             let currMemberCheckPhone = document.getElementById(`check_phone_${i}`);
             let currMemberCheckGender = document.getElementById(`check_gender_${i}`);
-            let memHead=document.getElementById(`memberhead_${i}`)
+            let memHead = document.getElementById(`memberhead_${i}`)
 
-            memHead.innerHTML=`Member ${i}`
+            memHead.innerHTML = `Member ${i}`
 
             memHead.setAttribute("id", `memberhead_${i - 1}`);
             currMemberName.setAttribute("id", `name_${i - 1}`);
@@ -991,6 +1028,7 @@
         currNoOfMem--;
         document.getElementById("no_of_members").value = currNoOfMem + 1;
     }
-</script> {% endcomment %} 
+</script> {% endcomment %}
 <script src="{% static 'js/registrationpage.js' %}"></script>
+
 </html>

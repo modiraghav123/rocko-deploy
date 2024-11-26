@@ -21,7 +21,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',views.saveform,name='saveform'),
-    # path('success/',views.success,name='success'),
+    #path('success/',views.success,name='success'),
     path('', views.index ,name='index'),
+     path('send-otp/', views.send_otp, name='send_otp'),
+    path('verify-otp/', views.verify_otp, name='verify_otp'),
+    path('register/', views.register, name='register'),
     path('gl79s2Gy8b',views.rockodetails,name='rockodetails'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

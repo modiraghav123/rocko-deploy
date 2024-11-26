@@ -330,7 +330,7 @@ input[type='checkbox'] {
 }
 
 .form-content {
-    background-image: url("{%static "images/rocko.png"%}");
+    background-image: url("{% static 'images/rocko.png' % }");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50% auto;
