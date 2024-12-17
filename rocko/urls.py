@@ -26,5 +26,6 @@ urlpatterns = [
      path('send-otp/', views.send_otp, name='send_otp'),
     path('verify-otp/', views.verify_otp, name='verify_otp'),
     path('register/', views.register, name='register'),
+    path('registation/', views.registration, name='registration'),
     path('gl79s2Gy8b',views.rockodetails,name='rockodetails'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

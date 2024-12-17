@@ -1,0 +1,824 @@
+html,
+body {
+    margin: 0px;
+    overflow-x: hidden;
+    background-color: #0E0E0E !important;
+}
+
+.skull {
+    position: fixed;
+     left: 6.6vw;
+    top:2vh;
+    height: 5vh;
+    width: 5vw;
+    z-index: 4;
+
+}
+.skull img{
+ 
+    height: 9vh;
+
+}
+.alcher_logo img{
+ 
+    height: 9vh;
+    max-width: none;
+
+}
+.alcher_logo{
+    position: fixed;
+    height: 5vh;
+    width: 2vw;
+    right: 10.5vw;
+    top:2vh;
+    z-index:3;
+}
+
+.top_part{
+    position: relative;
+    width: 100vw; 
+    
+    align-items: center;
+  
+    overflow-x: hidden;
+    
+}
+
+
+
+
+
+.nav_bar_text{
+    color: rgba(198, 179, 148, 1);
+    font-family: Poppins , sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+   
+}
+.event_name{
+    align-items: center;
+    display: flex;
+    width:100vw;
+}
+.height{
+    width: 100vw;
+    height: 100vh;
+}
+.align12{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+.svg-button{
+    display: flex;
+   align-items: center;
+flex-direction: column;
+justify-content: space-evenly;   
+width: 100vw;
+    height: 120vh;
+margin-top: -26vh;
+    
+}
+@media (min-height:355px) {
+    .svg-button{
+    height: 100vh;
+
+    }
+    
+}
+
+@media (min-height:450px) {
+    .svg-button{
+    height: 83vh;
+
+    }
+}
+@media (min-height:630px) {
+    .svg-button{
+    height: 58vh;
+
+    }
+}
+@media (min-height:700px) {
+    .svg-button{
+    height: 52vh;
+
+    }
+}
+.ROCKO-MOBILE{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+     flex-direction: column;
+     width: 100vw;
+     padding-top: 70vh;
+     box-sizing: border-box;
+     
+
+}
+.svg-img {
+    padding-top: 15vw;
+    background-image:url("../images/left-skull.png"),url("../images/right-skull.png")  ;
+
+    background-repeat: no-repeat;
+    background-size: 30% 30%;
+    background-position: 100% 0% , 0% 100%;
+    padding-bottom: 20vw;
+    
+}
+.ROCKO{
+    display: flex;
+    flex-flow:column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+    
+    background-image:url("../images/homepage.jpg")  ;
+    
+    background-size: cover;
+    object-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-position: 28% center;
+    
+    }
+.center-rocklogo{
+    display:flex;
+    width:60%;
+
+    justify-content: center;
+    align-items: center;
+}
+.rocko-center{
+    width:100%;
+    display: flex;
+    flex-flow:column;
+    justify-content: flex-start;
+    align-items:flex-start;
+    padding-left:10%;
+    box-sizing:border-box;
+    
+    
+
+}
+
+.ROCKO svg{
+    width:90%;
+    display: flex;
+    justify-content: flex-end;
+}
+.svg{
+    display: flex;
+    justify-content: flex-end;
+}
+.div1{
+    height: 90vh;
+    }
+.ROCKO-MOBILE svg {
+    width: 100vw; 
+    padding-left: 8vw;
+
+}
+.register-button-mobile-view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(13, 13, 13);
+    padding: 10px 15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+
+
+}
+
+
+.ROCKO-MOBILE svg {
+    width: 100vw; 
+    padding-left: 8vw;
+}
+
+.button-1{
+    /* width: 40vw; */
+    /* height: 6vh; */
+    height: 50px;
+    background-color: #0E0E0E;
+    border:2px solid #C6B394;
+}
+.piano{
+    position: relative;
+    background-color: #0E0E0E;
+
+}
+.piano-loader{
+    width: 100vw;
+    height: 51.5vh;
+    background-color: #0E0E0E;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+.piano-loader img{
+    animation:scaled 3s linear infinite;
+    height: 15vh;
+   
+}
+.piano-loader.hide {
+    display: none;
+  }
+
+@keyframes scaled {
+    0% {
+        transform: rotate( 0deg ) scale( 1 );
+      }
+      25% {
+        transform: rotate( 15deg ) scale( 2 );
+      }
+      50% {
+        transform: rotate( 0deg ) scale( 3 );
+      }
+      75% {
+        transform: rotate( -15deg ) scale( 2 );
+      }
+      100% {
+        transform: rotate( 0deg ) scale( 1 );
+      }
+}
+
+.right-skull{
+    position: absolute;
+
+    bottom: 26%;
+}
+.right-skull img{
+    width: 125px;
+    height: 200px;
+}
+@media (max-width: 650px) { 
+    .top_part{
+
+        background-image:url("../images/homepage.jpg")  ;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        image-rendering: pixelated;
+background-color: #0E0E0E;
+
+
+    }
+}
+@media (max-width: 800px){
+    .nav_bar_grid{
+        font-size: 1.85vw;
+    }
+    .alcher_logo img{
+ 
+        height: 8vh;
+        width: 7vw;
+    
+    }
+    .skull{
+        left:2vw;
+    }
+   
+    
+ 
+    
+}
+@media (max-width: 1000px){
+    .nav_bar_grid{
+        font-size: 1.7vw;
+    }
+    .skull img{
+        height: 10vh;
+        
+      }
+      
+    .skull{
+        left:2vw;
+    }
+   
+}
+@media (max-width: 700px){
+    .nav_bar_grid{
+        font-size: 2vw;
+    }
+    .skull{
+     
+        left: 3vw;
+
+   
+   }
+  .skull img{
+    height: 8vh;
+    width: 10vw;
+  }
+
+}
+@media (min-width:1200px) {
+    .ROCKO{
+        display: flex;
+     
+        padding-top:35vh;
+     
+       } 
+       
+       
+}
+@media (max-width:1200px) {
+    .ROCKO{
+        display: flex;
+     
+        padding-top:30vh;
+     
+       } 
+       
+       
+}
+
+/* about_us */
+
+#about_us {
+    font-family: 'Poppins';
+    background-color: #0E0E0E;
+    color: #C6B394;
+   
+}
+
+#about_us_wide {
+height : 37vw;
+    display: block;
+    background-image:url("../images/rocko.svg")  ;
+    background-repeat: no-repeat;
+    background-size: 70% 100%;
+    background-position: 170% 0% ;
+    background-color:#0E0E0E;
+}
+
+#about-heading_wide {
+    font-size: 2vw;
+    padding: 14vw 10vw ;
+    width: auto;
+    height: fit-content;
+    background-image:url("../images/Vector3.png")  ;
+    background-repeat: no-repeat;
+    background-position: 90% 30%;
+    background-size: 28vw;
+    box-sizing: border-box ;
+    z-index: 50;
+}
+
+#about-main-heading {
+    border-bottom: 0.5vw solid #711011;
+    padding-left: 0;
+   
+    
+    font-size: 3.3vw;
+ 
+    margin-left:0%;
+}
+
+#about-details {
+    text-align:left;
+    margin-top: 5%;
+    padding-left:0vh;
+    font-size: 1.5vw;
+}
+
+#images-inline {
+    display: flex;
+    flex-flow: row;
+    position: relative;
+    padding-left: 8vw;
+    padding-right: 4wv;
+}
+
+#about-us-mobile {
+    display: none;
+}
+
+@media (max-width: 760px) {
+
+    #about-heading {
+        font-size: calc(1.375rem + 1.5vw);
+          
+        border-bottom: 0.5vw solid #711011;
+    
+                 
+    }
+
+    #about_us_wide {
+        display: none;
+    }
+
+    #about-us-mobile {
+        display: block;
+
+        background-image:url("../images/skullfinal.png")  ;
+        background-repeat: no-repeat;
+        background-size: 70%;
+        background-position: 190% 25%;
+        padding-bottom: 4vw;
+      
+        /* backface-visibility: initial; */
+    }
+
+    #about-heading {
+
+        background-image: none;
+        background-repeat: no-repeat;
+        background-position: 90% 130%;
+    }
+    }
+    @media (max-width:600px){
+      #about_us_wide {
+        display: none;
+    }
+  
+    }
+    @media(max-width:400px){
+     #about_us_wide {
+        display: none;
+    }
+    }
+.gallery-main{
+background-color:#0E0E0E;
+padding: 2vw 0vw;
+padding-top: 0;
+color:#C6B394;
+
+}
+
+.gallery-main-heading {
+    border-bottom: 0.5vw solid #711011;
+    padding-left: 0;
+    
+    margin-bottom: 7vw;
+    margin-left:10%;
+    font-size: 3.3vw;
+}
+
+.main-slider{
+    display:flex;
+background-color:#0E0E0E;
+
+    }
+.slider{
+
+position:relative;
+width:100%;
+background-color:#0E0E0E;
+display:grid;
+margin-right:5vw;
+margin-left:0vw;
+
+overflow:hidden;
+}
+.slide-track{
+display:flex;
+width:calc(40vw*4);
+animation:move-rtl 20s linear infinite;
+}
+@keyframes move-rtl {
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(calc(-100%));
+}
+}
+
+.slide{
+height:20vw;
+width:32vw;
+display:flex;
+z-index:1;
+margin:1.5vw;
+
+}
+.sec1{
+border:.6vw solid #711011;
+}
+.sec2{
+border:.6vw solid #C6B394;
+}a
+.img{
+width:5vw;;
+height:4vw;
+align-items:center;
+}
+.border1{
+position:relative;
+left:13%;
+height:25vw;
+width:8%;
+background-image:linear-gradient(to left ,rgba(0,0,0,0),rgba(14,14,14,1));
+z-index:2;
+}
+.border2{
+position:relative;
+ left:82%;
+height:25vw;
+width:8%;
+background-image:linear-gradient(to right ,rgba(0,0,0,0),rgba(14,14,14,1));
+z-index:2;
+}
+ #gallery{
+     font-family: 'Poppins';
+    background-color: #0E0E0E;
+    color: #C6B394;
+    padding-bottom: 4vw;
+    border-bottom: 0.5vw solid #711011;
+    margin-left: 19%;
+    margin-right:73%;
+    padding-left:0vw;
+    margin-bottom: 5%;
+height:5vw;
+
+     }
+     .gallery-main-heading-mob{
+        display: none;
+       }
+
+@media (max-width: 760px){
+#gallery{
+padding-left:3vw;
+margin-left:0;
+padding-bottom:0;
+ margin-bottom :2%;
+
+
+}
+.slide{
+height:35vw;
+width:57vw;
+}
+.border1{
+height:43vw;
+left:12%;
+}
+.border2{
+height:43vw;
+left:83%;
+}
+.gallery-main-heading{
+  display: none;
+}
+.gallery-main-heading-mob{
+    font-size: calc(1.375rem + 1.5vw);
+   display: initial;
+   border-bottom: 0.5vw solid #711011;
+   
+}
+
+}
+
+#contact_us {
+    font-family: 'Poppins';
+    background-color: #0E0E0E;
+    color: #C6B394;
+    padding: 0vw 10vw;
+    display: flex;
+    flex-direction: column;
+    background-image:url("../images/right-skull.png")  ;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: contain;
+}
+
+#contact-text{
+font-size:2vw;
+margin-left: 5%;
+}
+.mail{
+display:flex;
+text-align:center;
+font-size:1.5vw;
+}
+.mlogo{
+margin-right:1vw;}
+.phone{
+display:flex;
+text-align:center;
+font-size:1.5vw;
+}
+.plogo{
+margin-right:1vw;}
+#contact-main{
+    display: flex;
+    align-items: center;
+ 
+    width: 100%;
+    background-image:url("../images/Frame.png")  ;
+    background-repeat: no-repeat;
+    background-size:35vw;
+    background-position: 100% 20% ;
+    padding: 0% 0%;
+    height: 27vw;
+}
+#c-heading{
+    border-bottom: 0.5vw solid #711011;
+    padding-left: 0;
+    font-size: 3.3vw;
+    
+  
+    margin-left: 0%;
+}
+
+#contact-images {
+    display: flex;
+    flex-flow: row;
+    padding-left: 30vw;
+    padding-bottom: 8vw;
+
+}
+.contact-img{
+margin-left:0;
+margin-top:0;
+}
+.contact-img img{
+    width: 13vw;
+
+}
+#footer {
+    
+    font-size: 1.3vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #711011;
+    color: #C6B394;
+    align-items: center;
+    
+}
+
+.footer2{
+    
+    height: 6vh;
+    font-size: 1.3vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #711011;
+    color: #C6B394;
+    align-items: center;
+    padding-left: 25vw;
+
+}
+.footer-iit{
+    margin-top: 2%;
+    font-size:1.625vw;
+}
+.footer-alcher{
+    font-size: 3.172vw;
+    font-weight: 1000;
+    width:80%;
+    border-bottom: 2px solid #C5B29399;
+    text-align: center;
+    
+
+}
+.mobile-footer-iit{
+    margin-top: 2%;
+    font-size:2vw;
+}
+.mobile-footer-alcher{
+    font-size: 4vw;
+    font-weight: 1000;
+    width:80%;
+    border-bottom: 2px solid #C5B29399;
+    text-align: center;
+    
+
+}
+.footer-logo{
+    margin-top:2% ;
+}
+.footer-description{
+    text-align: center;
+    font-weight: 50;
+    padding-bottom: 1vw;;
+}
+
+#footer-icons {
+    font-size: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#mobile-footer{
+    display: none;
+}
+
+#contact-us-mobile {
+    display: none;
+}
+
+@media (max-width: 760px) {
+#contact-heading{
+    font-size: calc(1.375rem + 1.5vw);
+    border-bottom: 0.5vw solid #711011;
+}
+.mail-mob{
+display:flex;
+gap: 2vw;
+
+}
+.phone-mob{
+display:flex;
+gap: 2vw;
+
+}
+.plogo-mob{
+padding-right:0;
+}
+.mlogo-mob{
+padding-right:0;
+}
+    #contact_us{
+        display: none;
+    }
+    #contact-us-mobile {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding-top: 7vw;
+        background-image:url("../images/skullfinal.png")  ;
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: -175% 35%;
+    }
+   
+    .contact-img-mob{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 5% 0%;
+    }
+    .contact-img-mob img{ 
+            width: 45vw;
+        }
+
+}
+@media (max-width: 400px) {
+
+    #footer{
+        display: none;
+    }
+
+
+    #contact_us_wide {
+        display: none;
+    }
+
+  
+
+  
+    #mobile-footer{
+        font-size: 3.3vw;
+        background-color: #711011;
+        width: 100%;
+        height: 46vw;
+        padding-top: 7%;
+        padding-bottom: 2%;
+        height: auto;
+        color: #C6B394;
+        display: flex;
+        flex-flow: column;
+        justify-items: center;
+        align-items: center;
+    }
+}
+@media (max-width: 300px){
+  #footer{
+        display: none;
+    }
+
+
+    #contact_us_wide {
+        display: none;
+    }
+
+
+}
+@media (max-width: 500px){
+  #footer{
+        display: none;
+    }
+
+
+    #contact_us_wide {
+        display: none;
+    }
+
+
+}

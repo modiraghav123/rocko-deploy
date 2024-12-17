@@ -7,8 +7,11 @@ from django.db import IntegrityError
 from django.contrib import messages 
 from django.utils import timezone
 
+def registration(request):
+    return render(request, 'registration.html')
+
 def index(request):
-    return render(request, 'base/rocko.html')
+    return render(request, 'base/index.html')
 
 def basic_form(request):
     return render(request, 'base/forms.html')
