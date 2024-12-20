@@ -1,1034 +1,148 @@
-{%load static%}
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
-<style>
-    * {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .reg-form-all {
-        width: 100vw;
-        min-height: 1vh;
-    }
-
-    .sections {
-        width: 40%;
-        max-width: 400px;
-    }
-
-    /* check boxes-- start */
-
-    .container {
-        width: 100%;
-        font-size: 13px;
-    }
-
-    ul.ks-cboxtags {
-        list-style: none;
-        padding: 20px;
-    }
-
-    ul.ks-cboxtags li {
-        display: inline;
-    }
-
-    ul.ks-cboxtags li label {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, .9);
-        border: 2px solid #002F43;
-        color: #002F43;
-        border-radius: 25px;
-        white-space: nowrap;
-        margin: 3px 0px;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        transition: all .2s;
-    }
-
-    ul.ks-cboxtags li label {
-        padding: 10px 15px 11px 15px;
-        cursor: pointer;
-    }
-
-    ul.ks-cboxtags li label::after {
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-weight: bold;
-        font-size: 12px;
-        padding: 0px 0px 0px 7px;
-        transition: transform .3s ease-in-out;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
-        content: "\f00c";
-        transition: transform .3s ease-in-out;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"]:checked+label {
-        border: 2px solid #002F43;
-        background-color: #F29E6D;
-        color: #002F43;
-        transition: all .2s;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"] {
-        display: absolute;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"] {
-        position: absolute;
-        opacity: 0;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"]:focus+label {
-        border: 2px solid #002F43;
-    }
-
-    /* check boxes-- END */
-    /* red-star-- START */
-
-    .red-star {
-        color: red;
-    }
-
-    /* red-star-- END */
-
-    .input-text-field {
-        background: rgba(255, 255, 255, 0);
-        height: 40px;
-        margin-top: 9px;
-        margin-bottom: 9px;
-        width: 100%;
-        padding: 5px;
-        border-color: black;
-        border-width: 2px;
-        font-size: 16px;
-    }
-
-    label {
-        align-items: center;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    input[type='checkbox'] {
-        margin-right: 2px;
-    }
-
-    .drop-down {
-        color: #989898;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
-
-    .head-style {
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 18px;
-    }
-
-    .row-view {
-        width: 90%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        margin: auto;
-
-    }
-
-    .rem {
-        justify-content: space-between;
-        width: 75%;
-        align-items: center;
-    }
-
-    .page-heading {
-        height: 134px;
-        width: 100%;
-        padding: 1vh;
-
-        background-color: #282826;
-        color: white;
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 64px;
-        line-height: 96px;
-        text-align: center;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-
-
-    .counter {
-        height: 42px;
-        min-width: 133px;
-        max-width: 133px;
-        border-radius: 50px 50px 50px 50px;
-        border: 1px solid black;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 0.5vw;
-        padding-top: 3vh;
-        padding-bottom: 3vh;
-
-
-
-    }
-
-    .counter span {
-        width: 100%;
-        text-align: center;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .counter span.num {
-        font-size: 1.3vw;
-        pointer-events: none;
-        text-align: center;
-    }
-
-    .artist-type {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-
-        align-items: center;
-        padding-right: 11vw;
-        padding-bottom: 2vw;
-
-    }
-
-
-    .register-button {
-        height: 40px;
-        align-items: center;
-        background: #C6B394;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 18px;
-        transition: box-shadow 0.6s;
-    }
-
-    .register-button:hover,
-    .register-button:focus,
-    ul.ks-cboxtags li label:hover,
-    ul.ks-cboxtags li label:focus {
-        box-shadow: 0 4px 15px 0 #C6B394;
-    }
-
-    .namep {
-        margin-bottom: 28px;
-    }
-
-    .artist-checkbox {
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        align-items: center;
-        width: 150px;
-        height: 50px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-
-
-    }
-
-    .checkbox {
-        width: 22px;
-
-
-    }
-
-    input[type="checkbox"] {
-        transform: scale(2.5);
-
-        margin-left: 18px;
-    }
-
-
-    input[type='checkbox'] {
-        accent-color: #34D67E;
-
-    }
-
-
-
-    @media only screen and (orientation: portrait) {
-        .namep {
-            margin-bottom: 9px;
-        }
-
-        .row-view {
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            width: 99%;
-        }
-
-        .sections {
-            width: 70%;
-        }
-
-        .page-heading {
-            font-size: 56px;
-            padding-top: 0vh;
-        }
-
-        .input-text-field {
-            min-width: none;
-            width: 100%;
-        }
-
-        .page-heading img {
-            display: none;
-        }
-
-
-    }
-
-    @media (max-width: 350px) {
-        .registration {
-            font-size: 43px;
-        }
-    }
-
-    .modal-list2-active {
-        cursor: pointer;
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
-        margin: 1rem;
-        padding: 0.25rem;
-        border-bottom: 2px solid #A81617;
-    }
-
-    .modal-list2-inactive {
-        cursor: pointer;
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        margin: 1rem;
-        padding: 0.25rem;
-        line-height: 24px;
-    }
-
-    .form-content {
-        background-image: url("{% static 'images/rocko.png' %}");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 50% auto;
-    }
-
-    .rem-btn {
-        padding-top: 1.5vw;
-        width: 134px;
-        height: 40px;
-        background: #C6B394;
-        background-color: #C6B394;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 18px;
-        transition: box-shadow 0.6s;
-    }
-
-    .rem-btn:hover,
-    .rem-btn:focus,
-    ul.ks-cboxtags li label:hover,
-    ul.ks-cboxtags li label:focus {
-        box-shadow: 0 4px 15px 0 #C6B394;
-    }
-</style>
-{% load static%}
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{%static '/css/nav.css' %}">
-    <link rel="stylesheet" href="{%static '/css/rocko_stylesheet.css' %}">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <title>Rock-O-Phonix | Register</title>
+    <title>rockophonix/Registration</title>
 </head>
-
+<link rel="stylesheet" href="{% static 'css/registrationstyle.css' %}">
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 <body>
-    {% comment %} <div class="nav_bar_grid">
-        <div class="skull">
-            <img src="{% static 'images/nav_bar_skull.png' %}">
+    <div class="body">
+        <div class="header">
+            <div class="img">
+                <img src="{% static 'img/headerimg-removebg-preview.png' %}" alt="headerimg" class="horn">
+                <img src="{% static 'img/Vector 1.png' %}" alt="vector" class="vector">
+            </div>
+            <ul class="links">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'registration' %}">Registration</a></li>
+                <li><a href="#Aboutus">About us</a></li>
+                <li><a href="#Contactus">Contact Us</a></li>
+                <li>
+                    <button class="button">
+                        <a href="{% url 'registration' %}">Registration</a>
+                    </button>
+                </li>
+            </ul>
+            <div class="uil uil-bars menubtn"></div>
+
+
         </div>
-        <div class="links2">
-            <div class="nav_bar_text">
-                <a href="{% url 'index' %}" class="nav_link">Home</a>
-            </div>
-            <div class="nav_bar_text">
-                <a href="{% url 'index' %}#about_us" class="nav_link">About us</a>
-            </div>
-            <div class="nav_bar_text">
-                <a href="{% url 'index' %}#contact_us" class="nav_link">Contact Us</a>
-            </div>
-        </div>
-        <div class="alcher_logo">
-            <img src="{% static 'images/alcher_logo.png' %}">
-        </div>
-    </div> {% endcomment %}
-    {% comment %} <div class="nav_mob_view" style="padding-top: 2vh; padding:1vh;background-color: #282826;">
+        <div class="bg">
+            <section>
+                <h1 class="main-heading">REGISTRATION</h1>
+                <h3 class="subheading">Team Details</h3>
+                <div class="team">
 
-        {% comment %} <ul class="links ">
-            <li>
-                <a href="{% url 'index'%}">Home</a>
-            </li>
-            <li>
-                <a href="#">Registration </a>
-            </li>
-            <li>
-                <a href="{% url 'index'%}#about_us">About us </a>
-            </li>
-            <li>
-                <a href="{% url 'index'%}#contact_us">Contact us</a>
-            </li>
-        </ul> {% endcomment %}
-
-
-        <div class="page-heading registration">Registration</div>
-        <br><br><br>
-        <form method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg form-content" class="reg-form-all">
-            {% csrf_token %}
-            <div class="row-view">
-                <div class="sections ">
-                    <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:175px; ">Team
-                        Details</h1>
-                    <p style="padding-top:1vh;">All fields marked with <span class="red-star"> *</span> are mandatory.
-                    </p>
-                </div>
-                <div class="sections "></div>
-            </div>
-            <br><br>
-            <div class="row-view">
-
-
-                <div class="sections ">
-
-
-                    <input type="text" name="no_of_members" id="no_of_members" style="display: none;" value="0" />
-
-                    <p>
-                        <label for="team_name" class="head-style ">Team Name</label>
-                        <span class="red-star"> *</span>
-
-                        <input class="input-text-field " required type="text" name="teamName" />
-                    </p>
-                    <p>
-                        <label for="team_name" class="head-style ">Previous Performance Link</label>
-                        <span class="red-star"> *</span>
-                        <input class="input-text-field " required type="text" name="performance" />
-                    </p>
-
+                    <div>
+                        <h4 class="subsubheading">Team Name<span class="redstar">*</span> </h4>
+                        <input type="text" placeholder="Enter Team Name...">
+                    </div>
+                    <div>
+                        <h4 class="subsubheading">City<span class="redstar">*</span> </h4>
+                        <input type="text" placeholder="Enter City Name...">
+                    </div>
+                    <div>
+                        <h4 class="subsubheading">Performance Link<span class="redstar">*</span> </h4>
+                        <input type="text" placeholder="Enter Link...">
+                    </div>
 
                 </div>
-
-                <div class="sections ">
-
-                    <p>
-                        <label for="city" class="head-style ">City</label>
-                        <span class="red-star"> *</span>
-
-                        <input class="input-text-field " required type="text" name="city" />
-                    </p>
-                </div>
-
-            </div>
-            <br>
-            <div class="row-view">
-                <div class="sections ">
-                    <label for="no-of-members" class="head-style ">Number of Members</label>
-                    <span class="red-star"> *</span>
-                </div>
-                <div class="sections ">
-                </div>
-            </div>
-            <br>
-
-            <div class="row-view">
-
-                <div class="sections ">
-
-                    <div class="artist-type">
-                        <label for="Drummer" class="head-style " style="margin-right:20px;">Drummer</label>
+            </section>
+            <section>
+                <h3 class="subheading">Number of Members</h3>
+                <div class="members">
+                    <div class="member">
+                        <h4 class="subsubheading">Drummer</h4>
                         <div class="counter">
-                            <img class="minus-1" src={% static '/images/minus.png' %}>
-                            <span class="num-1">0</span>
-                            <img class="plus-1" src={% static '/images/plus.png' %}>
+                            <button class="btn-minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                            </button>
+                            <input type="text" id="Drummer" value="0" readonly>
+                            <button class="btn-plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="member">
+                        <h4 class="subsubheading">Guitarist</h4>
+                        <div class="counter">
+                            <button class="btn-minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                            </button>
+                            <input type="text" id="Guitarist" value="0" readonly>
+                            <button class="btn-plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="member">
+                        <h4 class="subsubheading">Bassist</h4>
+                        <div class="counter">
+                            <button class="btn-minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                            </button>
+                            <input type="text" id="Bassist" value="0" readonly>
+                            <button class="btn-plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                            </button>
                         </div>
                     </div>
 
 
-                    <div class="artist-type">
-                        <label for="Bassist" class="head-style " style="margin-right:38px;">Bassist</label>
+                    <div class="member">
+                        <h4 class="subsubheading">Vocalist</h4>
                         <div class="counter">
-                            <img class="minus-2" src={% static '/images/minus.png' %}>
-                            <span class="num-2">0</span>
-                            <img class="plus-2" src={% static '/images/plus.png' %}>
+                            <button class="btn-minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                            </button>
+                            <input type="text" id="Vocalist" value="0" readonly>
+                            <button class="btn-plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                            </button>
                         </div>
                     </div>
                 </div>
-
-
-
-                <div class="sections ">
-
-                    <div class="artist-type">
-                        <label for="Guitarist" class="head-style " style="margin-right:26px;">Guitarist</label>
-                        <div class="counter">
-                            <img class="minus-3" src={% static '/images/minus.png' %}>
-                            <span class="num-3">0</span>
-                            <img class="plus-3" src={% static '/images/plus.png' %}>
-                        </div>
+            </section>
+            <section>
+                <h3 class="subheading">Leader Details</h3>
+                <div class="details">
+                    <div>
+                        <h4 class="subsubheading">Full Name </h4>
+                        <input type="text" placeholder="Enter Full Name...">
                     </div>
-
-
-                    <div class="artist-type">
-                        <label for="Vocalist" class="head-style " style="margin-right:30px;">Vocalist</label>
-                        <div class="counter">
-                            <img class="minus-4" src={% static '/images/minus.png' %}>
-                            <span class="num-4">0</span>
-                            <img class="plus-4" src={% static '/images/plus.png' %}>
-                        </div>
+                    <div>
+                        <h4 class="subsubheading">Full Name </h4>
+                        <input type="text" placeholder="Enter Full Name...">
+                    </div>
+                    <div>
+                        <h4 class="subsubheading">Contact Name </h4>
+                        <input type="text" placeholder="Enter Phone Name...">
+                    </div>
+                    <div>
+                        <h4 class="subsubheading">Email Id </h4>
+                        <input type="text" placeholder="Enter Email Id...">
                     </div>
                 </div>
-            </div>
-            <br>
 
-            <div class="row-view">
-                <div class="sections ">
-                    <h1 style="font-weight:600; font-size: 25px;border-bottom:4px solid #A81617;width:190px; ">Leader
-                        Details</h1>
-
+                <div class="addmember">
+                    <button>
+                        + Add Member
+                    </button>
                 </div>
-                <div class="sections "></div>
-            </div>
-            <br>
-            <div class="row-view">
-                <div class="sections ">
-
-
-                    <div class="Leader_form">
-
-                        <p>
-                            <label for="name_leader" class="head-style ">Name</label>
-                            <span class="red-star"> *</span>
-
-                            <input class="input-text-field " required type="text" name="name" />
-                        </p>
-                        <p>
-                            <label for="phone_leader" class="head-style ">Phone</label>
-                            <span class="red-star"> *</span>
-
-                            <input class="input-text-field " required type="number" name="phoneNumber" />
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="sections">
-
-                    
-
-                    <p>
-                        <label for="gender_leader" class="head-style ">Gender</label>
-                        <span class="red-star"> *</span>
-
-                        <input class="input-text-field " required type="text" name="gender" />
-                    </p>
-                    <p>
-                        <label for="email_leader" class="head-style ">Email ID</label>
-                        <span class="red-star"> *</span>
-                        <input class="input-text-field " required type="text" name="email" />
-                    </p>
-                </div>
-            </div>
-
+            </section>
+            <section class="register">
+                <button>
+                    Register
+                </button>
+            </section>
+        </div>
     </div>
-    <br>
-
-
-
-    <div class="sections ">
-        <h2>Verify OTP</h2>
-        <form method="POST">
-           
-            <label for="otp">Enter the OTP sent to your email:</label>
-            <input type="number" name="otp" id="otp" required>
-            <button type="submit">Verify OTP</button>
-        </form>
-    </div>
-    
-    <div class="row-view" style="width:83%">
-        <div class="artist-checkbox">
-
-            <input type="checkbox" class="checkbox" name="check-drummer" value="checkboxValue"
-                style="margin-right:20px;">
-            <label for="check-drummer" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Drummer</label>
-        </div>
-        <div class="artist-checkbox">
-
-            <input type="checkbox" class="checkbox" name="check-bassist" value="checkboxValue"
-                style="margin-right:30px;">
-            <label for="check-bassist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Bassist</label>
-        </div>
-        <div class="artist-checkbox">
-
-            <input type="checkbox" class="checkbox" name="check-guitarist" value="checkboxValue"
-                style="margin-right:20px;">
-            <label for="check-guitarist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Guitarist</label>
-        </div>
-        <div class="artist-checkbox">
-
-            <input type="checkbox" class="checkbox" name="check-vocalist" value="checkboxValue"
-                style="margin-right:20px;">
-            <label for="check-vocalist" style="font-weight: 600;font-size:  16px;line-height: 3vh;">Vocalist</label>
-        </div>
-
-    </div>
-    {% comment %} <div id="member_form">
-    </div> {% endcomment %}
-
-    {% comment %} <div class="row-view" style="display: flex;; ">
-        <div class="sections m-5">
-            <button onclick="addMember()" type="button" class=" register-button" style="font-size:18px">
-                <i class="fa-solid fa-plus"></i>
-                <i class="fa-solid fa-user" style="margin-right: 10px;"></i>
-                Add member
-            </button>
-        </div>
-        <div class="sections m-5"></div>
-    </div>{% endcomment %}
-    <div class="row-view" style="padding:2.5%;padding-bottom:5vh;">
-        <button type="submit" class=" register-button"
-            style="font-size:18px; padding-left:5.5%;padding-right:5.5%; background-color:C6B394; font-weight:600;">Register</button>
-    </div>
-    </form>
-    {% comment %} <footer id="footer">
-        <i class="bi bi-globe2" style="font-size: 2vw;"></i>
-        <a href="https://alcheringa.in" target="_blank"
-            style="color: #C6B394; padding-left: 1%; padding-right: 5%;">alcheringa.in</a>
-        <i class="bi bi-envelope" style="font-size: 2vw;"></i>
-        <p style="color: #C6B394; padding-left: 1%;  padding-right: 5%;">
-            rocko@alcheringa.in
-        </p>
-        <i class="bi bi-telephone" style="font-size: 2vw;"></i>
-        <p style="color: #C6B394; padding-left: 1%;  padding-right: 15%;">+917903022011
-        </p>
-        <div id="footer-icons">
-            <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
-            <a href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook"
-                    style="margin-left: 3.5vw;"></i></a>
-            <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram"
-                    style="margin-left: 3.5vw;"></i></a>
-            <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
-        </div>
-    </footer> {% endcomment %}
-    {% comment %} <footer id="mobile-footer">
-        <div style="display: flex; flex-flow: row;">
-            <i class="bi bi-telephone" style="margin-right: 5%;"></i>
-            <div style="color: #C6B394; margin-right: 15vw">+917903022011</div>
-            <i class="bi bi-search" style="margin-right: 5%;"></i>
-            <a href="https://alcheringa.in" target="_blank" style="color: #C6B394">alcheringa.in</a>
-        </div>
-        <div style="display: flex; flex-flow: row; padding-top: 2%; padding-bottom: 5vw;">
-            <i class="bi bi-envelope" style="margin-right: 4%; font-size: 5vw"></i>
-            <p style="color: #C6B394; padding-left: 1%;  padding-right: 5%;">
-                rocko@alcheringa.in
-            </p>
-        </div>
-        <div>Social Media</div>
-        <div style="font-size: 5vw; margin-top: 2%">
-            <a href="https://www.youtube.com/c/AlcheringaIITG"><i class="bi bi-youtube"></i></a>
-            <a href="https://www.facebook.com/rockophonix/"><i class="bi bi-facebook"
-                    style="margin-left: 3.5vw;"></i></a>
-            <a href="https://www.instagram.com/rockophonix_alcheriitg/"><i class="bi bi-instagram"
-                    style="margin-left: 3.5vw;"></i></a>
-            <a href="https://twitter.com/alcheringaiitg"><i class="bi bi-twitter" style="margin-left: 3.5vw;"></i></a>
-        </div>
-    </footer> {% endcomment %}
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head> -->
-<!-- <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    /> -->
-
-<!-- </head> -->
-
-<!-- <body>
-    <div class="page-heading">Registration</div>
-    <br><br>
-    <div class="reg-form-all">
-         <div class="row-view">
-            <div style="
-            font-size: 12px;
-            line-height: 15px;margin:1.25rem"> All fields marked with <span class="red-star">*</span> are mandatory</div>
-        </div> -->
-<!-- <div class="form-content">
-            <form class="form" style="display: flex;flex-direction:column;justify-content:center;" method="POST" action="{% url 'saveform' %}" id="RollForm" class="rg">
-              {% csrf_token %}
-                <div class="row-view">
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">Name<span class="red-star"> *</span></span>
-                            <br>
-                            <input type="text" id="name" class="input-text-field " required>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Contact Number<span class="red-star"> *</span></span>
-                            <br>
-                            <input type="number" id="cont_num" class="input-text-field " required>
-                        </div>
-                        <br><br><br>
-                        <div>
-                          <span class="head-style">Gender<span class="red-star"> *</span></span>
-                          <br>
-                          <input type="text" id="gender" class="input-text-field " required>
-                      </div>
-                    </div>
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">College Name<span class="red-star"> *</span></span>
-                            <br>
-                            <input type="text" id="name" class="input-text-field " required>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">E-mail<span class="red-star"> *</span></span>
-                            <br>
-                            <input type="email" id="email" class="input-text-field " required>
-                        </div>
-                    </div>
-
-
-                </div>
-                <br><br><br>
-                <div class="row-view" style="display: flex;justify-content:center">
-                    <button class=" register-button">Register</button>
-                </div>
-                <br><br><br>
-              </form>
-        </div>
-    </div>
- </body> -->
-
-<!-- </html> -->
-
-{% comment %}
-<script src="{% static '/js/nav.js' %}"></script> {% endcomment %}
-{% comment %}
-<script>
-    function samefunc(e) {
-        const PhoneNumber = document.getElementsByName("phone_" + e)[0]
-        const Email = document.getElementsByName("email_" + e)[0]
-        const Gender = document.getElementsByName("gender_" + e)[0]
-        const PhoneNumberCheck = document.getElementsByName("check_phone_" + e)[0]
-        const EmailCheck = document.getElementsByName("check_email_" + e)[0]
-        const GenderCheck = document.getElementsByName("check_gender_" + e)[0]
-
-        if (PhoneNumberCheck.checked) {
-            const leadPhoneNumber = document.getElementsByName("phoneNumber")[0].value
-            PhoneNumber.value = leadPhoneNumber
-        }
-        if (EmailCheck.checked) {
-            const leadEmail = document.getElementsByName("email")[0].value
-            Email.value = leadEmail
-        }
-        if (GenderCheck.checked) {
-            const leadGender = document.getElementsByName("gender")[0].value
-            Gender.value = leadGender
-        }
-
-    }
-    let currNoOfMem = -1;
-    function addMember() {
-
-        currNoOfMem++;
-        const Mem = currNoOfMem;
-        var label1 = document.createElement("Label");
-        label1.setAttribute("id", `label1_${currNoOfMem}`);
-        label1.setAttribute("class", "head-style");
-
-        label1.htmlFor = `name_${currNoOfMem}`;
-        label1.innerHTML = "Name";
-
-        const inp1 = document.createElement("input");
-        inp1.setAttribute("name", `name_${currNoOfMem}`);
-        inp1.setAttribute("id", `name_${currNoOfMem}`);
-        inp1.setAttribute("type", "text");
-        inp1.setAttribute("class", "input-text-field namep ");
-
-        var label2 = document.createElement("Label");
-        label2.setAttribute("id", `label2_${currNoOfMem}`);
-        label2.setAttribute("class", "head-style");
-
-        label2.htmlFor = `email_${currNoOfMem}`;
-        label2.innerHTML = "Email";
-
-        const inp2 = document.createElement("input");
-        inp2.setAttribute("name", `email_${currNoOfMem}`);
-        inp2.setAttribute("id", `email_${currNoOfMem}`);
-        inp2.setAttribute("class", "input-text-field ");
-        inp2.setAttribute("type", "email");
-
-        const check2p = document.createElement("p");
-        check2p.setAttribute("style", "display:flex;");
-        const check2 = document.createElement("input");
-        check2.setAttribute("name", `check_email_${currNoOfMem}`);
-        check2.setAttribute("id", `check_email_${currNoOfMem}`);
-        check2.setAttribute("type", "checkbox");
-        check2.setAttribute("onclick", `samefunc(${currNoOfMem})`);
-        const check2label = document.createElement("Label");
-        check2label.innerHTML = "Same As Leader";
-        check2p.appendChild(check2);
-        check2p.appendChild(check2label);
-
-        var label3 = document.createElement("Label");
-        label3.setAttribute("id", `label3_${currNoOfMem}`);
-        label3.setAttribute("class", "head-style");
-
-        label3.htmlFor = `phone_${currNoOfMem}`;
-        label3.innerHTML = "Phone";
-
-        const inp3 = document.createElement("input");
-        inp3.setAttribute("name", `phone_${currNoOfMem}`);
-        inp3.setAttribute("id", `phone_${currNoOfMem}`);
-        inp3.setAttribute("type", "text");
-        inp3.setAttribute("class", "input-text-field ");
-
-        const check3p = document.createElement("p");
-        check3p.setAttribute("style", "display:flex;");
-        const check3 = document.createElement("input");
-        check3.setAttribute("name", `check_phone_${currNoOfMem}`);
-        check3.setAttribute("id", `check_phone_${currNoOfMem}`);
-        check3.setAttribute("type", "checkbox");
-        check3.setAttribute("onclick", `samefunc(${currNoOfMem})`);
-        const check3label = document.createElement("Label");
-        check3label.innerHTML = "Same As Leader";
-        check3p.appendChild(check3);
-        check3p.appendChild(check3label);
-
-
-        var label4 = document.createElement("Label");
-        label4.setAttribute("id", `label4_${currNoOfMem}`);
-        label4.setAttribute("class", "head-style");
-
-        label4.htmlFor = `gender_${currNoOfMem}`;
-        label4.innerHTML = "Gender";
-
-        const inp4 = document.createElement("input");
-        inp4.setAttribute("name", `gender_${currNoOfMem}`);
-        inp4.setAttribute("id", `gender_${currNoOfMem}`);
-        inp4.setAttribute("type", "text");
-        inp4.setAttribute("class", "input-text-field ");
-
-        const check4p = document.createElement("p");
-        check4p.setAttribute("style", "display:flex;");
-        const check4 = document.createElement("input");
-        check4.setAttribute("name", `check_gender_${currNoOfMem}`);
-        check4.setAttribute("id", `check_gender_${currNoOfMem}`);
-        check4.setAttribute("type", "checkbox");
-        check4.setAttribute("onclick", `samefunc(${currNoOfMem})`);
-        const check4label = document.createElement("Label");
-        check4label.innerHTML = "Same As Leader";
-        check4p.appendChild(check4);
-        check4p.appendChild(check4label);
-
-
-        const rem_but = document.createElement("BUTTON");
-        rem_but.setAttribute("type", "button");
-        rem_but.setAttribute("class", "register-button ");
-        rem_but.innerHTML = `<i class="fa fa-minus-circle mr-2"></i>Remove Member`
-
-
-        rem_but.setAttribute("name", `remove_${currNoOfMem}`);
-        rem_but.setAttribute("id", `remove_${currNoOfMem}`);
-        rem_but.setAttribute("style", "font-size:18px;width:auto")
-        rem_but.setAttribute("value", currNoOfMem);
-        rem_but.setAttribute(
-            "onclick",
-            "removeMember(this.value)"
-        );
-
-        let rollForm = document.getElementById("member_form");
-        let currMember = document.createElement("div");
-        currMember.setAttribute("id", `member_${currNoOfMem}`)
-        let phone_gender = document.createElement("div");
-
-
-        currMember.setAttribute("value", currNoOfMem)
-        let name_email = document.createElement("div");
-
-        let but_div = document.createElement("div");
-        var rem = document.createElement("p");
-        rem.setAttribute("class", "row-view rem")
-        currMember.appendChild(rem);
-
-
-        var MemID = document.createElement("span");
-        MemID.innerHTML = `Member ${currNoOfMem + 1}`
-        MemID.setAttribute("style", `font-size:18px; font-weight:bold;`)
-        MemID.setAttribute("id", `memberhead_${currNoOfMem}`)
-        rem.append(MemID);
-
-        but_div.append(rem);
-        currMember.appendChild(but_div);
-        rem.appendChild(rem_but);
-
-        var name_p = document.createElement("p");
-        name_p.appendChild(label1);
-        name_p.appendChild(inp1);
-
-        currMember.appendChild(name_p);
-        // currMember.setAttribute("class","row-view");
-        let rowview = document.createElement("div");
-
-        // rollForm.appendChild(label1);
-        var email_p = document.createElement("p");
-        email_p.appendChild(label2);
-        email_p.appendChild(inp2);
-        email_p.appendChild(check2p);
-
-        currMember.appendChild(email_p);
-        name_email.appendChild(name_p);
-        name_email.appendChild(email_p);
-
-
-        name_email.setAttribute("class", "sections m-5");
-        var phone_p = document.createElement("p");
-        phone_p.appendChild(label3);
-        phone_p.appendChild(inp3);
-        phone_p.appendChild(check3p);
-
-        currMember.appendChild(phone_p);
-        var gender_p = document.createElement("p");
-        gender_p.appendChild(label4);
-        gender_p.appendChild(inp4);
-        gender_p.appendChild(check4p);
-
-        currMember.appendChild(gender_p);
-
-        phone_gender.appendChild(phone_p);
-        phone_gender.appendChild(gender_p);
-        rowview.appendChild(name_email);
-        rowview.appendChild(phone_gender);
-        rowview.setAttribute("class", "row-view");
-        currMember.appendChild(rowview);
-        phone_gender.setAttribute("class", "sections m-5");
-
-        rollForm.appendChild(currMember);
-        document.getElementById("no_of_members").value = currNoOfMem + 1;
-    }
-    function removeMember(member) {
-        let currToBeDelMember = document.getElementById(`member_${member}`);
-        let memberDiv = document.getElementById("member_form");
-        memberDiv.removeChild(currToBeDelMember);
-        console.log(member);
-        console.log(currNoOfMem);
-        let i = Number(member) + 1;
-        while (i <= currNoOfMem) {
-            console.log(12)
-            let currMember = document.getElementById(`member_${i}`);
-            currMember.setAttribute("id", `member_${i - 1}`);
-            currMember.setAttribute("value", i - 1);
-
-            let currMemberName = document.getElementById(`name_${i}`);
-            let currMemberEmail = document.getElementById(`email_${i}`);
-            let currMemberPhone = document.getElementById(`phone_${i}`);
-            let currMemberGender = document.getElementById(`gender_${i}`);
-            let currMemberRemBtn = document.getElementById(`remove_${i}`);
-            let labela = document.getElementById(`label1_${i}`);
-            let labelb = document.getElementById(`label2_${i}`);
-            let labelc = document.getElementById(`label3_${i}`);
-            let labeld = document.getElementById(`label4_${i}`);
-            let currMemberCheckEmail = document.getElementById(`check_email_${i}`);
-            let currMemberCheckPhone = document.getElementById(`check_phone_${i}`);
-            let currMemberCheckGender = document.getElementById(`check_gender_${i}`);
-            let memHead = document.getElementById(`memberhead_${i}`)
-
-            memHead.innerHTML = `Member ${i}`
-
-            memHead.setAttribute("id", `memberhead_${i - 1}`);
-            currMemberName.setAttribute("id", `name_${i - 1}`);
-            currMemberEmail.setAttribute("id", `email_${i - 1}`);
-            currMemberPhone.setAttribute("id", `phone_${i - 1}`);
-            currMemberGender.setAttribute("id", `gender_${i - 1}`);
-            currMemberRemBtn.setAttribute("id", `remove_${i - 1}`);
-            currMemberCheckEmail.setAttribute("id", `check_email_${i - 1}`);
-            currMemberCheckPhone.setAttribute("id", `check_phone_${i - 1}`);
-            currMemberCheckGender.setAttribute("id", `check_gender_${i - 1}`);
-
-            labela.setAttribute("id", `label1_${i - 1}`)
-            labelb.setAttribute("id", `label2_${i - 1}`)
-            labelc.setAttribute("id", `label3_${i - 1}`)
-            labeld.setAttribute("id", `label4_${i - 1}`)
-
-            currMemberName.setAttribute("name", `name_${i - 1}`);
-            currMemberEmail.setAttribute("name", `email_${i - 1}`);
-            currMemberPhone.setAttribute("name", `phone_${i - 1}`);
-            currMemberGender.setAttribute("name", `gender_${i - 1}`);
-            currMemberRemBtn.setAttribute("value", `${i - 1}`);
-            currMemberCheckEmail.setAttribute("name", `check_email_${i - 1}`);
-            currMemberCheckPhone.setAttribute("name", `check_phone_${i - 1}`);
-            currMemberCheckGender.setAttribute("name", `check_gender_${i - 1}`);
-            currMemberCheckEmail.setAttribute("onclick", `samefunc(${i - 1})`);
-            currMemberCheckPhone.setAttribute("onclick", `samefunc(${i - 1})`);
-            currMemberCheckGender.setAttribute("onclick", `samefunc(${i - 1})`);
-            i++;
-        }
-        currNoOfMem--;
-        document.getElementById("no_of_members").value = currNoOfMem + 1;
-    }
-</script> {% endcomment %}
-<script src="{% static 'js/registrationpage.js' %}"></script>
 
 </html>

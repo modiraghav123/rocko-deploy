@@ -12,37 +12,45 @@
 <body>
     <div class="body">
          <div class="header">
-            <div class="img">
-                <img src="{% static 'img/headerimg-removebg-preview.png' %}" alt="headerimg" class="horn">
-                <img src="{% static 'img/Vector 1.png' %}" alt="vector" class="vector">
-            </div>
+                <div class="img">
+                    <img src="{% static 'img/headerimg-removebg-preview.png' %}" alt="headerimg" class="horn">
+                    <img src="{% static 'img/Vector 1.png' %}" alt="vector" class="vector">
+                </div>
                 <ul class="links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="/registration">Registration</a></li>
+                    <li ><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'registration' %}">Registration</a></li>
                     <li><a href="#Aboutus">About us</a></li>
                     <li><a href="#Contactus">Contact Us</a></li>
-                    
+                    <li>
+                        <button class="button">
+                            <a href="{% url 'registration' %}">Registration</a>
+                        </button>
+                    </li>
                 </ul>
                 <div class="uil uil-bars menubtn"></div>
-                <button class="button">
-                    <a href="/register">Register</a>
-                </button>
+               
            
          </div>
 
          <!-- <img src="img/bg.png" alt="bg" class="bg"> -->
          <div class="bg">
             <div class="hero">
-             
-            </div>
+                <div class="hero-heading">
+                  <h2>Alcheringa</h2>
+                  <h1>ROCK-O-PHONIX</h1>
+                </div>
+                <video src="{% static 'img/0001-0170.mp4' %}" muted></video>
+              </div>
             <div class="about" id="Aboutus">
                 <section class="about-section">
                    <h1 class="subheading">About us</h1>
                    <div class="about-container">
-                    <img src="{% static 'img/image1.jpg' %}" alt="Concert" class="img1">
-                    <img src="{% static 'img/image2.jpg' %}" alt="Microphone" class="img2">
-                    <img src="{% static 'img/image3.jpg' %}" alt="DJ Console" class="img3">
-                    <img src="{% static 'img/image4.jpg' %}" alt="Sound Equipment" class="img4">
+                   
+                        <img src="{% static 'img/image1.jpg' %}" alt="Concert" class="img1">
+                        <img src="{% static 'img/image2.jpg' %}" alt="Microphone" class="img2">
+                        <img src="{% static 'img/image3.jpg' %}" alt="DJ Console" class="img3">
+                        <img src="{% static 'img/image4.jpg' %}" alt="Sound Equipment" class="img4">
+                  
                     <p class="about-text">
                       Alcheringa is the annual cultural festival of the Indian Institute of Technology, Guwahati. 
                       A splendid idea realized by a group of students in 1996, it marked the dawn of one of Asia’s 
@@ -73,7 +81,7 @@
 
                 <div class="logo" id="logo">
                     <div class="logos">
-                        <h2>IIT Guwahathi's</h2>
+                        <h2>IIT Guwahati's</h2>
                         <h1><i>ALCHERINGA</i></h1>
                     </div>
                     <img src="{% static 'img/Screenshot_2024-12-10_203259-removebg-preview.png' %}" alt="">
@@ -83,9 +91,9 @@
 
 
                 <div class="footerlinks">
-                <span><p><i class="uil uil-globe"></i> alcheringa.in</p></span>
-                <span><p> <i class="uil uil-envelope"> </i>rockophonix@alcheringa.in</p></span>
-                <span> <p> <i class="uil uil-phone"></i> +91-8307279038</p></span>
+                <span><p class="item"><i class="uil uil-globe"></i> alcheringa.in</p></span>
+                <span><p class="middle "> <i class="uil uil-envelope "> </i>rockophonix@alcheringa.in</p></span>
+                <span> <p class="item"> <i class="uil uil-phone item"></i> +91-8307279038</p></span>
                 </div>
                 <div class="footericons">
                     <i class="uil uil-youtube"></i>
@@ -102,5 +110,25 @@
          
     </div>
   
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"
+      integrity="sha512-judXDFLnOTJsUwd55lhbrX3uSoSQSOZR6vNrsll+4ViUFv+XOIr/xaIK96soMj6s5jVszd7I97a0H+WhgFwTEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.utils import timezone
 
 def registration(request):
-    return render(request, 'registration.html')
+    return render(request, 'base/registration.html')
 
 def index(request):
     return render(request, 'base/index.html')
