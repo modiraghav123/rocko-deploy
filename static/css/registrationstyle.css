@@ -44,6 +44,7 @@ html {
     justify-content: space-around;
     font-size: 2rem;
     position: fixed;
+    z-index: 1000;
 }
 
 .header .links {
@@ -135,7 +136,7 @@ html {
 .bg {
     position: relative;
 
-    /* z-index: -1000; */
+    
     width: 97vw;
     height: auto;
     /* padding: 0 10px; */
@@ -267,7 +268,12 @@ input::placeholder {
 .member {
     margin-top: 2rem;
 }
+.member .counter span{
+   color:#FAE3CF;
+   font-size: 2rem;
+   background: none;
 
+}
 .details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -293,7 +299,14 @@ input::placeholder {
     font-size: 2rem;
 
 }
-
+.removemember button{
+    background-color: #FAE3CF;
+    color: #A70012;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+    font-size: 2rem;
+}
 .register {
     text-align: center;
 }
@@ -306,6 +319,55 @@ input::placeholder {
     border-radius: 1.2rem;
     font-size: 2rem;
 }
+.gender-dropdown {
+    height: 3rem;
+    width: 30rem;
+    border: 2px solid #FAE3CF;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    color: #FAE3CF;
+}
+
+.gender-dropdown option {
+    color: #0A0F24;
+    background-color: #FAE3CF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1024px) {
 
@@ -376,6 +438,9 @@ input::placeholder {
         margin-left: 5px;
         padding: 10px 20px;
     }
+
+
+
     .header .links .button {
         margin-top: 2rem;
         display: block;
@@ -387,6 +452,15 @@ input::placeholder {
     .header {
         height: 6rem;
     }
+
+
+
+
+
+
+
+
+
 }
 
 @media(max-width:465px) {

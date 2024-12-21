@@ -203,13 +203,12 @@ html {
   background: transparent;
 }
 
-.hero-heading h1 {
+.hero-heading .alcher {
   width: max-content;
-  font-size: 3rem;
+  height:14rem;
 }
 
-.hero-heading h2 {
-  font-size: 2rem;
+.hero-heading .rocko {
   margin-bottom: -0.5rem;
 }
 
@@ -491,6 +490,15 @@ section {
     margin-bottom: -4rem;
     margin-left: 2.5rem;
   }
+  .hero-heading .alcher {
+    width: max-content;
+    height:14rem;
+  }
+  
+  .hero-heading .rocko {
+    margin-bottom: -0.5rem;
+    width: 80rem;
+  }
 }
 
 @media(max-width:991px) {
@@ -569,7 +577,11 @@ section {
     height: 20rem;
   }
 
-
+ 
+  .hero-heading .rocko {
+    margin-bottom: -0.5rem;
+    width: 60rem;
+  }
 
 
 
@@ -578,7 +590,7 @@ section {
 
 }
 
-@media(max-width:465px) {
+@media(max-width:450px) {
   html {
     font-size: 50%;
   }
@@ -729,5 +741,13 @@ section {
 
   .credit {
     font-size: 1.8rem;
+  }
+  .hero-heading .alcher {
+    width: 25rem;
+    height:8rem;
+  }
+  .hero-heading .rocko {
+    margin-bottom: -0.5rem;
+    width: 40rem;
   }
 }

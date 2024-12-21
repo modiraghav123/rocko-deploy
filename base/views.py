@@ -16,6 +16,7 @@ def index(request):
 def basic_form(request):
     return render(request, 'base/forms.html')
 
+
 def saveform(request):
     if request.method == "POST":
         email = request.POST.get('email')

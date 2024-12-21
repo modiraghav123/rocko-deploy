@@ -45,7 +45,7 @@
                         <input type="text" placeholder="Enter City Name...">
                     </div>
                     <div>
-                        <h4 class="subsubheading">Performance Link<span class="redstar">*</span> </h4>
+                        <h4 class="subsubheading">Performence Link<span class="redstar">*</span> </h4>
                         <input type="text" placeholder="Enter Link...">
                     </div>
 
@@ -58,11 +58,11 @@
                         <h4 class="subsubheading">Drummer</h4>
                         <div class="counter">
                             <button class="btn-minus">
-                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-1">
                             </button>
-                            <input type="text" id="Drummer" value="0" readonly>
+                            <span class="num-1">0</span>
                             <button class="btn-plus">
-                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-1">
                             </button>
                         </div>
                     </div>
@@ -71,11 +71,11 @@
                         <h4 class="subsubheading">Guitarist</h4>
                         <div class="counter">
                             <button class="btn-minus">
-                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-2">
                             </button>
-                            <input type="text" id="Guitarist" value="0" readonly>
+                            <span class="num-2">0</span>
                             <button class="btn-plus">
-                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-2">
                             </button>
                         </div>
                     </div>
@@ -84,11 +84,11 @@
                         <h4 class="subsubheading">Bassist</h4>
                         <div class="counter">
                             <button class="btn-minus">
-                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-3">
                             </button>
-                            <input type="text" id="Bassist" value="0" readonly>
+                            <span class="num-3">0</span>
                             <button class="btn-plus">
-                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-3">
                             </button>
                         </div>
                     </div>
@@ -98,17 +98,18 @@
                         <h4 class="subsubheading">Vocalist</h4>
                         <div class="counter">
                             <button class="btn-minus">
-                                <img src="{% static 'img/minus.png' %}" alt="Minus">
+                                <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-4">
                             </button>
-                            <input type="text" id="Vocalist" value="0" readonly>
+                          <span class="num-4">0</span>
                             <button class="btn-plus">
-                                <img src="{% static 'img/plus.png' %}" alt="Plus">
+                                <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-4">
                             </button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section>
+            <section class="teamdetails">
+               <div>
                 <h3 class="subheading">Leader Details</h3>
                 <div class="details">
                     <div>
@@ -116,8 +117,12 @@
                         <input type="text" placeholder="Enter Full Name...">
                     </div>
                     <div>
-                        <h4 class="subsubheading">Full Name </h4>
-                        <input type="text" placeholder="Enter Full Name...">
+                        <h4 class="subsubheading">Gender</h4>
+                        <select class="gender-dropdown">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
                     <div>
                         <h4 class="subsubheading">Contact Name </h4>
@@ -127,14 +132,18 @@
                         <h4 class="subsubheading">Email Id </h4>
                         <input type="text" placeholder="Enter Email Id...">
                     </div>
+               </div>
                 </div>
 
+           
+            </section>
+             <section>
                 <div class="addmember">
-                    <button>
+                    <button onclick="addMember()">
                         + Add Member
                     </button>
                 </div>
-            </section>
+             </section>
             <section class="register">
                 <button>
                     Register
@@ -142,7 +151,7 @@
             </section>
         </div>
     </div>
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/registartionscript.js' %}"></script>
 </body>
 
 </html>
