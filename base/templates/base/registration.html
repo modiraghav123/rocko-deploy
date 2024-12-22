@@ -125,9 +125,19 @@
                         </select>
                     </div>
                     <div>
-                        <h4 class="subsubheading">Contact Name </h4>
-                        <input type="text" placeholder="Enter Phone Name...">
+                        <h4 class="subsubheading">Contact Number <span class="redstar">*</span></h4>
+                        <div class="phone-container">
+                            <select id="country-code" class="country-dropdown">
+                                <option value="">Country Code</option>
+                                
+                            </select>
+                            <input id="phone-number" type="text" placeholder="Enter Phone Number..." maxlength="10" >
+                        </div>
+                        <p id="error-message" class="error"></p>
                     </div>
+                    
+                    
+                    
                     <div>
                         <h4 class="subsubheading">Email Id </h4>
                         <input type="text" placeholder="Enter Email Id...">
@@ -155,3 +165,51 @@
 </body>
 
 </html>
+
+<script>
+    const jsonUrl = "{% static 'js/countries.json' %}"; 
+console.log("Fetching from: ", jsonUrl); 
+
+fetch(jsonUrl)
+    .then(response => response.json())
+    .then(countries => {
+        const countryDropdown = document.getElementById("country-code");
+
+        
+        countries.forEach(country => {
+            const option = document.createElement("option");
+            option.value = country.code; 
+            option.textContent = `${country.flag} ${country.name} (${country.code})`; 
+            countryDropdown.appendChild(option);
+        });
+    })
+    .catch(error => console.error("Error loading countries:", error));
+
+const phoneNumberInput = document.getElementById("phone-number");
+
+document.getElementById("country-code").addEventListener("change", function () {
+    const selectedCountryCode = this.value;  
+    const selectedCountry = countries.find(country => country.code === selectedCountryCode);
+
+    if (selectedCountry) {
+        
+        phoneNumberInput.value = `${selectedCountry.flag} ${selectedCountry.code}`;
+        phoneNumberInput.disabled = false;  
+    } else {
+        phoneNumberInput.value = ""; 
+    }
+});
+
+
+phoneNumberInput.addEventListener("input", function () {
+    const phoneInput = this.value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (phoneInput.length > 0 && !/^\d{10}$/.test(phoneInput.slice(phoneInput.indexOf('+') + 1))) {
+        errorMessage.textContent = "Phone number must be 10 digits.";
+    } else {
+        errorMessage.textContent = "";
+    }
+});
+
+</script>

@@ -480,3 +480,45 @@ input::placeholder {
     }
 
 }
+
+
+.phone-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.country-dropdown {
+    height: 3rem;
+    width: 12rem;
+    border: 2px solid #FAE3CF;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #FAE3CF;
+}
+
+.country-dropdown option {
+    background-color: #0A0F24;
+    color: #FAE3CF;
+}
+
+#error-message {
+    color: red;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+
+
+
+#country-flag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem; /* Adjust the size of the flag emoji */
+}
+
+
+
