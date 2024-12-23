@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from .models import Team
@@ -16,6 +16,9 @@ def index(request):
 def basic_form(request):
     return render(request, 'base/forms.html')
 
+def success(request):
+    return render(request, 'base/success.html')
+
 
 def saveform(request):
     if request.method == "POST":
@@ -31,8 +34,8 @@ def saveform(request):
          team.phoneNumber = request.POST.get('phoneNumber')
          team.gender = request.POST.get('gender')
 
-        team.save()
-        return render(request, 'base/success.html')
+         team.save()
+         return render(request, 'base/success.html')
     return render(request, 'base/registration.html')
 
         # leader=Member(isLeader=1,name=name,email=email,phoneNumber=phone,gender=gender,team=team)
@@ -93,9 +96,7 @@ def send_otp(request):
         except Exception as e:
             print(f"Unexpected error: {e}")
             return JsonResponse({"status": "error", "message": "An unexpected error occurred."})
-
     return JsonResponse({"status": "error", "message": "Invalid request"})
-
 def verify_otp(request):
     if request.method == "POST":
         email = request.POST.get('email')
@@ -115,8 +116,6 @@ def verify_otp(request):
         except Team.DoesNotExist:
             return JsonResponse({"status": "error", "message": "No team found for this email."})
     return JsonResponse({"status": "error", "message": "Invalid request"})
-
-
 def register(request):
     if request.method == "POST":
         email = request.POST.get('email')
@@ -135,15 +134,15 @@ def register(request):
             
             team.save()  
             messages.success(request, "Registration completed successfully!")
-            return JsonResponse({"status": "success", "redirect_url": "/success/"})
+            return redirect('success')
         
         except Team.DoesNotExist:
         
             return JsonResponse({"status": "error", "message": "Please verify OTP before registering."})
-
     return JsonResponse({"status": "error", "message": "Invalid request"})
 
 def rockodetails(request):
     # users_singles = Member.objects.all()
     teams = Team.objects.all()
     return render(request,'base/user_details.html',{'teams':teams})
+

@@ -124,3 +124,44 @@ function addMember() {
 }
 
 
+function validateForm() {
+    const errors = [];
+    const teamName = document.querySelector('input[placeholder="Enter Team Name..."]');
+    const city = document.querySelector('input[placeholder="Enter City Name..."]');
+    const phoneNumber = document.getElementById("phone-number");
+    const emailInput = document.querySelector('input[placeholder="Enter Email Id..."]');
+
+    if (!teamName || !teamName.value.trim()) {
+        errors.push("Team Name is required.");
+    }
+    if (!city || !city.value.trim()) {
+        errors.push("City is required.");
+    }
+    if (phoneNumber && !/^\d{10}$/.test(phoneNumber.value.trim())) {
+        errors.push("Phone number must be 10 digits.");
+    }
+    if (emailInput && !/\S+@\S+\.\S+/.test(emailInput.value.trim())) {
+        errors.push("Enter a valid email address.");
+    }
+
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+    }
+    return true;
+}
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    if (!validateForm()) {
+        event.preventDefault();
+    }
+});
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    const phoneNumber = document.getElementById("phone-number").value;
+    if (phoneNumber && !/^\d{10}$/.test(phoneNumber)) {
+        event.preventDefault();
+        alert("Phone number must be 10 digits.");
+    }
+});
+

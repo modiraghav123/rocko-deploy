@@ -31,37 +31,40 @@
 
         </div>
         <div class="bg">
-            <section>
+            <form  method="POST" action="{% url 'register' %}" >
+             {% csrf_token %}  
+             <section>
                 <h1 class="main-heading">REGISTRATION</h1>
                 <h3 class="subheading">Team Details</h3>
                 <div class="team">
-
+                
                     <div>
+                        
                         <h4 class="subsubheading">Team Name<span class="redstar">*</span> </h4>
-                        <input type="text" placeholder="Enter Team Name...">
+                        <input type="text" id="teamName" placeholder="Enter Team Name..." name="teamName" required>
                     </div>
                     <div>
                         <h4 class="subsubheading">City<span class="redstar">*</span> </h4>
-                        <input type="text" placeholder="Enter City Name...">
+                        <input type="text" id="city" placeholder="Enter City Name..." name="city" required>
                     </div>
                     <div>
-                        <h4 class="subsubheading">Performence Link<span class="redstar">*</span> </h4>
-                        <input type="text" placeholder="Enter Link...">
+                        <h4 class="subsubheading">Performance Link<span class="redstar">*</span> </h4>
+                        <input type="text" id="previousPerformance" placeholder="Enter Link..." name="performance" required>
                     </div>
 
                 </div>
-            </section>
-            <section>
+             </section>
+             <section>
                 <h3 class="subheading">Number of Members</h3>
                 <div class="members">
                     <div class="member">
                         <h4 class="subsubheading">Drummer</h4>
                         <div class="counter">
-                            <button class="btn-minus">
+                            <button class="btn-minus" type="button">
                                 <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-1">
                             </button>
                             <span class="num-1">0</span>
-                            <button class="btn-plus">
+                            <button class="btn-plus" type="button">
                                 <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-1">
                             </button>
                         </div>
@@ -70,11 +73,11 @@
                     <div class="member">
                         <h4 class="subsubheading">Guitarist</h4>
                         <div class="counter">
-                            <button class="btn-minus">
+                            <button class="btn-minus" type="button">
                                 <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-2">
                             </button>
                             <span class="num-2">0</span>
-                            <button class="btn-plus">
+                            <button class="btn-plus" type="button">
                                 <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-2">
                             </button>
                         </div>
@@ -83,11 +86,11 @@
                     <div class="member">
                         <h4 class="subsubheading">Bassist</h4>
                         <div class="counter">
-                            <button class="btn-minus">
+                            <button class="btn-minus" type="button">
                                 <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-3">
                             </button>
                             <span class="num-3">0</span>
-                            <button class="btn-plus">
+                            <button class="btn-plus" type="button">
                                 <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-3">
                             </button>
                         </div>
@@ -97,28 +100,28 @@
                     <div class="member">
                         <h4 class="subsubheading">Vocalist</h4>
                         <div class="counter">
-                            <button class="btn-minus">
+                            <button class="btn-minus" type="button">
                                 <img src="{% static 'img/minus.png' %}" alt="Minus" class="minus-4">
                             </button>
                           <span class="num-4">0</span>
-                            <button class="btn-plus">
+                            <button class="btn-plus" type="button">
                                 <img src="{% static 'img/plus.png' %}" alt="Plus" class="plus-4">
                             </button>
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="teamdetails">
+             </section>
+             <section class="teamdetails">
                <div>
                 <h3 class="subheading">Leader Details</h3>
                 <div class="details">
                     <div>
                         <h4 class="subsubheading">Full Name </h4>
-                        <input type="text" placeholder="Enter Full Name...">
+                        <input type="text" id="name" placeholder="Enter Full Name..." name="name" required>
                     </div>
                     <div>
                         <h4 class="subsubheading">Gender</h4>
-                        <select class="gender-dropdown">
+                        <select class="gender-dropdown" id="gender" name="gender">
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
@@ -131,7 +134,7 @@
                                 <option value="">Country Code</option>
                                 
                             </select>
-                            <input id="phone-number" type="text" placeholder="Enter Phone Number..." maxlength="10" >
+                            <input id="phone-number" id="phoneNumber" type="text" placeholder="Enter Phone Number..." name="phoneNumber"  maxlength="10" required>
                         </div>
                         <p id="error-message" class="error"></p>
                     </div>
@@ -140,25 +143,52 @@
                     
                     <div>
                         <h4 class="subsubheading">Email Id </h4>
-                        <input type="text" placeholder="Enter Email Id...">
+                        <input type="text" id="email" placeholder="Enter Email Id..." name="email" required>
                     </div>
                </div>
                 </div>
 
            
+             </section>
+             <section>
+                <h3 class="subheading">OTP Verification</h3>
+                <div class="otp-verification" style="width: 83%; margin-top: 10px;">
+                    <!-- Send OTP Button -->
+                    <button type="button" id="sendOtpBtn" class="register-button" style="margin-top: 10px;" onclick="sendOTP()">
+                        Send OTP
+                    </button>
+                    
+                    <!-- OTP Input (hidden initially) -->
+                    <p style="margin-top: 10px; display: none;" id="otpInputContainer">
+                        <label for="otp" class="head-style">Enter OTP</label>
+                        <input class="input-text-field" type="text" name="otp" id="otp" required style="display: none;" />
+                    </p>
+        
+                    <!-- Verify OTP Button (hidden initially) -->
+                    <button type="button" id="verifyOtpBtn" class="register-button" style="margin-top: 10px; display: none;" onclick="verifyOTP()">
+                        Verify OTP
+                    </button>
+        
+                    <!-- OTP and Verification Feedback Messages -->
+                    <p id="otpMessage"></p>
+                    <p id="verifyOtpMessage"></p>
+                </div>
             </section>
              <section>
                 <div class="addmember">
-                    <button onclick="addMember()">
+                    <button onclick="addMember()" type="button">
                         + Add Member
                     </button>
                 </div>
              </section>
-            <section class="register">
-                <button>
-                    Register
-                </button>
-            </section>
+
+             <section class="register">
+                <button type="submit">Register</button>
+             </section>
+            </form>
+             
+           
+
         </div>
     </div>
     <script src="{% static 'js/registartionscript.js' %}"></script>
@@ -167,49 +197,189 @@
 </html>
 
 <script>
-    const jsonUrl = "{% static 'js/countries.json' %}"; 
-console.log("Fetching from: ", jsonUrl); 
-
-fetch(jsonUrl)
+    let countries = [];
+    fetch("{% static 'js/countries.json' %}")
     .then(response => response.json())
-    .then(countries => {
+    .then(data => {
+        countries = data;
         const countryDropdown = document.getElementById("country-code");
 
-        
         countries.forEach(country => {
             const option = document.createElement("option");
-            option.value = country.code; 
-            option.textContent = `${country.flag} ${country.name} (${country.code})`; 
+            option.value = country.code;
+            option.textContent = `${country.flag} ${country.name} (${country.code})`;
             countryDropdown.appendChild(option);
         });
+
+        // Set India as the default selected option if it's not already selected
+        const indiaOption = countries.find(country => country.code === "+91");
+        if (indiaOption) {
+            countryDropdown.value = indiaOption.code;
+        }
     })
     .catch(error => console.error("Error loading countries:", error));
 
-const phoneNumberInput = document.getElementById("phone-number");
+//     const jsonUrl = "{% static 'js/countries.json' %}"; 
+// console.log("Fetching from: ", jsonUrl); 
 
-document.getElementById("country-code").addEventListener("change", function () {
-    const selectedCountryCode = this.value;  
-    const selectedCountry = countries.find(country => country.code === selectedCountryCode);
+// fetch(jsonUrl)
+//     .then(response => response.json())
+//     .then(countries => {
+//         const countryDropdown = document.getElementById("country-code");
 
-    if (selectedCountry) {
         
-        phoneNumberInput.value = `${selectedCountry.flag} ${selectedCountry.code}`;
-        phoneNumberInput.disabled = false;  
-    } else {
-        phoneNumberInput.value = ""; 
+//         countries.forEach(country => {
+//             const option = document.createElement("option");
+//             option.value = country.code; 
+//             option.textContent = `${country.flag} ${country.name} (${country.code})`; 
+//             countryDropdown.appendChild(option);
+//         });
+//     })
+//     .catch(error => console.error("Error loading countries:", error));
+
+// const phoneNumberInput = document.getElementById("phone-number");
+
+// document.getElementById("country-code").addEventListener("change", function () {
+//     const selectedCountryCode = this.value;  
+//     const selectedCountry = countries.find(country => country.code === selectedCountryCode);
+
+//     if (selectedCountry) {
+        
+//         phoneNumberInput.value = `${selectedCountry.flag} ${selectedCountry.code}`;
+//         phoneNumberInput.disabled = false;  
+//     } else {
+//         phoneNumberInput.value = ""; 
+//     }
+// });
+
+
+// phoneNumberInput.addEventListener("input", function () {
+//     const phoneInput = this.value;
+//     const errorMessage = document.getElementById("error-message");
+
+//     if (phoneInput.length > 0 && !/^\d{10}$/.test(phoneInput.slice(phoneInput.indexOf('+') + 1))) {
+//         errorMessage.textContent = "Phone number must be 10 digits.";
+//     } else {
+//         errorMessage.textContent = "";
+//     }
+// });
+
+// document.querySelector("form").addEventListener("submit", function (event) {
+//     const requiredFields = ["teamName", "city", "performance", "name", "gender", "phoneNumber", "email"];
+//     let isValid = true;
+
+//     requiredFields.forEach(field => {
+//         const input = document.querySelector(`[name="${field}"]`);
+//         if (!input.value.trim()) {
+//             alert(`${field} is required.`);
+//             isValid = false;
+//         }
+//     });
+
+//     if (!isValid) {
+//         event.preventDefault(); // Prevent form submission
+//     }
+// });
+
+function sendOTP() {
+    const email = document.getElementById('email').value;
+    const otpMessageElement = document.getElementById('otpMessage');
+    if (!email) {
+        if (otpMessageElement) {
+            otpMessageElement.innerText = 'Please enter a valid email address.';
+        }
+        return;
     }
-});
+
+    fetch("{% url 'send_otp' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ 'email': email })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (otpMessageElement) {
+            otpMessageElement.innerText = data.message;
+        }
+
+        if (data.status === 'success') {
+            const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+            const otpInput = document.getElementById('otp');
+            const otpInputContainer = document.getElementById('otpInputContainer');
+            
+            if (verifyOtpBtn) verifyOtpBtn.style.display = 'block';
+            if (otpInput) otpInput.style.display = 'block';
+            if (otpInputContainer) otpInputContainer.style.display = 'block';
+        }
+    })
+    .catch(error => {
+        if (otpMessageElement) {
+            otpMessageElement.innerText = 'Error sending OTP: ' + error.message;
+        }
+    });
+}
+
+function verifyOTP() {
+    const email = document.getElementById('email').value;
+    const otp = document.getElementById('otp').value;
+    const verifyOtpMessageElement = document.getElementById('verifyOtpMessage');
+    
+    fetch("{% url 'verify_otp' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ 'email': email, 'otp': otp })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (verifyOtpMessageElement) {
+            verifyOtpMessageElement.innerText = data.message;
+        }
+
+        if (data.status === 'success') {
+            const sendOtpBtn = document.getElementById('sendOtpBtn');
+            if (sendOtpBtn) sendOtpBtn.style.display = 'none';
+        }
+    })
+    .catch(error => {
+        if (verifyOtpMessageElement) {
+            verifyOtpMessageElement.innerText = 'Error verifying OTP: ' + error.message;
+        }
+    });
+}
+
+function register() {
+    const email = document.getElementById('email').value;
+    const registerMessageElement = document.getElementById('registerMessage');
+    
+    fetch("{% url 'register' %}", {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ 'email': email })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            window.location.href = data.redirect_url;
+        } else if (registerMessageElement) {
+            registerMessageElement.innerText = data.message;
+        }
+    })
+    .catch(error => {
+        if (registerMessageElement) {
+            registerMessageElement.innerText = 'Error registering: ' + error.message;
+        }
+    });
+}
 
 
-phoneNumberInput.addEventListener("input", function () {
-    const phoneInput = this.value;
-    const errorMessage = document.getElementById("error-message");
-
-    if (phoneInput.length > 0 && !/^\d{10}$/.test(phoneInput.slice(phoneInput.indexOf('+') + 1))) {
-        errorMessage.textContent = "Phone number must be 10 digits.";
-    } else {
-        errorMessage.textContent = "";
-    }
-});
 
 </script>

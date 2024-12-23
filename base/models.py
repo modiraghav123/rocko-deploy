@@ -17,7 +17,7 @@ class Team(models.Model):
     gender = models.CharField(null=True,max_length=10)
     otp = models.CharField(max_length=6,blank=True,null=True)
     otp_created_at = models.DateTimeField(null=True, blank=True) 
-    registration_succesful= models.BooleanField(default=False)
+    registration_successful= models.BooleanField(default=False)
 
 
     def generate_otp(self):
