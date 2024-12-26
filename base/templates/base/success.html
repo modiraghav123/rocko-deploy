@@ -19,7 +19,7 @@
             </div>
             <ul class="links">
                 <li ><a href="{% url 'index' %}" >Home</a></li>
-                <li><a href="{% url 'registration' %}">Registartion</a></li>
+                <li><a href="{% url 'registration' %}">Registration</a></li>
                 <li><a href="#Aboutus">About us</a></li>
                 <li><a href="#Contactus">Contact Us</a></li>
                 <li>
@@ -41,11 +41,11 @@
             <h1>You're In! Registration Successful!</h1>
             <p>Thank you for registering for Rock-O-Phonix at Alcheringa!Get ready for a night of music, lights, and energy. Check your inbox for registartion details!</p>
             <button>
-               <a href="{% static 'index.html' %}"> Back to Homepage</a>
-            </button>
+                <a href="{% url 'index' %}"> Back to Homepage</a>
+             </button>
           </section>
      </div>
-     <script src="{% static 'js/redirectionscipt.js' %}"></script>
+     <script src="{% static 'js/redirectionscript.js' %}"></script>
     </div>
 </body>
 </html>
