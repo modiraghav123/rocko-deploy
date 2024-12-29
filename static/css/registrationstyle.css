@@ -464,6 +464,9 @@ input::placeholder {
 }
 
 @media(max-width:465px) {
+    form{
+        margin-left: -30px;
+    }
     html {
         font-size: 50%;
     }
